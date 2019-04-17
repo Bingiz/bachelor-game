@@ -15,6 +15,8 @@ public class split_input_text_to_words : MonoBehaviour
 
     private char[] wordSplitPattern = {' ',',','.','?',':',';','!'};
 
+    List<string> words = new List<string>();
+
 
     List<string> inputWords = new List<string>();
 
@@ -42,9 +44,9 @@ public class split_input_text_to_words : MonoBehaviour
 
         input = input.ToLower();
 
-        string[] words = input.Split(wordSplitPattern);
+        words.AddRange(input.Split(wordSplitPattern));
 
-        foreach(string x in words)
+        foreach (string x in words)
         {
             Debug.Log(x);
         }
