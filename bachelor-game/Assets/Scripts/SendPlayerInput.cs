@@ -13,6 +13,10 @@ public class SendPlayerInput : MonoBehaviour
 
     public GameObject AnswerText;
 
+    public GameObject PlayerInputOutput;
+
+    public GameObject DialoguePartner;
+
     public List<InputTag> listOfAllInputTags;
 
     [HideInInspector] public List<InputTag> listOfTagsInInput;
@@ -20,6 +24,8 @@ public class SendPlayerInput : MonoBehaviour
     private GameManager gameManager;
 
     string input;
+
+    string inputForOutput;
 
     string output;
 
@@ -35,9 +41,9 @@ public class SendPlayerInput : MonoBehaviour
 
     public void SendInputMessage()
     {
-
         input = PlayerInput.GetComponent<Text>().text;
         input = input.Trim();
+        inputForOutput = input;
         input = input.ToLower();
 
         AddInputTags();
@@ -145,7 +151,11 @@ public class SendPlayerInput : MonoBehaviour
             output = answerBuffer[Random.Range(0, answerBuffer.Length)];
         }
         //write the output
-        AnswerText.GetComponent<Text>().text = output;
+
+        DialoguePartner = gameManager.DialoguePartner;
+        DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory += inputForOutput + "\n\n\n";
+        DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory += "\n" + output + "\n\n";
+        //AnswerText.GetComponent<Text>().text = output;
 
         // clear the output buffer and empty the list of recieved words
         output = "";

@@ -6,4 +6,6 @@ public class CharacterDialogueInfos : MonoBehaviour
 {
     public string characterName;
     public Color color;
+    public string playerInputHistory;
+    public string responseHistory;
 }
