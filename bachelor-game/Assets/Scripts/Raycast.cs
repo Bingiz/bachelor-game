@@ -9,14 +9,12 @@ public class Raycast : MonoBehaviour
 
     public Camera fpsCam;
 
-    bool inDialogue = false;
+    bool interacting = false;
 
     public GameObject interactionIcon;
 
-    List<Context> contextBuffer;
 
-    public GameObject gameManager;
-
+    GameObject interactingWith;
 
 
     // Update is called once per frame
@@ -24,21 +22,30 @@ public class Raycast : MonoBehaviour
     {
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        {
-            if (inDialogue == false) 
-            { 
-                if(hit.transform)
-                interactionIcon.SetActive(true);
+        {   
+
+            if (interacting == false) 
+            {
+                if (hit.collider.gameObject.tag == "NPC" | hit.collider.gameObject.tag == "ViewableObject")
+                {
+                    interactionIcon.SetActive(true);
+                }
 
                 if (Input.GetButtonDown("Interact"))
                 {
-                    //enter Dialogue
-                    gameManager.GetComponent<GameManager>().DialoguePartner = hit.transform.gameObject;
-                    contextBuffer = new List<Context>(hit.transform.GetComponent<DialogueTrigger>().context);
 
-                    gameManager.GetComponent<GameManager>().currentContexts.AddRange(contextBuffer);
 
-                    gameManager.GetComponent<EnterDialogue>().StartDialogue();
+                    interactingWith = hit.collider.gameObject;
+
+                    if (interactingWith.tag == "NPC")
+                    {
+                        interactingWith.GetComponent<EnterDialogue>().StartDialogue();
+                    }
+                    else if (interactingWith.tag == "ViewableObject")
+                    {
+                        interactingWith.GetComponent<ViewObject>().EnterView();
+                    }
+
 
                     interactionIcon.SetActive(false);
 
@@ -46,32 +53,30 @@ public class Raycast : MonoBehaviour
 
 
 
-                    inDialogue = true;
+                    interacting = true;
                 }
             }
-
-            Debug.Log(hit.transform.name);
 
         }
         else { interactionIcon.SetActive(false); }
 
-        if (inDialogue == true)
+        if (interacting == true)
         {
             if (Input.GetButtonDown("Escape"))
             {
                 transform.parent.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
 
-                gameManager.GetComponent<EnterDialogue>().EndDialogue();
-                gameManager.GetComponent<GameManager>().DialoguePartner = null;
-                for (int i = 0; i < contextBuffer.Count; i++)
+                if (interactingWith.tag == "NPC")
                 {
-                    gameManager.GetComponent<GameManager>().currentContexts.Remove(contextBuffer[i]);
+                    interactingWith.GetComponent<EnterDialogue>().EndDialogue();
                 }
-                contextBuffer.Clear();
+                  else if (interactingWith.tag == "ViewableObject")
+                  {
+                      interactingWith.GetComponent<ViewObject>().QuitView();
+                  }
+                  
 
-
-
-                inDialogue = false;
+                interacting = false;
             }
         }
 

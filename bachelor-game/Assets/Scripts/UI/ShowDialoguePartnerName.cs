@@ -10,33 +10,44 @@ public class ShowDialoguePartnerName : MonoBehaviour
     public GameObject dialoguePartnerAnswer;
     string charName;
     Color charColor;
-  
 
+    Text showPlayerInputHistory;
+    Text showResponseHistory;
+    CharacterDialogueInfos characterDialogueInfos;
+
+
+    private void Start()
+    {
+        showPlayerInputHistory = GetComponent<SendPlayerInput>().PlayerInputOutput.GetComponent<Text>();
+        showResponseHistory = GetComponent<SendPlayerInput>().AnswerText.GetComponent<Text>();
+    }
 
     private void Update()
     {
-        //on dialogue enter
-        ChangeNameAndColor();
-        showDialoguePartnerDialogueHistory();
-
-
-
+        if (GetComponent<GameManager>().DialoguePartner != null)
+        {
+            showDialoguePartnerDialogueHistory();
+        }
     }
+
 
     public void ChangeNameAndColor()
     {
+        //change Name
         charName = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().characterName;
         dialoguePartner.GetComponent<Text>().text = charName;
-        //Debug.Log("Name Changed");
+
+        //change Color
         charColor = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().color;
         dialoguePartner.GetComponent<Text>().color = charColor;
         dialoguePartnerAnswer.GetComponent<Text>().color = charColor;
-        //Debug.Log("Color Changed");
     }
 
     public void showDialoguePartnerDialogueHistory()
     {
-        GetComponent<SendPlayerInput>().PlayerInputOutput.GetComponent<Text>().text = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory;
-        GetComponent<SendPlayerInput>().AnswerText.GetComponent<Text>().text = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory;
+        showPlayerInputHistory.text = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory;
+        showResponseHistory.text = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory;
     }
+
+
 }
