@@ -15,8 +15,13 @@ MonoBehaviour:
   name: 
   description: 
   priority: 1
+  needsAnswer: 0
+  noFittingAnswer: []
   tagResponseCombinations:
   - name: who are you
+    addContextToCharacter: {fileID: 0}
+    addContext: {fileID: 0}
+    switchTopicTo: {fileID: 0}
     inputTags:
     - {fileID: 11400000, guid: 8da4a6be537234d908f815cf98e13ef0, type: 2}
     - {fileID: 11400000, guid: e8896682f72e84252b1f9070eb683163, type: 2}
@@ -24,27 +29,56 @@ MonoBehaviour:
     responses:
     - Name's Edgar. I'm the ship's captain.
     - I'm captain Evans.
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     askedBefore: 1
   - name: what happened
+    addContextToCharacter: {fileID: 0}
+    addContext: {fileID: 0}
+    switchTopicTo: {fileID: 0}
     inputTags:
     - {fileID: 11400000, guid: 174e45ae481f24dc68142fc89a4d57ce, type: 2}
     - {fileID: 11400000, guid: ed5ff94d1d0b74038ae1a534a35381f8, type: 2}
     responses:
     - Veltman disappeared a few days before you arrived.
     - I tell you what happened. The professor vanished.
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     askedBefore: 1
   - name: where are we?
+    addContextToCharacter: {fileID: 0}
+    addContext: {fileID: 0}
+    switchTopicTo: {fileID: 0}
     inputTags:
     - {fileID: 11400000, guid: b9938e1115c964f8bad70b2f7904132d, type: 2}
     - {fileID: 11400000, guid: ed5ff94d1d0b74038ae1a534a35381f8, type: 2}
     responses:
     - What ya thinkin? We're at the southpole.
     - Well you did come all the way here to not know we're at the southpole?
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     askedBefore: 1
   - name: greetings
+    addContextToCharacter: {fileID: 0}
+    addContext: {fileID: 0}
+    switchTopicTo: {fileID: 0}
     inputTags:
     - {fileID: 11400000, guid: 9694fc240a8e24914b826b24a2e9acd0, type: 2}
     responses:
     - Hey Kid, what's up?
     - Hi Kiddo.
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     askedBefore: 1

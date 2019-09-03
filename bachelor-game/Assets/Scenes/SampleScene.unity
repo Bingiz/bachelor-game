@@ -6989,16 +6989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentContexts: []
-  listOfAllInputTags:
-  - {fileID: 11400000, guid: e8896682f72e84252b1f9070eb683163, type: 2}
-  - {fileID: 11400000, guid: 543047ff48b5f4f8c8203e3698ddc60e, type: 2}
-  - {fileID: 11400000, guid: b9938e1115c964f8bad70b2f7904132d, type: 2}
-  - {fileID: 11400000, guid: f2aedf32e778242c2a2b535791b067c4, type: 2}
-  - {fileID: 11400000, guid: ed5ff94d1d0b74038ae1a534a35381f8, type: 2}
-  - {fileID: 11400000, guid: 8da4a6be537234d908f815cf98e13ef0, type: 2}
-  - {fileID: 11400000, guid: 174e45ae481f24dc68142fc89a4d57ce, type: 2}
-  - {fileID: 11400000, guid: 253953aa69a134628b36e84f033c276f, type: 2}
-  - {fileID: 11400000, guid: 9694fc240a8e24914b826b24a2e9acd0, type: 2}
+  currentTopic: {fileID: 0}
   stemDictionary: {fileID: 0}
   DialoguePartner: {fileID: 0}
 --- !u!114 &1420672479

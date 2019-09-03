@@ -35,7 +35,14 @@ public class SendPlayerInput : MonoBehaviour
     {
         gameManager = GetComponent<GameManager>();
 
-        listOfAllInputTags = gameManager.listOfAllInputTags;
+        //listOfAllInputTags = gameManager.listOfAllInputTags;
+
+        //listOfAllInputTags.AddRange(Resources.LoadAll("InputTags", typeof(InputTag)));
+        foreach(InputTag g in Resources.LoadAll("InputTags", typeof(InputTag)))
+        {
+            Debug.Log("prefab found: " + g.name);
+            listOfAllInputTags.Add(g);
+        }
 
     }
 
@@ -110,9 +117,45 @@ public class SendPlayerInput : MonoBehaviour
                 if (UnorderedEqual(currentlyHighestContext.tagResponseCombinations[j].inputTags, listOfTagsInInput))
                 {
                     currentlyHighestContext.tagResponseCombinations[j].askedBefore = true;
+
+                    //add contexts
+                    if(currentlyHighestContext.tagResponseCombinations[j].addContexts != null)
+                    {
+                        currentlyHighestContext.tagResponseCombinations[j].addContextToCharacter.GetComponent<DialogueTrigger>().context.AddRange(currentlyHighestContext.tagResponseCombinations[j].addContexts);
+                    }
+
+                    //remove contexts
+                    if(currentlyHighestContext.tagResponseCombinations[j].removeContexts != null)
+                    {
+                        
+                        List<Context> temp = new List<Context>();
+                        temp.AddRange(currentlyHighestContext.tagResponseCombinations[j].removeContextFromCharacter.GetComponent<DialogueTrigger>().context);
+
+                        foreach(Context item in currentlyHighestContext.tagResponseCombinations[j].removeContexts)
+                        {
+                            temp.Remove(item);
+                        }
+
+                        temp.Clear();
+                         
+                    }
+
+                    // change topic              
+                    if(currentlyHighestContext.tagResponseCombinations[j].switchTopicTo != null)
+                    {
+                        gameManager.currentTopic = currentlyHighestContext.tagResponseCombinations[j].switchTopicTo;
+                    }
+
+                    // Invoke Event            
+                    if(currentlyHighestContext.tagResponseCombinations[j].DialogueEvent != null)
+                    {
+                        currentlyHighestContext.tagResponseCombinations[j].DialogueEvent.Invoke();
+                    }
+                    
                     return currentlyHighestContext.tagResponseCombinations[j].responses;
-                    break;
                 }
+
+
 
             }
 
@@ -121,11 +164,69 @@ public class SendPlayerInput : MonoBehaviour
 
         }
         contextsToSearch.Clear();
-        Debug.Log("No fitting Answer found");
+        Debug.Log("No answer found");
         return null;
 
         //gameManager.currentContexts[0].tagResponseCombinations[0].inputTags[0]
     }
+
+
+  
+    public string[] AnswerCurrentTopic(){
+        Context currentTopic = gameManager.currentTopic;
+
+        bool answerFound = false;
+
+        for (int i = 0; i < currentTopic.tagResponseCombinations.Length; i++)
+        {
+            if (UnorderedEqual(currentTopic.tagResponseCombinations[i].inputTags, listOfTagsInInput))
+            {
+                currentTopic.tagResponseCombinations[i].askedBefore = true;
+
+                //add context
+                if(currentTopic.tagResponseCombinations[i].addContexts != null)
+                {   
+                    currentTopic.tagResponseCombinations[i].addContextToCharacter.GetComponent<DialogueTrigger>().context.AddRange(currentTopic.tagResponseCombinations[i].addContexts);
+                }
+
+                //remove contexts
+                if(currentTopic.tagResponseCombinations[i].removeContexts != null)
+                {
+                    List<Context> temp = new List<Context>();
+                    temp.AddRange(currentTopic.tagResponseCombinations[i].removeContextFromCharacter.GetComponent<DialogueTrigger>().context);
+
+                    foreach(Context item in currentTopic.tagResponseCombinations[i].removeContexts)
+                    {
+                        temp.Remove(item);
+                    }
+
+                    temp.Clear();
+                }
+
+                // change topic              
+                if(currentTopic.tagResponseCombinations[i].switchTopicTo != null)
+                {
+                    gameManager.currentTopic = currentTopic.tagResponseCombinations[i].switchTopicTo;
+                }
+
+                // Invoke Event            
+                if(currentTopic.tagResponseCombinations[i].DialogueEvent != null)
+                {
+                    currentTopic.tagResponseCombinations[i].DialogueEvent.Invoke();
+                }
+
+                return currentTopic.tagResponseCombinations[i].responses;
+            }
+            
+        }
+            if(currentTopic.needsAnswer)
+            {
+                return currentTopic.noFittingAnswer;
+            }
+            return null;
+            
+    }
+
 
     public void stemInputMessage(List<string> playerInput)
     {
@@ -142,13 +243,30 @@ public class SendPlayerInput : MonoBehaviour
     }
 
     public void outputAnswer()
-    {
-        string[] answerBuffer = FindAnswerOfHighestPriorityContext();
+    {   
+        string[] answerBuffer = null;
+        
+        if (gameManager.currentTopic != null)
+        {
+            answerBuffer = AnswerCurrentTopic();
+        }
+        if (answerBuffer != null)
+        {
+            
+        }
+        else {answerBuffer = FindAnswerOfHighestPriorityContext();}
+            
 
 
         if (answerBuffer != null)
         {
             output = answerBuffer[Random.Range(0, answerBuffer.Length)];
+        }
+        else
+        {   
+            Context currentTopic = gameManager.currentTopic;
+
+            output = currentTopic.noFittingAnswer[Random.Range(0, currentTopic.noFittingAnswer.Length)];
         }
         //write the output
 
@@ -159,6 +277,7 @@ public class SendPlayerInput : MonoBehaviour
 
         // clear the output buffer and empty the list of recieved words
         output = "";
+        answerBuffer = null;
     }
 
     //https://www.dotnetperls.com/list-equals

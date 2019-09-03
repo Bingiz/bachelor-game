@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public List<Context> currentContexts;
 
-    public List<InputTag> listOfAllInputTags;
+    public Context currentTopic;
+
+    //public List<InputTag> listOfAllInputTags;
 
     [HideInInspector] public StemDictionary stemDictionary;
 

@@ -15,4 +15,6 @@ MonoBehaviour:
   name: dialoguePartner
   associatedStrings:
   - you
-  associatedTagCombinations: []
+  associatedTagCombinations:
+  - InputTags:
+    - {fileID: 0}
