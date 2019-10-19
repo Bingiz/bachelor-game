@@ -46,6 +46,9 @@ public class Context : ScriptableObject
     [Header("No fitting Answer")]
     public string[] noFittingAnswer;
 
+    [Header("Greetings")]
+    public string[] greetings;
+
     public TagResponseCombinations[] tagResponseCombinations;
 
 

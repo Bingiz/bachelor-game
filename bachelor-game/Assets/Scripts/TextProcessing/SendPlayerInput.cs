@@ -119,25 +119,31 @@ public class SendPlayerInput : MonoBehaviour
                     currentlyHighestContext.tagResponseCombinations[j].askedBefore = true;
 
                     //add contexts
-                    if(currentlyHighestContext.tagResponseCombinations[j].addContexts != null)
+                    if (currentlyHighestContext.tagResponseCombinations[j].addContextToCharacter != null)
                     {
-                        currentlyHighestContext.tagResponseCombinations[j].addContextToCharacter.GetComponent<DialogueTrigger>().context.AddRange(currentlyHighestContext.tagResponseCombinations[j].addContexts);
+                        if (currentlyHighestContext.tagResponseCombinations[j].addContexts != null)
+                        {
+                            currentlyHighestContext.tagResponseCombinations[j].addContextToCharacter.GetComponent<DialogueTrigger>().context.AddRange(currentlyHighestContext.tagResponseCombinations[j].addContexts);
+                        }
                     }
 
                     //remove contexts
-                    if(currentlyHighestContext.tagResponseCombinations[j].removeContexts != null)
-                    {
-                        
-                        List<Context> temp = new List<Context>();
-                        temp.AddRange(currentlyHighestContext.tagResponseCombinations[j].removeContextFromCharacter.GetComponent<DialogueTrigger>().context);
-
-                        foreach(Context item in currentlyHighestContext.tagResponseCombinations[j].removeContexts)
+                    if (currentlyHighestContext.tagResponseCombinations[j].removeContextFromCharacter != null)
                         {
-                            temp.Remove(item);
-                        }
+                        if (currentlyHighestContext.tagResponseCombinations[j].removeContexts != null)
+                        {
 
-                        temp.Clear();
-                         
+                            List<Context> temp = new List<Context>();
+                            temp.AddRange(currentlyHighestContext.tagResponseCombinations[j].removeContextFromCharacter.GetComponent<DialogueTrigger>().context);
+
+                            foreach (Context item in currentlyHighestContext.tagResponseCombinations[j].removeContexts)
+                            {
+                                temp.Remove(item);
+                            }
+
+                            temp.Clear();
+
+                        }
                     }
 
                     // change topic              
@@ -171,7 +177,6 @@ public class SendPlayerInput : MonoBehaviour
     }
 
 
-  
     public string[] AnswerCurrentTopic(){
         Context currentTopic = gameManager.currentTopic;
 
@@ -262,7 +267,7 @@ public class SendPlayerInput : MonoBehaviour
         {
             output = answerBuffer[Random.Range(0, answerBuffer.Length)];
         }
-        else
+        else if (gameManager.currentTopic != null)
         {   
             Context currentTopic = gameManager.currentTopic;
 
@@ -270,14 +275,68 @@ public class SendPlayerInput : MonoBehaviour
         }
         //write the output
 
-        DialoguePartner = gameManager.DialoguePartner;
+
         DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory += inputForOutput + "\n\n\n";
-        DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory += "\n" + output + "\n\n";
+        WriteNPCLine(output);
         //AnswerText.GetComponent<Text>().text = output;
 
         // clear the output buffer and empty the list of recieved words
         output = "";
         answerBuffer = null;
+    }
+
+    public void WriteNPCLine(string output)
+    {
+        DialoguePartner = gameManager.DialoguePartner;
+        DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory += "\n" + output + "\n\n";
+    }
+
+    public void Greeting()
+    {
+        if (GreetHighestPriorityContext() != null)
+        {
+            string[] answerBuffer = GreetHighestPriorityContext();
+
+            output = answerBuffer[Random.Range(0, answerBuffer.Length)];
+
+            WriteNPCLine(output);
+        }
+        else { Debug.Log("no greeting available");}
+
+    }
+
+    public string[] GreetHighestPriorityContext()
+    {
+        List<Context> contextsToSearch = new List<Context>();
+
+        contextsToSearch.AddRange(gameManager.currentContexts);
+
+        //find highest priority context
+
+        for (int h = 0; h < gameManager.currentContexts.Count; h++)
+        {
+            Context currentlyHighestContext = ScriptableObject.CreateInstance<Context>();
+
+            //check which of the current contexts has the highest priority and put the one into currentlyHighestContext
+            for (int i = 0; i < contextsToSearch.Count; i++)
+            {
+                if (contextsToSearch[i].priority > currentlyHighestContext.priority)
+                {
+                    currentlyHighestContext = contextsToSearch[i];
+
+                    if (currentlyHighestContext.greetings != null)
+                    {
+                        return currentlyHighestContext.greetings;
+                    }
+                }
+            }
+
+        }
+        contextsToSearch.Clear();
+        Debug.Log("No answer found");
+        return null;
+
+        //gameManager.currentContexts[0].tagResponseCombinations[0].inputTags[0]
     }
 
     //https://www.dotnetperls.com/list-equals

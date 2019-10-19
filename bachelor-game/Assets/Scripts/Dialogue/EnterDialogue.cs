@@ -19,14 +19,14 @@ public class EnterDialogue : MonoBehaviour
     private void Start()
     {
         showDialoguePartnerName = gameManager.gameObject.GetComponent<ShowDialoguePartnerName>();
-       activateUI = gameManager.GetComponent<ActivateUI>();
-       dialogueTrigger = GetComponent<DialogueTrigger>();
-       inputFieldAutoActivate = inputFieldObj.GetComponent<InputFieldAutoActivate>();
+        activateUI = gameManager.GetComponent<ActivateUI>();
+        dialogueTrigger = GetComponent<DialogueTrigger>();
+        inputFieldAutoActivate = inputFieldObj.GetComponent<InputFieldAutoActivate>();
     }
 
 
     public void StartDialogue()
-    {   
+    {
         //enter Dialogue
         gameManager.DialoguePartner = this.gameObject;
         contextBuffer = new List<Context>(dialogueTrigger.context);
@@ -35,10 +35,14 @@ public class EnterDialogue : MonoBehaviour
         showDialoguePartnerName.ChangeNameAndColor();
 
         gameManager.currentContexts.AddRange(contextBuffer);
+
+        gameManager.GetComponent<SendPlayerInput>().Greeting();
+
         activateUI.activateDialogueUI();
         inputFieldAutoActivate.activateField();
 
     }
+
 
     public void EndDialogue()
     {
