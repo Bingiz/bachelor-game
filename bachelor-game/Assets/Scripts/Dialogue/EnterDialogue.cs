@@ -28,19 +28,27 @@ public class EnterDialogue : MonoBehaviour
     public void StartDialogue()
     {
         //enter Dialogue
-        gameManager.DialoguePartner = this.gameObject;
-        contextBuffer = new List<Context>(dialogueTrigger.context);
+
+        UpdateContexts();
 
         //change Name and Color to Dialogue Partners
         showDialoguePartnerName.ChangeNameAndColor();
 
-        gameManager.currentContexts.AddRange(contextBuffer);
-
         gameManager.GetComponent<SendPlayerInput>().Greeting();
-
+        
         activateUI.activateDialogueUI();
         inputFieldAutoActivate.activateField();
 
+    }
+
+    public void UpdateContexts()
+    {
+        gameManager.DialoguePartner = this.gameObject;
+        contextBuffer = new List<Context>(dialogueTrigger.context);
+
+        gameManager.currentContexts.Clear();
+
+        gameManager.currentContexts.AddRange(contextBuffer);
     }
 
 

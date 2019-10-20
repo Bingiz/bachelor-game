@@ -10,32 +10,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62060999fc4e84837acbc28a73c8529f, type: 3}
-  m_Name: AdelaideShackletonDefault
+  m_Name: A_Default
   m_EditorClassIdentifier: 
   name: A_Deffault
   description: 
   priority: 1
   needsAnswer: 0
   noFittingAnswer:
-  - I know nothing about it.
+  - Ich habe keine Ahnung wovon sie sprechen.
   greetings:
-  - Hello
-  - Hello again.
-  - You are back.
+  - Hallo.
+  - Da sind Sie ja wieder.
+  - Hallo nochmal.
   tagResponseCombinations:
   - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
+    tagList:
+    - inputTags:
+      - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
+      - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
     responses:
     - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
+    addContexts: []
+    removeContexts: []
+    switchTopicTo: {fileID: 0}
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    askedBefore: 1
+  - name: Forschung
+    tagList:
+    - inputTags:
+      - {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
+    - inputTags:
+      - {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
+      - {fileID: 11400000, guid: b6749316ae920422899346baffd180d1, type: 2}
+    - inputTags:
+      - {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
+      - {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
+    - inputTags:
+      - {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
+      - {fileID: 11400000, guid: b6749316ae920422899346baffd180d1, type: 2}
+    - inputTags:
+      - {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
+      - {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
+    responses:
+    - "Ich bin her gekommen um zusammen mit Dr. Veltman und Mr. Edgeworth das Gestein
+      des S\xFCdpols zu untersuchen um dessen Entstehung zu ergr\xFCnden. Dr. Veltman
+      hat jedoch zu meinem Bedauern angeordnet, dass er und Edgeworth allein das Artefakt
+      untersuchen und nicht gest\xF6rt werden sollen. Ich habe dann selbstst\xE4ndig
+      mit mit meiner eigenen Forschung begonnen."
+    addContexts: []
+    removeContexts: []
+    switchTopicTo: {fileID: 11400000, guid: fbfc0caf2462b4f8ca634ea6d6687900, type: 2}
     DialogueEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -43,303 +71,15 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     askedBefore: 1
   - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
+    tagList:
+    - inputTags:
+      - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
+      - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
     responses:
     - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
+    addContexts: []
     removeContexts: []
     switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
-    DialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    askedBefore: 1
-  - name: Spieler stellt sich vor
-    addContextToCharacter: {fileID: 3660190182148029611, guid: 2338c54cefe1542908bce138e660122c,
-      type: 3}
-    addContexts:
-    - {fileID: 11400000}
-    removeContextFromCharacter: {fileID: 0}
-    removeContexts: []
-    switchTopicTo: {fileID: 0}
-    inputTags:
-    - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-    - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
-    responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
     DialogueEvent:
       m_PersistentCalls:
         m_Calls: []

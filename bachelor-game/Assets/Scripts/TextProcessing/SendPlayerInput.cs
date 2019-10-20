@@ -113,60 +113,60 @@ public class SendPlayerInput : MonoBehaviour
             //check the tagResponseCombinations of the currentlyHighestContext against the tags in Input
             for (int j = 0; j < currentlyHighestContext.tagResponseCombinations.Length; j++)
             {
-                //compare each Tag from tagResponseCombination[j] in current Context with each Tag from the Player Input
-                if (UnorderedEqual(currentlyHighestContext.tagResponseCombinations[j].inputTags, listOfTagsInInput))
+                for (int k = 0; k < currentlyHighestContext.tagResponseCombinations[j].tagList.Length; k++)
                 {
-                    currentlyHighestContext.tagResponseCombinations[j].askedBefore = true;
 
-                    //add contexts
-                    if (currentlyHighestContext.tagResponseCombinations[j].addContextToCharacter != null)
+                    //compare each Tag from tagResponseCombination[j] in current Context with each Tag from the Player Input
+                    if (UnorderedEqual(currentlyHighestContext.tagResponseCombinations[j].tagList[k].inputTags, listOfTagsInInput))
                     {
+                        currentlyHighestContext.tagResponseCombinations[j].askedBefore = true;
+
+                        //add contexts
                         if (currentlyHighestContext.tagResponseCombinations[j].addContexts != null)
                         {
-                            currentlyHighestContext.tagResponseCombinations[j].addContextToCharacter.GetComponent<DialogueTrigger>().context.AddRange(currentlyHighestContext.tagResponseCombinations[j].addContexts);
+                            DialoguePartner.GetComponent<DialogueTrigger>().context.AddRange(currentlyHighestContext.tagResponseCombinations[j].addContexts);
+                            DialoguePartner.GetComponent<EnterDialogue>().UpdateContexts();
                         }
-                    }
 
-                    //remove contexts
-                    if (currentlyHighestContext.tagResponseCombinations[j].removeContextFromCharacter != null)
-                        {
+                        //remove contexts
                         if (currentlyHighestContext.tagResponseCombinations[j].removeContexts != null)
                         {
-
-                            List<Context> temp = new List<Context>();
-                            temp.AddRange(currentlyHighestContext.tagResponseCombinations[j].removeContextFromCharacter.GetComponent<DialogueTrigger>().context);
-
-                            foreach (Context item in currentlyHighestContext.tagResponseCombinations[j].removeContexts)
+                            if (currentlyHighestContext.tagResponseCombinations[j].removeContexts != null)
                             {
-                                temp.Remove(item);
+
+                                List<Context> temp = new List<Context>();
+                                temp.AddRange(DialoguePartner.GetComponent<DialogueTrigger>().context);
+
+                                foreach (Context item in currentlyHighestContext.tagResponseCombinations[j].removeContexts)
+                                {
+                                    temp.Remove(item);
+                                }
+
+                                temp.Clear();
+
                             }
-
-                            temp.Clear();
-
                         }
+
+                        // change topic              
+                        if (currentlyHighestContext.tagResponseCombinations[j].switchTopicTo != null)
+                        {
+                            gameManager.currentTopic = currentlyHighestContext.tagResponseCombinations[j].switchTopicTo;
+                        }
+
+                        // Invoke Event            
+                        if (currentlyHighestContext.tagResponseCombinations[j].DialogueEvent != null)
+                        {
+                            currentlyHighestContext.tagResponseCombinations[j].DialogueEvent.Invoke();
+                        }
+
+                        return currentlyHighestContext.tagResponseCombinations[j].responses;
                     }
 
-                    // change topic              
-                    if(currentlyHighestContext.tagResponseCombinations[j].switchTopicTo != null)
-                    {
-                        gameManager.currentTopic = currentlyHighestContext.tagResponseCombinations[j].switchTopicTo;
-                    }
-
-                    // Invoke Event            
-                    if(currentlyHighestContext.tagResponseCombinations[j].DialogueEvent != null)
-                    {
-                        currentlyHighestContext.tagResponseCombinations[j].DialogueEvent.Invoke();
-                    }
-                    
-                    return currentlyHighestContext.tagResponseCombinations[j].responses;
                 }
 
-
-
+                //Problematic
+                contextsToSearch.Remove(currentlyHighestContext);
             }
-
-            //Problematic
-            contextsToSearch.Remove(currentlyHighestContext);
 
         }
         contextsToSearch.Clear();
@@ -184,45 +184,49 @@ public class SendPlayerInput : MonoBehaviour
 
         for (int i = 0; i < currentTopic.tagResponseCombinations.Length; i++)
         {
-            if (UnorderedEqual(currentTopic.tagResponseCombinations[i].inputTags, listOfTagsInInput))
+            for (int k = 0; k < currentTopic.tagResponseCombinations[i].tagList.Length; k++)
             {
-                currentTopic.tagResponseCombinations[i].askedBefore = true;
-
-                //add context
-                if(currentTopic.tagResponseCombinations[i].addContexts != null)
-                {   
-                    currentTopic.tagResponseCombinations[i].addContextToCharacter.GetComponent<DialogueTrigger>().context.AddRange(currentTopic.tagResponseCombinations[i].addContexts);
-                }
-
-                //remove contexts
-                if(currentTopic.tagResponseCombinations[i].removeContexts != null)
+                if (UnorderedEqual(currentTopic.tagResponseCombinations[i].tagList[k].inputTags, listOfTagsInInput))
                 {
-                    List<Context> temp = new List<Context>();
-                    temp.AddRange(currentTopic.tagResponseCombinations[i].removeContextFromCharacter.GetComponent<DialogueTrigger>().context);
+                    currentTopic.tagResponseCombinations[i].askedBefore = true;
 
-                    foreach(Context item in currentTopic.tagResponseCombinations[i].removeContexts)
+                    //add context
+                    if (currentTopic.tagResponseCombinations[i].addContexts != null)
                     {
-                        temp.Remove(item);
+                        DialoguePartner.GetComponent<DialogueTrigger>().context.AddRange(currentTopic.tagResponseCombinations[i].addContexts);
+                        DialoguePartner.GetComponent<EnterDialogue>().UpdateContexts();
                     }
 
-                    temp.Clear();
+                    //remove contexts
+                    if (currentTopic.tagResponseCombinations[i].removeContexts != null)
+                    {
+                        List<Context> temp = new List<Context>();
+                        temp.AddRange(DialoguePartner.GetComponent<DialogueTrigger>().context);
+
+                        foreach (Context item in currentTopic.tagResponseCombinations[i].removeContexts)
+                        {
+                            temp.Remove(item);
+                        }
+
+                        temp.Clear();
+                    }
+
+                    // change topic              
+                    if (currentTopic.tagResponseCombinations[i].switchTopicTo != null)
+                    {
+                        gameManager.currentTopic = currentTopic.tagResponseCombinations[i].switchTopicTo;
+                    }
+
+                    // Invoke Event            
+                    if (currentTopic.tagResponseCombinations[i].DialogueEvent != null)
+                    {
+                        currentTopic.tagResponseCombinations[i].DialogueEvent.Invoke();
+                    }
+
+                    return currentTopic.tagResponseCombinations[i].responses;
                 }
 
-                // change topic              
-                if(currentTopic.tagResponseCombinations[i].switchTopicTo != null)
-                {
-                    gameManager.currentTopic = currentTopic.tagResponseCombinations[i].switchTopicTo;
-                }
-
-                // Invoke Event            
-                if(currentTopic.tagResponseCombinations[i].DialogueEvent != null)
-                {
-                    currentTopic.tagResponseCombinations[i].DialogueEvent.Invoke();
-                }
-
-                return currentTopic.tagResponseCombinations[i].responses;
             }
-            
         }
             if(currentTopic.needsAnswer)
             {
@@ -300,6 +304,7 @@ public class SendPlayerInput : MonoBehaviour
             output = answerBuffer[Random.Range(0, answerBuffer.Length)];
 
             WriteNPCLine(output);
+            DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory += "\n\n\n";
         }
         else { Debug.Log("no greeting available");}
 

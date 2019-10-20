@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62060999fc4e84837acbc28a73c8529f, type: 3}
   m_Name: A_Vorgestellt
   m_EditorClassIdentifier: 
-  name: 
+  name: Vorgestellt
   description: 
-  priority: -1
+  priority: 2
   needsAnswer: 0
   noFittingAnswer: []
-  greetings: []
+  greetings:
+  - Hallo nochmal.
+  - Da sind Sie ja wieder.
   tagResponseCombinations: []

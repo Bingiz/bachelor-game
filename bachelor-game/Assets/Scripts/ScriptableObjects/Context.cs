@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class TagList
+{
+    public List<InputTag> inputTags = new List<InputTag>();
+}
+
 [CreateAssetMenu(menuName = "AI/Context")]
 public class Context : ScriptableObject
 {
@@ -17,24 +23,23 @@ public class Context : ScriptableObject
     public class TagResponseCombinations
     {
         public string name;
-        
-        [Header("Context add")]
-        public GameObject addContextToCharacter;
-        public List<Context> addContexts;
-
-        [Header("Context remove")]
-        public GameObject removeContextFromCharacter;
-        public List<Context> removeContexts;
-
-
-        [Header("Topic switch")]
-        public Context switchTopicTo;
 
         [Header("Input Tags required for response")]
-        public List<InputTag> inputTags = new List<InputTag>();
+        public TagList[] tagList;
 
         [Header("Response Output")]
         public string[] responses;
+
+        [Header("Context add")]
+        //public GameObject addContextToCharacter;
+        public List<Context> addContexts;
+
+        [Header("Context remove")]
+        //public GameObject removeContextFromCharacter;
+        public List<Context> removeContexts;
+
+        [Header("Topic switch")]
+        public Context switchTopicTo;
 
         [Header("Event")]
         public UnityEngine.Events.UnityEvent DialogueEvent;
@@ -42,6 +47,8 @@ public class Context : ScriptableObject
         [HideInInspector]
         public bool askedBefore;
     }
+
+
 
     [Header("No fitting Answer")]
     public string[] noFittingAnswer;
