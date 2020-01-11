@@ -29,7 +29,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
       - {fileID: 11400000, guid: 16b5231129a764a34b3acd64e6ef4ef2, type: 2}
     responses:
-    - Freut mih sie kennen zu lernen. Ich bin Adelaide Shackleton.
+    - Freut mich sie kennen zu lernen. Ich bin Adelaide Shackleton.
     addContexts: []
     removeContexts: []
     switchTopicTo: {fileID: 0}

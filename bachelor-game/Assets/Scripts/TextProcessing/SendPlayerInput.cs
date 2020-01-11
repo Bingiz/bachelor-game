@@ -179,6 +179,7 @@ public class SendPlayerInput : MonoBehaviour
     // return answer if no Input Tag specific answer is found
     public string[] NoFittingAnswer()
     {
+        gameManager.currentTopic = null;
         List<Context> contextsToSearch = new List<Context>();
 
         contextsToSearch.AddRange(gameManager.currentContexts);
@@ -224,8 +225,15 @@ public class SendPlayerInput : MonoBehaviour
                     //add context
                     if (currentTopic.tagResponseCombinations[i].addContexts != null)
                     {
-                        DialoguePartner.GetComponent<DialogueTrigger>().context.AddRange(currentTopic.tagResponseCombinations[i].addContexts);
-                        DialoguePartner.GetComponent<EnterDialogue>().UpdateContexts();
+                        for (int f = 0; f < currentTopic.tagResponseCombinations[i].addContexts.Count; f++)
+                        {
+/*CHECK IF WORKS*/          if (DialoguePartner.GetComponent<DialogueTrigger>().context.IndexOf(currentTopic.tagResponseCombinations[i].addContexts[f]) < 0)
+                            {
+                                DialoguePartner.GetComponent<DialogueTrigger>().context.Add(currentTopic.tagResponseCombinations[i].addContexts[f]);
+                                DialoguePartner.GetComponent<EnterDialogue>().UpdateContexts();
+                            }
+                        }
+                        
                     }
 
                     //remove contexts
@@ -283,6 +291,8 @@ public class SendPlayerInput : MonoBehaviour
     public void outputAnswer()
     {   
         string[] answerBuffer = null;
+
+        AnswerCurrentTopic();
 
         if (gameManager.currentTopic != null)
         {
