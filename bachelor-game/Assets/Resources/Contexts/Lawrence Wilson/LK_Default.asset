@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62060999fc4e84837acbc28a73c8529f, type: 3}
+  m_Name: LK_Default
+  m_EditorClassIdentifier: 
+  name: 
+  description: 
+  priority: 1
+  needsAnswer: 0
+  noFittingAnswer: []
+  greetings:
+  - Hello
+  tagResponseCombinations:
+  - name: who are you
+    tagList: []
+    responses:
+    - My name is Lawrence WIlson.
+    - I'm Lawrence. I am the crews doctor.
+    addContexts: []
+    removeContexts: []
+    switchTopicTo: {fileID: 0}
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    askedBefore: 1
+  - name: what happened
+    tagList: []
+    responses:
+    - Dr. Veltman vanished after he had something of a mental breakdown.
+    - Veltman was a bit confused lately and then someday he was nowhere to be found.
+    addContexts: []
+    removeContexts: []
+    switchTopicTo: {fileID: 0}
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    askedBefore: 1
+  - name: where are we?
+    tagList: []
+    responses:
+    - 'Well, we are at the southpole apperantly. '
+    addContexts: []
+    removeContexts: []
+    switchTopicTo: {fileID: 0}
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    askedBefore: 1
+  - name: greetings
+    tagList: []
+    responses:
+    - Hello.
+    - Hi.
+    addContexts: []
+    removeContexts: []
+    switchTopicTo: {fileID: 0}
+    DialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    askedBefore: 1

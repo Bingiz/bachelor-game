@@ -7,6 +7,8 @@ public class InputTag : ScriptableObject
 {
     public string name;
 
+    public int priority;
+
     public List<string> associatedStrings = new List<string>();
 
     [System.Serializable]

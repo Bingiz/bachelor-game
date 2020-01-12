@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public List<Context> currentContexts;
 
-    public Context currentTopic;
+    public InputTag currentTopic;
 
     //public List<InputTag> listOfAllInputTags;
 
