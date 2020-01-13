@@ -18,8 +18,98 @@ public class Context : ScriptableObject
     public bool needsAnswer;
 
     [System.Serializable]
+    public class Topic
+    {
+        [HideInInspector]
+        public string name;
+        public InputTag topic;
+        public string[] answers;
+
+        [Header("Event")]
+        public UnityEngine.Events.UnityEvent DialogueEvent;
+
+        public Topic(string n, InputTag it)
+        {
+            name = n;
+            topic = it;
+        }
+    }
+
+    [System.Serializable]
+    public class CM
+    {
+        [HideInInspector]
+        public string name;
+        public ConversationalMove conversationalMoveObject;
+        public Topic[] topics;
+
+        public CM(string n, ConversationalMove cm, Topic[] to)
+        {
+            name = n;
+            conversationalMoveObject = cm;
+            topics = to;
+        }
+    }
+
+    public string[] greetings;
+
+    public CM[] listOfConversationalMoves;
+
+    public CM[] specialCases;
+
+    [HideInInspector]
+    Topic[] listOfTopics;
+
+    public Context()
+    {
+        priority = -1;
+        //askedBefore = false;
+    }
+
+    private void Awake()
+    {
+        Object[] count = Resources.LoadAll("Topics");
+        int countOfTopics = count.Length;
+        listOfTopics = new Topic[countOfTopics];
+
+        count = Resources.LoadAll("Conversational Moves/Standard Moves");
+        int countOfConversationalMoves = count.Length;
+        listOfConversationalMoves = new CM[countOfConversationalMoves];
+        
+            int i = 0;
+            foreach (InputTag top in Resources.LoadAll("Topics", typeof(InputTag)))
+            {
+                listOfTopics[i] = new Topic(top.name, top);
+                i++;
+            }
+
+            int j = 0;
+            foreach (ConversationalMove cmove in Resources.LoadAll("Conversational Moves/Standard Moves", typeof(ConversationalMove)))
+            {
+                listOfConversationalMoves[j] = new CM(cmove.name, cmove, listOfTopics);
+                j++;
+            }
+    }
+}
+
+/*
+if (cmove.name.Contains("SCM_"))
+            {
+                Topic[] singleTopic = new Topic[1];
+singleTopic[0] = new Topic("DEFAULT", null);
+
+listOfConversationalMoves[j] = new CM(cmove.name, cmove, singleTopic);
+            }
+
+
+
+
+
+
+        [System.Serializable]
     public class TagResponseCombinations
     {
+        [HideInInspector]
         public string name;
 
         [Header("Input Tags required for response")]
@@ -42,77 +132,7 @@ public class Context : ScriptableObject
         [Header("Event")]
         public UnityEngine.Events.UnityEvent DialogueEvent;
 
-        [HideInInspector]
-        public bool askedBefore;
+        //[HideInInspector]
+        //public bool askedBefore;
     }
-
-    [System.Serializable]
-    public class Topic
-    {
-        public string name;
-        public InputTag topic;
-        public string[] answers;
-
-        public Topic(string n, InputTag it)
-        {
-            name = n;
-            topic = it;
-        }
-    }
-
-    [System.Serializable]
-    public class CM
-    {
-        public string name;
-        public ConversationalMove conversationalMoveObject;
-        public Topic[] topics;
-
-        public CM(string n, ConversationalMove cm, Topic[] to)
-        {
-            name = n;
-            conversationalMoveObject = cm;
-            topics = to;
-        }
-
-    }
-
-    public string[] noFittingAnswer;
-
-    public string[] greetings;
-
-    public CM[] listOfConversationalMoves;
-
-    [HideInInspector]
-    Topic[] listOfTopics;
-
-    public Context()
-    {
-        priority = -1;
-        //askedBefore = false;
-    }
-
-    private void Awake()
-    {
-        Object[] count = Resources.LoadAll("Topics");
-        int countOfTopics = count.Length;
-        listOfTopics = new Topic[countOfTopics];
-
-        count = Resources.LoadAll("Conversational Moves");
-        int countOfConversationalMoves = count.Length;
-        listOfConversationalMoves = new CM[countOfConversationalMoves];
-        
-            int i = 0;
-            foreach (InputTag top in Resources.LoadAll("Topics", typeof(InputTag)))
-            {
-                listOfTopics[i] = new Topic(top.name, top);
-                i++;
-            }
-
-            int j = 0;
-            foreach (ConversationalMove cmove in Resources.LoadAll("Conversational Moves", typeof(ConversationalMove)))
-            {
-                listOfConversationalMoves[j] = new CM(cmove.name, cmove, listOfTopics);
-                j++;
-            }
-    }
-}
+*/

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Greet'
   m_EditorClassIdentifier: 
   name: Greet
+  priority: 0
   associatedStrings:
   - hi
   - hallo

@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c71e3b0e48b3490e9e104870a5661f0, type: 3}
-  m_Name: CM_AskStateOfTopic
+  m_Name: CM_AskMethodOnTopic
   m_EditorClassIdentifier: 
+  priority: 0
   associatedTagCombinations: []
-  topicAnswers: []
+  topicAnswers:
+  - Topic: {fileID: 0}
+    Answers: []

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41cbfdf9a02664e2e9642bb452f7362f, type: 3}
-  m_Name: '#Entschuldigung'
+  m_Name: '#Apologize'
   m_EditorClassIdentifier: 
   name: Apologize
+  priority: 0
   associatedStrings:
   - leid
   - entschuldigung

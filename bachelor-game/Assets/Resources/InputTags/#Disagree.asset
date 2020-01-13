@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cbfdf9a02664e2e9642bb452f7362f, type: 3}
   m_Name: '#Disagree'
   m_EditorClassIdentifier: 
-  name: '#Disagree'
+  name: Disagree
+  priority: 0
   associatedStrings:
   - nein
   - nicht

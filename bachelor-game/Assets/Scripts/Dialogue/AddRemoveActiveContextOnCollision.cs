@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddRemoveActiveContext : MonoBehaviour
+public class AddRemoveActiveContextOnCollision : MonoBehaviour
 {
   public Context context;
   public GameManager gameManager;

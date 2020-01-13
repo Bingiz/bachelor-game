@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.Linq;
 
     //new parsing whole input text for Tags
 public class SendPlayerInput : MonoBehaviour
@@ -17,9 +18,14 @@ public class SendPlayerInput : MonoBehaviour
 
     public GameObject DialoguePartner;
 
+    public ConversationalMove Catchall; 
+
     public List<InputTag> listOfAllInputTags;
     public List<InputTag> listOfAllTopics;
     public List<InputTag> listOfAllAuxTags;
+    public List<ConversationalMove> listOfAllConversationalMoves;
+    public List<ConversationalMove> listOfStandardConversationalMoves;
+    public List<ConversationalMove> listOfSpecialCaseConversationalMoves;
 
     [HideInInspector] public List<InputTag> listOfTagsInInput;
 
@@ -52,6 +58,22 @@ public class SendPlayerInput : MonoBehaviour
             listOfAllTopics.Add(g);
             listOfAllInputTags.Add(g);
         }
+
+        // create Standard CM list to compare with input
+        foreach (ConversationalMove g in Resources.LoadAll("Conversational Moves/Standard Moves", typeof(ConversationalMove)))
+        {
+            Debug.Log("Conversational Move Loaded: " + g.name);
+            listOfAllConversationalMoves.Add(g);
+            listOfStandardConversationalMoves.Add(g);
+        }
+
+        // create Special Case CM list to compare with input
+        foreach (ConversationalMove g in Resources.LoadAll("Conversational Moves/Special Cases", typeof(ConversationalMove)))
+        {
+            Debug.Log("Conversational Move Loaded: " + g.name);
+            listOfAllConversationalMoves.Add(g);
+            listOfSpecialCaseConversationalMoves.Add(g);
+        }
     }
 
     // process the player input
@@ -63,10 +85,10 @@ public class SendPlayerInput : MonoBehaviour
         input = input.ToLower();
 
         AddInputTags();
+        DecideTopic();
 
-       // DecideTopic();
 
-       // MatchTags();
+       // Match CM and Topic --> return answer.
 
         outputAnswer();
 
@@ -95,7 +117,6 @@ public class SendPlayerInput : MonoBehaviour
         }
     }
 
-    
     public void DecideTopic()
     {
         List<InputTag> listOfTopicsInInput = new List<InputTag>();
@@ -160,20 +181,61 @@ public class SendPlayerInput : MonoBehaviour
         }
 
     }
-     
-    
 
-    /*
-    public void MatchTags()
+    public List<ConversationalMove> GetStandardConversationalMovesFromInput()
     {
-        listOfTagsInInput
+        List<ConversationalMove> conversationalMovesInInput = new List<ConversationalMove>();
+
+        for (int i = 0; i < listOfStandardConversationalMoves.Count; i++)
+        {
+            for (int j = 0; j < listOfStandardConversationalMoves[i].associatedTagCombinations.Length; j++)
+            {
+                if(UnorderedEqual(listOfStandardConversationalMoves[i].associatedTagCombinations[j].InputTags, listOfTagsInInput))
+                {
+                    conversationalMovesInInput.Add(listOfStandardConversationalMoves[i]);
+                }
+            }
+        }
+
+        if (conversationalMovesInInput.Count > 0)
+        {
+            conversationalMovesInInput.Add(Catchall);
+            Debug.Log("Catchall CM added");
+        }
+
+        List<ConversationalMove> conversationalMovesInInputOrdered = conversationalMovesInInput.OrderBy(e => e.priority).ToList();
+
+        return conversationalMovesInInputOrdered;
+
     }
-    */
 
+    public List<ConversationalMove> GetSpecialCaseCMFromInput()
+    {
+        List<ConversationalMove> conversationalMovesInInput = new List<ConversationalMove>();
 
-/*
+        for (int i = 0; i < listOfSpecialCaseConversationalMoves.Count; i++)
+        {
+            for (int j = 0; j < listOfSpecialCaseConversationalMoves[i].associatedTagCombinations.Length; j++)
+            {
+                if (UnorderedEqual(listOfSpecialCaseConversationalMoves[i].associatedTagCombinations[j].InputTags, listOfTagsInInput))
+                {
+                    conversationalMovesInInput.Add(listOfSpecialCaseConversationalMoves[i]);
+                }
+            }
+        }
+
+        List<ConversationalMove> conversationalMovesInInputOrdered = conversationalMovesInInput.OrderBy(e => e.priority).ToList();
+
+        return conversationalMovesInInputOrdered;
+    }
+
+    public void MatchTopicAndCM()
+    {
+
+    }
+
     // return a answer based on current contexts and Input Tags
-    public string[] FindAnswerOfHighestPriorityContext()
+    public string[] FindAnswerOfHighestPriority()
     {
         List<Context> contextsToSearch = new List<Context>();
 
@@ -184,6 +246,8 @@ public class SendPlayerInput : MonoBehaviour
         for (int h = 0; h < gameManager.currentContexts.Count; h++)
         {
             Context currentlyHighestContext = ScriptableObject.CreateInstance<Context>();
+            List<ConversationalMove> CMBuffer = GetStandardConversationalMovesFromInput();
+            List<ConversationalMove> SCMBuffer = GetSpecialCaseCMFromInput();
 
             //check which of the current contexts has the highest priority and put the one into currentlyHighestContext
             for (int i = 0; i < contextsToSearch.Count; i++)
@@ -191,103 +255,58 @@ public class SendPlayerInput : MonoBehaviour
                 if (contextsToSearch[i].priority > currentlyHighestContext.priority)
                 {
                     currentlyHighestContext = contextsToSearch[i];
-
                 }
-            }
 
-            //check the tagResponseCombinations of the currentlyHighestContext against the tags in Input
-            for (int j = 0; j < currentlyHighestContext.tagResponseCombinations.Length; j++)
-            {
-                for (int k = 0; k < currentlyHighestContext.tagResponseCombinations[j].tagList.Length; k++)
+                //Check Special Cases first
+                if(currentlyHighestContext.specialCases != null)
                 {
-
-                    //compare each Tag from tagResponseCombination[j] in current Context with each Tag from the Player Input
-                    if (UnorderedEqual(currentlyHighestContext.tagResponseCombinations[j].tagList[k].inputTags, listOfTagsInInput))
+                    for (int j = 0; j < currentlyHighestContext.specialCases.Length; j++)
                     {
-                        currentlyHighestContext.tagResponseCombinations[j].askedBefore = true;
-
-                        //add contexts
-                        if (currentlyHighestContext.tagResponseCombinations[j].addContexts != null)
+                        for (int k = 0; k < SCMBuffer.Count; k++)
                         {
-                            DialoguePartner.GetComponent<DialogueTrigger>().context.AddRange(currentlyHighestContext.tagResponseCombinations[j].addContexts);
-                            DialoguePartner.GetComponent<EnterDialogue>().UpdateContexts();
-                        }
-
-                        //remove contexts
-                        if (currentlyHighestContext.tagResponseCombinations[j].removeContexts != null)
-                        {
-                            if (currentlyHighestContext.tagResponseCombinations[j].removeContexts != null)
+                            if (currentlyHighestContext.specialCases[j].conversationalMoveObject == SCMBuffer[k])
                             {
-
-                                List<Context> temp = new List<Context>();
-                                temp.AddRange(DialoguePartner.GetComponent<DialogueTrigger>().context);
-
-                                foreach (Context item in currentlyHighestContext.tagResponseCombinations[j].removeContexts)
+                                for (int l = 0; l < currentlyHighestContext.specialCases[j].topics.Length; l++)
                                 {
-                                    temp.Remove(item);
+                                    if (currentlyHighestContext.specialCases[j].topics[l].topic == gameManager.currentTopic)
+                                    {
+                                        if (currentlyHighestContext.specialCases[j].topics[l].answers != null)
+                                        {
+                                            return currentlyHighestContext.specialCases[j].topics[l].answers;
+                                        }
+                                    }
                                 }
-
-                                temp.Clear();
-
                             }
                         }
-
-                        // change topic
-
-                        if (currentlyHighestContext.tagResponseCombinations[j].switchTopicTo != null)
-                        {
-                            gameManager.currentTopic = currentlyHighestContext.tagResponseCombinations[j].switchTopicTo;
-                        }
-
-
-                        // Invoke Event            
-                        if (currentlyHighestContext.tagResponseCombinations[j].DialogueEvent != null)
-                        {
-                            currentlyHighestContext.tagResponseCombinations[j].DialogueEvent.Invoke();
-                        }
-
-                        return currentlyHighestContext.tagResponseCombinations[j].responses;
-                    }
-
+                    }  
                 }
 
+                //check the tagResponseCombinations of the currentlyHighestContext against the tags in Input
+                for (int j = 0; j < currentlyHighestContext.listOfConversationalMoves.Length; j++)
+                {
+                    for (int k = 0; k < CMBuffer.Count; k++)
+                    {
+                        if(currentlyHighestContext.listOfConversationalMoves[j].conversationalMoveObject == CMBuffer[k])
+                        {
+                            for (int l = 0; l < currentlyHighestContext.listOfConversationalMoves[j].topics.Length; l++)
+                            {
+                                if (currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic == gameManager.currentTopic)
+                                {
+                                    if(currentlyHighestContext.listOfConversationalMoves[j].topics[l].answers != null)
+                                    {
+                                        return currentlyHighestContext.listOfConversationalMoves[j].topics[l].answers;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 //Problematic
                 contextsToSearch.Remove(currentlyHighestContext);
             }
 
         }
         contextsToSearch.Clear();
-        return null;
-    }
-*/
-    // return answer if no Input Tag specific answer is found
-    public string[] NoFittingAnswer()
-    {
-        List<Context> contextsToSearch = new List<Context>();
-
-        contextsToSearch.AddRange(gameManager.currentContexts);
-
-        //find highest priority context
-
-        for (int h = 0; h < gameManager.currentContexts.Count; h++)
-        {
-            Context currentlyHighestContext = ScriptableObject.CreateInstance<Context>();
-
-            //check which of the current contexts has the highest priority and put the one into currentlyHighestContext
-            for (int i = 0; i < contextsToSearch.Count; i++)
-            {
-                if (contextsToSearch[i].priority > currentlyHighestContext.priority)
-                {
-                    currentlyHighestContext = contextsToSearch[i];
-                }
-            }
-            if (currentlyHighestContext.noFittingAnswer != null)
-            {
-                return currentlyHighestContext.noFittingAnswer;
-            }
-            else
-            { contextsToSearch.Remove(currentlyHighestContext);}
-        }
         return null;
     }
 
@@ -311,21 +330,13 @@ public class SendPlayerInput : MonoBehaviour
     {
         string[] answerBuffer = null;
 
-
-        //answerBuffer = FindAnswerOfHighestPriorityContext();
-
-        if (answerBuffer != null)
-        {
-        }
-        else answerBuffer = NoFittingAnswer();
-
+        answerBuffer = FindAnswerOfHighestPriority();
 
         if (answerBuffer != null)
         {
             output = answerBuffer[Random.Range(0, answerBuffer.Length)];
         }
         //write the output
-
 
         DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory += inputForOutput + "\n\n\n";
         WriteNPCLine(output);
