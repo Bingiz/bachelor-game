@@ -8,16 +8,11 @@ public class OnSendMessage : MonoBehaviour
 {
     public UnityEvent ExecuteMessage;
 
-
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
             ExecuteMessage.Invoke();
         }
-
     }
-
-
 }

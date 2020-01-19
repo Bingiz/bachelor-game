@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AI/InputTag")]
 public class InputTag : ScriptableObject
 {
+
     public string name;
 
     public int priority;
@@ -18,4 +19,10 @@ public class InputTag : ScriptableObject
     }
 
     public AssociatedTagCombinations[] associatedTagCombinations;
+
+
+    public InputTag(string n)
+    {
+        name = n;
+    }
 }

@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41cbfdf9a02664e2e9642bb452f7362f, type: 3}
-  m_Name: '#Adelaide_Shackleton'
+  m_Script: {fileID: 11500000, guid: 6221aa83162fb419f8b152518054d033, type: 3}
+  m_Name: "Elektronenro\u0308hre"
   m_EditorClassIdentifier: 
-  name: Adelaide Shackleton
-  priority: 1
-  associatedStrings:
-  - adelaide
-  - shackleton
-  - geologin
-  associatedTagCombinations: []
+  name: 
+  description: 
+  icon: {fileID: 0}
