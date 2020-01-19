@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: '#Schiff'
   m_EditorClassIdentifier: 
   name: Schiff
-  priority: 0
   associatedStrings:
   - schiff
   - foresight
   - anlegestelle
-  - reparieren
-  - reparierst
-  - repariert
-  - reparatur
   associatedTagCombinations: []

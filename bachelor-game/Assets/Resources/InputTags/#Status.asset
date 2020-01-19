@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: '#Status'
   m_EditorClassIdentifier: 
   name: Status
-  priority: 0
   associatedStrings:
   - wie
   - auf welche art
   - gut
   - schlecht
-  - genau
-  - im detail
   associatedTagCombinations: []

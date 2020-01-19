@@ -1,53 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ViewObject : MonoBehaviour
 {
 
     Vector3 originalPosition;
     Quaternion originalRotation;
-    GameManager gameManager;
     GameObject offset;
-    GameObject itemTitle;
-    GameObject itemDescription;
-    GameObject itemInfoUI;
-    GameObject inventory;
-
-    public Item item;
 
     private void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         originalPosition = this.transform.position;
         originalRotation = this.transform.rotation;
         offset = GameObject.Find("Offset");
-        itemInfoUI = GameObject.Find("/UI/ItemDescription/Background");
-        itemInfoUI.SetActive(false);
-
-        inventory = GameObject.Find("/UI/Inventory/Background");
-        
-    }
-
-    public void ViewInformation(bool yn)
-    {
-        if (item != null)
-        {
-            if (yn)
-            {
-                itemInfoUI.SetActive(true);
-
-                itemTitle = GameObject.Find("/UI/ItemDescription/Background/Title");
-                itemDescription = GameObject.Find("/UI/ItemDescription/Background/Text");
-                itemTitle.GetComponent<Text>().text = item.name;
-                itemDescription.GetComponent<Text>().text = item.description;
-            }
-            else
-            {
-                itemInfoUI.SetActive(false);
-            }
-        }
     }
 
     public void EnterView()
@@ -65,12 +31,5 @@ public class ViewObject : MonoBehaviour
         GetComponent<ViewObject>().enabled = false;
         this.transform.position = originalPosition;
         this.transform.rotation = originalRotation;
-    }
-
-    public void CollectItem()
-    {
-        gameManager.itemsInInventory.Add(item);
-        inventory.GetComponent<InventoryUI>().AddInventoryObject(item);
-        Destroy(this.gameObject);
     }
 }

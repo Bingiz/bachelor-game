@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c71e3b0e48b3490e9e104870a5661f0, type: 3}
-  m_Name: CM_InvestigateOnTopic
+  m_Name: CM_AskAboutTopic
   m_EditorClassIdentifier: 
   priority: 0
-  associatedTagCombinations: []
+  associatedTagCombinations:
+  - InputTags:
+    - {fileID: 11400000, guid: b6749316ae920422899346baffd180d1, type: 2}
+  - InputTags:
+    - {fileID: 11400000, guid: b6749316ae920422899346baffd180d1, type: 2}
   topicAnswers: []

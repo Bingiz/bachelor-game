@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: '#Maschine'
   m_EditorClassIdentifier: 
   name: Maschine
-  priority: 0
   associatedStrings:
   - maschine
   - kabel
@@ -22,6 +21,4 @@ MonoBehaviour:
   - strom
   - "ger\xE4te"
   - generator
-  - schalter
-  - schaltkreis
   associatedTagCombinations: []

@@ -25,15 +25,30 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - Das bin ich. Adelaide Shackleton.
+      - Ich bin Adelaide.
       DialogueEvent:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11500000, guid: a255473630a004b85a40888b637f0f5c, type: 3}
+            m_MethodName: 
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - name: Alexander Veltman
       topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
+      answers:
+      - Doctor Veltman ist schon seit einiger Zeit verschwunden.
+      - Doctor Veltman ist der Leiter der Expedition.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -41,7 +56,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
     - name: Amelie Veltman
       topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
+      answers:
+      - "Ich f\xFCrchte, ich habe keine Ahnung wer das ist."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -49,7 +65,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
     - name: Arbeit
       topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
+      answers:
+      - Ich habe hier an Erdproben  geforscht.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -57,7 +74,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
     - name: Artefakt
       topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
+      answers:
+      - "Das Artefakt in der H\xF6hle war wonach Doctor Veltman gesucht hat."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -65,7 +83,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
     - name: Brandspuren
       topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
+      answers:
+      - Dort ist er gestorben...
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -73,7 +92,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
     - name: Crew
       topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
+      answers:
+      - "Zun\xE4chst waren wir zu f\xFCnft. Jetzt sind nur noch wir drei \xFCbrig."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -81,7 +101,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
     - name: David Edgeworth
       topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
+      answers:
+      - Er war mein Mentor.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -2005,9 +2026,7 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers:
-      - TEST1
-      - TEST2
+      answers: []
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -2221,25 +2240,4 @@ MonoBehaviour:
           m_Calls: []
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-  specialCases:
-  - name: 
-    conversationalMoveObject: {fileID: 11400000, guid: ace7a731cb84f4684ab25bb5a79dba94,
-      type: 2}
-    topics:
-    - name: 
-      topic: {fileID: 11400000, guid: 23e45060ee55348e38775ae49b84a92f, type: 2}
-      answers:
-      - Du Arsch
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
+  specialCases: []

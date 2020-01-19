@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: '#Adelaide_Shackleton'
   m_EditorClassIdentifier: 
   name: Adelaide Shackleton
-  priority: 1
   associatedStrings:
   - adelaide
   - shackleton
