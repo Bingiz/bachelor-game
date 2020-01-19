@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Crew'
   m_EditorClassIdentifier: 
   name: Crew
+  priority: 0
   associatedStrings:
   - crew
   - besatzung
@@ -28,4 +29,6 @@ MonoBehaviour:
   - "\xFCberlebende"
   - "\xFCberlebender"
   - "\xFCberlebenden"
+  - anderen
+  - andere
   associatedTagCombinations: []

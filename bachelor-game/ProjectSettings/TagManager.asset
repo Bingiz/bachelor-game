@@ -7,6 +7,7 @@ TagManager:
   - playerText
   - NPC
   - ViewableObject
+  - InteractableObject
   layers:
   - Default
   - TransparentFX

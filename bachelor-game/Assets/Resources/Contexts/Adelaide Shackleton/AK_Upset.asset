@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62060999fc4e84837acbc28a73c8529f, type: 3}
-  m_Name: AK_Default
+  m_Name: AK_Upset
   m_EditorClassIdentifier: 
-  priority: 1
+  priority: 10
   needsAnswer: 0
-  greetings:
-  - Da sind sie ja Wieder.
-  - Hallo, brauchen Sie etwas?
-  - "Ah, entschuldigung. Ich war gerade besch\xE4ftigt. Was gibt es?"
+  greetings: []
   listOfConversationalMoves:
   - name: CM_AskAboutTopic
     conversationalMoveObject: {fileID: 11400000, guid: 4eb3a7de46dab405fa248b5b61b79640,
@@ -25,7 +22,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -245,7 +243,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -465,7 +464,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -685,7 +685,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -905,7 +906,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1125,7 +1127,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1345,7 +1348,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1565,7 +1569,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1785,7 +1790,8 @@ MonoBehaviour:
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -2006,8 +2012,7 @@ MonoBehaviour:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
       answers:
-      - TEST1
-      - TEST2
+      - ICH REDE NICHT MIT DIR
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -2222,24 +2227,11 @@ MonoBehaviour:
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
+      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
       answers: []
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-  specialCases:
-  - name: 
-    conversationalMoveObject: {fileID: 11400000, guid: ace7a731cb84f4684ab25bb5a79dba94,
-      type: 2}
-    topics:
-    - name: 
-      topic: {fileID: 11400000, guid: 23e45060ee55348e38775ae49b84a92f, type: 2}
-      answers:
-      - Du Arsch
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
+  specialCases: []
