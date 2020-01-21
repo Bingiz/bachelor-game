@@ -38,6 +38,7 @@ public class Raycast : MonoBehaviour
                     if (Input.GetButtonDown("Interact"))
                     {
                         interactingWith = hit.collider.gameObject;
+                        Debug.Log(interactingWith);
 
                         if (interactingWith.tag == "NPC")
                         {

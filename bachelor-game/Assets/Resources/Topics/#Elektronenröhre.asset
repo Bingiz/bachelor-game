@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41cbfdf9a02664e2e9642bb452f7362f, type: 3}
-  m_Name: "#Elektronenro\u0308hre"
+  m_Name: "#Elektronenr\xF6hre"
   m_EditorClassIdentifier: 
   name: "Elektronenr\xF6hre"
+  priority: 0
   associatedStrings:
   - "elektronenr\xF6hre"
   - "r\xF6hre"
