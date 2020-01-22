@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Oppose'
   m_EditorClassIdentifier: 
   name: Beleidigung
+  priority: 0
   associatedStrings:
   - arschloch
   - arsch

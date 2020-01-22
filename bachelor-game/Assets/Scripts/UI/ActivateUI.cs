@@ -10,7 +10,7 @@ public class ActivateUI : MonoBehaviour
 
     public void Start()
     {
-        ui.enabled = false;
+        //ui.enabled = false;
     }
 
     // Update is called once per frame

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ViewObject : MonoBehaviour
 {
-
     Vector3 originalPosition;
     Quaternion originalRotation;
     GameManager gameManager;
@@ -14,6 +13,7 @@ public class ViewObject : MonoBehaviour
     GameObject itemDescription;
     GameObject itemInfoUI;
     GameObject inventory;
+    private bool viewingInformation = false;
 
     public Item item;
 
@@ -25,9 +25,20 @@ public class ViewObject : MonoBehaviour
         offset = GameObject.Find("Offset");
         itemInfoUI = GameObject.Find("/UI/ItemDescription/Background");
         itemInfoUI.SetActive(false);
-
         inventory = GameObject.Find("/UI/Inventory/Background");
-        
+    }
+
+
+
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            ViewInformation(!viewingInformation);
+            viewingInformation = !viewingInformation;
+            
+        }
     }
 
     public void ViewInformation(bool yn)
@@ -58,7 +69,6 @@ public class ViewObject : MonoBehaviour
 
         GetComponent<ViewObject>().enabled = true;
     }
-
     public void QuitView()
     {
         Debug.Log("View Ended");

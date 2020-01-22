@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Name'
   m_EditorClassIdentifier: 
   name: Name
+  priority: 0
   associatedStrings:
   - name
   - namen

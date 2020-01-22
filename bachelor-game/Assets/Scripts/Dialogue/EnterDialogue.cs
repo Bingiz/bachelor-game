@@ -14,14 +14,19 @@ public class EnterDialogue : MonoBehaviour
 
     ShowDialoguePartnerName showDialoguePartnerName;
 
+    Raycast raycast;
+
     List<Context> contextBuffer;
 
     private void Start()
     {
+        
         showDialoguePartnerName = gameManager.gameObject.GetComponent<ShowDialoguePartnerName>();
         activateUI = gameManager.GetComponent<ActivateUI>();
+        activateUI.deactivateDialogueUI();
         dialogueTrigger = GetComponent<DialogueTrigger>();
         inputFieldAutoActivate = inputFieldObj.GetComponent<InputFieldAutoActivate>();
+        raycast = GameObject.Find("FPSController/FirstPersonCharacter").GetComponent<Raycast>();
     }
 
 
@@ -39,6 +44,7 @@ public class EnterDialogue : MonoBehaviour
         activateUI.activateDialogueUI();
         inputFieldAutoActivate.activateField();
 
+        raycast.inDialogue = true;
     }
 
     public void UpdateContexts()
@@ -63,5 +69,6 @@ public class EnterDialogue : MonoBehaviour
         contextBuffer.Clear();
         activateUI.deactivateDialogueUI();
         inputFieldAutoActivate.deactivateField();
+        raycast.inDialogue = false;
     }
 }

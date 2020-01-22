@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Dialogpartner'
   m_EditorClassIdentifier: 
   name: Dialogpartner
+  priority: 0
   associatedStrings:
   - du
   - dein

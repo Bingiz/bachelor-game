@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Person'
   m_EditorClassIdentifier: 
   name: Person
+  priority: 0
   associatedStrings:
   - wer
   - wen

@@ -8,4 +8,5 @@ public class CharacterDialogueInfos : MonoBehaviour
     public Color color;
     public string playerInputHistory;
     public string responseHistory;
+    public InputTag characterInputTag;
 }

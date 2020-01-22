@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject DialoguePartner;
 
+    public GameObject InteractingWith;
+
     private void Awake()
     {
         stemDictionary = GetComponent<StemDictionary>();

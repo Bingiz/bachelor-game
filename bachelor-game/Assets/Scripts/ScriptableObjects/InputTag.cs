@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "AI/InputTag")]
 public class InputTag : ScriptableObject
 {
+    
 
     public string name;
 

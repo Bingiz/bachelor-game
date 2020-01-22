@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System.Linq;
 
-    //new parsing whole input text for Tags
+//new parsing whole input text for Tags
 public class SendPlayerInput : MonoBehaviour
 {
 
@@ -18,7 +18,9 @@ public class SendPlayerInput : MonoBehaviour
 
     public GameObject DialoguePartner;
 
-    public ConversationalMove Catchall; 
+    public ConversationalMove Catchall;
+
+    public ConversationalMove currentCM;
 
     public List<InputTag> listOfAllInputTags;
     public List<InputTag> listOfAllTopics;
@@ -27,9 +29,14 @@ public class SendPlayerInput : MonoBehaviour
     public List<ConversationalMove> listOfStandardConversationalMoves;
     public List<ConversationalMove> listOfSpecialCaseConversationalMoves;
 
-    [HideInInspector] public List<InputTag> listOfTagsInInput;
+    private InputTag[] auxTags;
+
+    [HideInInspector]
+    public List<InputTag> listOfTagsInInput;
 
     private GameManager gameManager;
+    [SerializeField]
+    private InputTag previousTopic;
 
     string input;
 
@@ -44,7 +51,7 @@ public class SendPlayerInput : MonoBehaviour
         gameManager = GetComponent<GameManager>();
 
         // create Tag List to compare with input
-        foreach(InputTag g in Resources.LoadAll("InputTags", typeof(InputTag)))
+        foreach (InputTag g in Resources.LoadAll("InputTags/RegularInputTags", typeof(InputTag)))
         {
             //Debug.Log("InputTag Loaded: " + g.name);
             listOfAllInputTags.Add(g);
@@ -52,10 +59,17 @@ public class SendPlayerInput : MonoBehaviour
         }
 
         // create Topic list to compare with input
-        foreach (InputTag g in Resources.LoadAll("Topics", typeof(InputTag)))
+        foreach (InputTag g in Resources.LoadAll("InputTags/Topics", typeof(InputTag)))
         {
             //Debug.Log("Topic Loaded: " + g.name);
             listOfAllTopics.Add(g);
+            listOfAllInputTags.Add(g);
+        }
+
+        // create Topic list to compare with input
+        foreach (InputTag g in Resources.LoadAll("InputTags/AuxInputTags", typeof(InputTag)))
+        {
+            //Debug.Log("Topic Loaded: " + g.name);
             listOfAllInputTags.Add(g);
         }
 
@@ -74,6 +88,7 @@ public class SendPlayerInput : MonoBehaviour
             listOfAllConversationalMoves.Add(g);
             listOfSpecialCaseConversationalMoves.Add(g);
         }
+        auxTags = new InputTag[2] { Resources.Load<InputTag>("InputTags/AuxInputTags/#Dialogpartner"), Resources.Load<InputTag>("InputTags/AuxInputTags/#Person") };
     }
 
     // process the player input
@@ -85,10 +100,10 @@ public class SendPlayerInput : MonoBehaviour
         input = input.ToLower();
 
         AddInputTags();
+        CheckDialoguePartner();
+        CheckPerson();
         DecideTopic();
 
-
-       // Match CM and Topic --> return answer.
 
         outputAnswer();
 
@@ -103,16 +118,84 @@ public class SendPlayerInput : MonoBehaviour
             bool tagFoundForWord = false;
 
             for (int k = 0; k < listOfAllInputTags[j].associatedStrings.Count && tagFoundForWord == false; k++)
-            {   
-                Regex matchWords = new Regex(@"\b"+ listOfAllInputTags[j].associatedStrings[k] +@"\b");
+            {
+                Regex matchWords = new Regex(@"\b" + listOfAllInputTags[j].associatedStrings[k] + @"\b");
 
                 if (matchWords.Match(input).Value == listOfAllInputTags[j].associatedStrings[k])
                 {
+                    if (! listOfTagsInInput.Contains(listOfAllInputTags[j]))
+                    {
                         listOfTagsInInput.Add(listOfAllInputTags[j]);
                         Debug.Log(listOfAllInputTags[j].name + " added");
-                        tagFoundForWord = true;
+                        //tagFoundForWord = true;
                         break;
+                    }
+                    
                 }
+            }
+        }
+    }
+    public void CheckPerson()
+    {
+        //check Person Input Tag
+        //check DialoguePartner Input Tag
+
+        if (listOfTagsInInput.Contains(auxTags[1]))
+        {
+            Debug.Log("Person Tag Found in Input");
+            listOfTagsInInput.Remove(auxTags[1]);
+            //Debug.Log(auxTags[1].name + " removed from InputTags in input.");
+
+            if (previousTopic != null)
+            {
+                bool inInput = false;
+
+                for (int i = 0; i < listOfTagsInInput.Count; i++)
+                {
+                    if (previousTopic.name == "Adelaide Shackleton" ||
+                    listOfTagsInInput[i].name == "Lawrence Wilson" ||
+                    listOfTagsInInput[i].name == "Edgar Evans" ||
+                    listOfTagsInInput[i].name == "Alexander Veltman" ||
+                    listOfTagsInInput[i].name == "Amelie Veltman")
+                    {
+                        inInput = true;
+                        break;
+                    }
+                }
+
+                if (!inInput &&
+                    previousTopic.name == "Adelaide Shackleton" ||
+                    previousTopic.name == "Lawrence Wilson" ||
+                    previousTopic.name == "Edgar Evans" ||
+                    previousTopic.name == "Alexander Veltman" ||
+                    previousTopic.name == "Amelie Veltman"
+                    )
+                {
+                    listOfTagsInInput.Add(previousTopic);
+                    Debug.Log(previousTopic + " added");
+                }
+            }
+        }
+    }
+
+    public void CheckDialoguePartner()
+    {
+        //check DialoguePartner Input Tag
+        if (listOfTagsInInput.Contains(auxTags[0]))
+        {
+            listOfTagsInInput.Remove(auxTags[0]);
+            Debug.Log(auxTags[0].name + " removed from InputTags in input.");
+
+            InputTag characterIT = DialoguePartner.GetComponent<CharacterDialogueInfos>().characterInputTag;
+
+            if (! listOfTagsInInput.Contains(characterIT))
+            {
+                listOfTagsInInput.Add(characterIT);
+                Debug.Log(characterIT + " added");
+            }
+            else
+            {
+                Debug.Log(characterIT + " Dialogue Partner InputTag already in input.");
             }
         }
     }
@@ -172,11 +255,18 @@ public class SendPlayerInput : MonoBehaviour
                 }
             }
 
+            // change to new topic if topic is recognised in input
             if(currentlyHighestTopic != null)
             {
                 gameManager.currentTopic = currentlyHighestTopic;
                 Debug.Log("New Topic is: "+gameManager.currentTopic.name);
             }
+            // continue topic when no topic is recognised but curret topic exists
+            else if (gameManager.currentTopic != null)
+            {
+                Debug.Log("Topic remains: " + gameManager.currentTopic.name);
+            }
+            // input the #NO_TOPIC topic when previously no topic was recognised
             else
             {   
                 gameManager.currentTopic = Instantiate(Resources.Load("Topics/#NO_TOPIC",typeof(InputTag))) as InputTag;
@@ -202,9 +292,19 @@ public class SendPlayerInput : MonoBehaviour
 
         if (conversationalMovesInInput.Count == 0)
         {
-            conversationalMovesInInput.Add(Catchall);
-            Debug.Log("CM added: " + Catchall);
-            return conversationalMovesInInput;
+            if (currentCM != null)
+            {
+                conversationalMovesInInput.Add(currentCM);
+                Debug.Log("CM remains: " + currentCM);
+                return conversationalMovesInInput;
+            }
+            else
+            {
+                conversationalMovesInInput.Add(Catchall);
+                Debug.Log("CM added: " + Catchall);
+                return conversationalMovesInInput;
+            }
+            
         }
         else
         {
@@ -280,6 +380,8 @@ public class SendPlayerInput : MonoBehaviour
                                     {
                                         if (currentlyHighestContext.specialCases[j].topics[l].answers != null)
                                         {
+                                            currentCM = currentlyHighestContext.specialCases[j].conversationalMoveObject;
+                                            previousTopic = currentlyHighestContext.specialCases[j].topics[l].topic;
                                             return currentlyHighestContext.specialCases[j].topics[l].answers;
                                         }
                                     }
@@ -310,7 +412,7 @@ public class SendPlayerInput : MonoBehaviour
 
                             for (int l = 0; l < currentlyHighestContext.listOfConversationalMoves[j].topics.Length; l++)
                             {
-                                Debug.Log("Comparing Topics " + currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic.name + " to " + gameManager.currentTopic.name);
+                                //Debug.Log("Comparing Topics " + currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic.name + " to " + gameManager.currentTopic.name);
 
                                 if (currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic == gameManager.currentTopic)
                                 {
@@ -318,6 +420,8 @@ public class SendPlayerInput : MonoBehaviour
                                     if(currentlyHighestContext.listOfConversationalMoves[j].topics[l].answers != null)
                                     {
                                         Debug.Log("Returning String Array");
+                                        currentCM = currentlyHighestContext.listOfConversationalMoves[j].conversationalMoveObject;
+                                        previousTopic = currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic;
                                         return currentlyHighestContext.listOfConversationalMoves[j].topics[l].answers;
                                     }
                                 }

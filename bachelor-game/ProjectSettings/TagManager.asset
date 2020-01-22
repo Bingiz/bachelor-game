@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - ViewableObject
   - InteractableObject
+  - interactable
   layers:
   - Default
   - TransparentFX

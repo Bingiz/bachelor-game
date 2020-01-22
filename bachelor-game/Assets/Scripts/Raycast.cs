@@ -11,19 +11,55 @@ public class Raycast : MonoBehaviour
 
     bool interacting = false;
 
-    bool cooldown = false;
-
-    bool viewingInformation = false;
-
     public GameObject interactionIcon;
 
+    public bool inDialogue = false;
 
-    GameObject interactingWith;
+    bool cooldown = false;
+    bool viewingInformation = false;
+
+
+    public GameObject interactingWith;
 
 
     // Update is called once per frame
     void Update()
     {
+        /*
+        RaycastHit hit;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        {
+            if (hit.collider.gameObject.tag == "interactable")
+            {
+                interactionIcon.SetActive(!interacting);
+                if (Input.GetButtonDown("Interact") && !inDialogue)
+                {
+                    interactingWith = hit.collider.gameObject.GetComponent<OpenUI>();
+                    Debug.Log(hit.collider.gameObject.GetComponent<OpenUI>());
+
+                    if (interactingWith.interactable)
+                    {
+                        interactingWith.ShowUIElement();
+                    }
+                    if (!interacting)
+                    {
+                        EnterInteraction();
+                    }
+                    else
+                    {
+                        ExitInteraction();
+                    }
+                }
+
+            }
+        }
+        else
+        {
+            interactionIcon.SetActive(false);
+        }
+        */
+
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -43,6 +79,7 @@ public class Raycast : MonoBehaviour
                         if (interactingWith.tag == "NPC")
                         {
                             EnterInteraction();
+                            Cursor.lockState = CursorLockMode.None;
                             interactingWith.GetComponent<EnterDialogue>().StartDialogue();
                         }
                         else if (interactingWith.tag == "ViewableObject")
@@ -54,6 +91,7 @@ public class Raycast : MonoBehaviour
                         {
                             if (interactingWith.GetComponent<InteractableObject>().Interaction())
                             {
+                                Cursor.lockState = CursorLockMode.None;
                                 EnterInteraction();
                             }
 
@@ -70,19 +108,18 @@ public class Raycast : MonoBehaviour
 
         if (interacting == true && cooldown == false)
         {
+            if (interactingWith.tag =="ViewableObject")
+            {
+                if (Input.GetMouseButtonDown(0) && !cooldown && interacting)
+                {
+                    cooldown = true;
+                    interactingWith.GetComponent<ViewObject>().ViewInformation(viewingInformation);
+                    viewingInformation = !viewingInformation;
+                    
+                }
 
-            if (Input.GetMouseButtonDown(0) && !viewingInformation && !cooldown)
-            {
-                cooldown = true;
-                viewingInformation = true;
-                interactingWith.GetComponent<ViewObject>().ViewInformation(true);
             }
-            else if (Input.GetMouseButtonDown(0) && viewingInformation && !cooldown)
-            {
-                cooldown = true;
-                viewingInformation = false;
-                interactingWith.GetComponent<ViewObject>().ViewInformation(false);
-            }
+
 
             cooldown = true;
 
@@ -127,19 +164,28 @@ public class Raycast : MonoBehaviour
 
     }
 
-    void ExitInteraction()
+    public void ExitInteraction()
     {
-        interactingWith.GetComponent<ViewObject>().QuitView();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        //interactingWith.GetComponent<ViewObject>().QuitView();
+        transform.parent.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
         interactingWith = null;
         interacting = false;
+        
     }
     void EnterInteraction()
     {
+        
+        Cursor.visible = true;
         interactionIcon.SetActive(false);
         transform.parent.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
         interacting = true;
+        
     }
-    
 
-  
+    void OpenMainMenu(bool open)
+    {
+
+    }
 }

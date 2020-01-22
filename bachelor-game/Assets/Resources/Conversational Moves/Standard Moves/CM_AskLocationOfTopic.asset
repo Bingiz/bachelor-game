@@ -15,7 +15,5 @@ MonoBehaviour:
   priority: 0
   associatedTagCombinations:
   - InputTags:
-    - {fileID: 0}
-    - {fileID: 0}
-  - InputTags: []
+    - {fileID: 11400000, guid: e8685b1f1569145648721f7b6f4116fb, type: 2}
   topicAnswers: []
