@@ -18,8 +18,8 @@ public class Raycast : MonoBehaviour
     bool cooldown = false;
     bool viewingInformation = false;
 
-
     public GameObject interactingWith;
+
 
 
     // Update is called once per frame
@@ -67,7 +67,7 @@ public class Raycast : MonoBehaviour
             {
                 cooldown = true;
 
-                if (hit.collider.gameObject.tag == "NPC" | hit.collider.gameObject.tag == "ViewableObject" | hit.collider.gameObject.tag == "InteractableObject")
+                if (hit.collider.gameObject.tag == "NPC" | hit.collider.gameObject.tag == "ViewableObject" | (hit.collider.gameObject.tag == "InteractableObject" && hit.collider.gameObject.GetComponent<InteractableObject>().solved == false))
                 {
                     interactionIcon.SetActive(true);
 
@@ -91,14 +91,17 @@ public class Raycast : MonoBehaviour
                         {
                             if (interactingWith.GetComponent<InteractableObject>().Interaction())
                             {
-                                Cursor.lockState = CursorLockMode.None;
-                                EnterInteraction();
+                                    Cursor.lockState = CursorLockMode.None;
+                                    EnterInteraction();
+                                    //show Lock
+                                    interactingWith.GetComponent<InteractableObject>().openCodeUI(true);
+
                             }
 
                         }
                         else
                         {
-                            interactingWith = null;
+                           // interactingWith = null;
                         }
                     }
                 }
@@ -113,7 +116,7 @@ public class Raycast : MonoBehaviour
                 if (Input.GetMouseButtonDown(0) && !cooldown && interacting)
                 {
                     cooldown = true;
-                    interactingWith.GetComponent<ViewObject>().ViewInformation(viewingInformation);
+                    interactingWith.GetComponent<ViewObject>().ViewInformation(!viewingInformation);
                     viewingInformation = !viewingInformation;
                     
                 }
@@ -121,7 +124,7 @@ public class Raycast : MonoBehaviour
             }
 
 
-            cooldown = true;
+            //cooldown = true;
 
             if (Input.GetButtonDown("Escape"))
             {
@@ -134,6 +137,7 @@ public class Raycast : MonoBehaviour
                 else if (interactingWith.tag == "ViewableObject")
                 {
                     interactingWith.GetComponent<ViewObject>().QuitView();
+                    interactingWith.GetComponent<ViewObject>().ViewInformation(false);
                 }
                 interactingWith = null;
                 interacting = false;
@@ -142,6 +146,7 @@ public class Raycast : MonoBehaviour
 
             if (Input.GetButtonDown("Interact"))
             {
+                
                 if (interactingWith.tag == "ViewableObject")
                 {
                     transform.parent.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
@@ -155,6 +160,14 @@ public class Raycast : MonoBehaviour
                             interactingWith.GetComponent<ViewObject>().CollectItem();
                         }
                     }
+                    Debug.Log("Exits interaction");
+                    interactingWith.GetComponent<ViewObject>().ViewInformation(false);
+                    interactingWith.GetComponent<ViewObject>().QuitView();
+                    ExitInteraction(); 
+                }
+                else if (interactingWith.tag == "InteractableObject")
+                {
+                    interactingWith.GetComponent<InteractableObject>().openCodeUI(false);
                     ExitInteraction();
                 }
             }
@@ -188,4 +201,6 @@ public class Raycast : MonoBehaviour
     {
 
     }
+
+
 }

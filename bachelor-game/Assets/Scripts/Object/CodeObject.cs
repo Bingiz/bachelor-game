@@ -5,8 +5,8 @@ using UnityEngine;
 public class CodeObject : MonoBehaviour
 {
 
-    public int[] requiredCode;
-    public int[] inputCode;
+    public int[] requiredCode = new int[4];
+    public int[] inputCode = new int[4] { 0, 0, 0, 0 };
 
 
 

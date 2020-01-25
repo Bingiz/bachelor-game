@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnterDialogue : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnterDialogue : MonoBehaviour
     DialogueTrigger dialogueTrigger;
     InputFieldAutoActivate inputFieldAutoActivate;
     ActivateUI activateUI;
+    Scrollbar scrollbar;
 
     ShowDialoguePartnerName showDialoguePartnerName;
 
@@ -27,6 +29,7 @@ public class EnterDialogue : MonoBehaviour
         dialogueTrigger = GetComponent<DialogueTrigger>();
         inputFieldAutoActivate = inputFieldObj.GetComponent<InputFieldAutoActivate>();
         raycast = GameObject.Find("FPSController/FirstPersonCharacter").GetComponent<Raycast>();
+        scrollbar = GameObject.Find("UI/DialogueUI/DialogueBox/Text Box/Scrollbar Vertical/").GetComponent<Scrollbar>();
     }
 
 
@@ -45,6 +48,8 @@ public class EnterDialogue : MonoBehaviour
         inputFieldAutoActivate.activateField();
 
         raycast.inDialogue = true;
+
+        scrollbar.value = 0;
     }
 
     public void UpdateContexts()

@@ -13,7 +13,7 @@ public class ViewObject : MonoBehaviour
     GameObject itemDescription;
     GameObject itemInfoUI;
     GameObject inventory;
-    private bool viewingInformation = false;
+    //private bool viewingInformation = false;
 
     public Item item;
 
@@ -33,12 +33,14 @@ public class ViewObject : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             ViewInformation(!viewingInformation);
             viewingInformation = !viewingInformation;
             
         }
+        */
     }
 
     public void ViewInformation(bool yn)
@@ -83,4 +85,5 @@ public class ViewObject : MonoBehaviour
         inventory.GetComponent<InventoryUI>().AddInventoryObject(item);
         Destroy(this.gameObject);
     }
+
 }

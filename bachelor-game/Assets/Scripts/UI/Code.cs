@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Code : MonoBehaviour
@@ -10,12 +9,14 @@ public class Code : MonoBehaviour
     public int[] inputCode;
     public Text codeText;
 
-    public UnityEvent DoOnSolve;
+    Raycast raycast;
 
     private void Awake()
     {
+        raycast = GameObject.Find("FPSController/FirstPersonCharacter").GetComponent<Raycast>();
+        Debug.Log(this);
         requiredCode = new int[4];
-        inputCode = new int[4] {0,0,0,0};
+        inputCode = new int[4] { 0, 0, 0, 0 };
         DisplayDigits();
     }
 
@@ -36,11 +37,24 @@ public class Code : MonoBehaviour
         //SendLockInformation();
     }
 
-    void GetLockInformation(int[] req , int[] input)
+    private void OnEnable()
     {
-        requiredCode = req;
-        inputCode = input;
+        GetLockInformation();
+        SetLockInformation();
+    }
+
+    public void GetLockInformation()
+    {
+        if (raycast.interactingWith != null)
+        {
+            inputCode = raycast.interactingWith.GetComponent<CodeObject>().inputCode;
+            requiredCode = raycast.interactingWith.GetComponent<CodeObject>().requiredCode;
+        }
         DisplayDigits();
+    }
+    public void SetLockInformation()
+    {
+        raycast.interactingWith.GetComponent<CodeObject>().inputCode = inputCode;
     }
 
     private void DisplayDigits()
@@ -53,20 +67,20 @@ public class Code : MonoBehaviour
         bool codeIsRight = true;
         for (int i = 0; i < requiredCode.Length; i++)
         {
-            for (int j = 0; j < inputCode.Length; j++)
-            {
-                if (requiredCode[i] != inputCode[j])
+                if (requiredCode[i] != inputCode[i])
                 {
+                    //Debug.Log("Checking: " + requiredCode[i] + " against " + inputCode[i]);
                     codeIsRight = false;
                     break;
                 }
-            } 
         }
 
         if (codeIsRight)
         {
             Debug.Log("Code is right!");
-            DoOnSolve.Invoke();
+            raycast.interactingWith.GetComponent<InteractableObject>().Solved();
+            raycast.interactingWith.GetComponent<InteractableObject>().openCodeUI(false);
+            raycast.ExitInteraction();
         }
         else
         {

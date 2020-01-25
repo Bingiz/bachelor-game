@@ -12,7 +12,7 @@ public class DigitUpDown : MonoBehaviour
     {
         Cursor.visible = true;
         code = GameObject.Find("UI/KeyCode").GetComponent<Code>();
-        Debug.Log(code);
+        //Debug.Log(code);
     }
     public void changeDigit()
     {

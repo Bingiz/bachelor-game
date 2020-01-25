@@ -8,6 +8,7 @@ public class InteractableObject : MonoBehaviour
 {
 
     public bool needsItem;
+    public bool solved = false;
 
     GameManager gameManager;
 
@@ -15,9 +16,31 @@ public class InteractableObject : MonoBehaviour
 
     public UnityEvent DoOnInteraction;
 
+    public UnityEvent DoOnSolve;
+
+    InventoryUI inventoryUI;
+
+    Transform inventory;
+    public GameObject codeUI;
+    Code code;
+
     private void Start()
     {
+        inventoryUI = GameObject.Find("UI/Inventory/Background").GetComponent<InventoryUI>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        inventory = GameObject.Find("UI/Inventory/Background").GetComponent<Transform>();
+    }
+
+    public void openCodeUI(bool open)
+    {
+        codeUI.SetActive(open);
+    }
+
+    public void Solved()
+    {
+        solved = true;
+        Debug.Log("SOLVED");
+        DoOnSolve.Invoke();
     }
 
     public bool Interaction()
@@ -28,6 +51,21 @@ public class InteractableObject : MonoBehaviour
             {
                 Debug.Log(neededItem.name + " used successfully!");
                 DoOnInteraction.Invoke();
+
+                gameManager.itemsInInventory.Remove(neededItem);
+
+                foreach (Transform item in inventory)
+                {
+                    if (item.name == neededItem.name)
+                    {
+                        Destroy(item.gameObject);
+                        break;
+                    }
+                }
+
+                inventoryUI.UpdateInventoryUISize();
+
+                needsItem = false;
                 return true;
             }
             else
