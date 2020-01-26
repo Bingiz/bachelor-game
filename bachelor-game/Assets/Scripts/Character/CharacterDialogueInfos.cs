@@ -9,4 +9,7 @@ public class CharacterDialogueInfos : MonoBehaviour
     public string playerInputHistory;
     public string responseHistory;
     public InputTag characterInputTag;
+
+    
+    public Message.MessageType messageType;
 }

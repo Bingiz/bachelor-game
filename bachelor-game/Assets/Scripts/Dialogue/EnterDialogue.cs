@@ -12,7 +12,7 @@ public class EnterDialogue : MonoBehaviour
     DialogueTrigger dialogueTrigger;
     InputFieldAutoActivate inputFieldAutoActivate;
     ActivateUI activateUI;
-    Scrollbar scrollbar;
+    public Scrollbar scrollbar;
 
     ShowDialoguePartnerName showDialoguePartnerName;
 
@@ -29,7 +29,7 @@ public class EnterDialogue : MonoBehaviour
         dialogueTrigger = GetComponent<DialogueTrigger>();
         inputFieldAutoActivate = inputFieldObj.GetComponent<InputFieldAutoActivate>();
         raycast = GameObject.Find("FPSController/FirstPersonCharacter").GetComponent<Raycast>();
-        scrollbar = GameObject.Find("UI/DialogueUI/DialogueBox/Text Box/Scrollbar Vertical/").GetComponent<Scrollbar>();
+        //scrollbar = GameObject.Find("UI/DialogueUI/DialogueBox/Text Box/Scrollbar Vertical/").GetComponent<Scrollbar>();
     }
 
 
@@ -75,5 +75,6 @@ public class EnterDialogue : MonoBehaviour
         activateUI.deactivateDialogueUI();
         inputFieldAutoActivate.deactivateField();
         raycast.inDialogue = false;
+        //gameManager.GetComponent<MessageManager>().ClearMessageList();
     }
 }

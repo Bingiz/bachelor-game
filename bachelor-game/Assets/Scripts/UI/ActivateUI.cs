@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ActivateUI : MonoBehaviour
 {
-    public Canvas ui;
+    public GameObject ui;
     public bool inDialogue = false;
 
     public void Start()
@@ -16,13 +16,14 @@ public class ActivateUI : MonoBehaviour
     // Update is called once per frame
     public void activateDialogueUI()
     {
-        ui.enabled = true;
+        ui.SetActive(true);
         inDialogue = true;
     }
 
     public void deactivateDialogueUI()
     {
-        ui.enabled = false;
+        ui.SetActive(false);
         inDialogue = false;
+        GetComponent<MessageManager>().ClearMessageList();
     }
 }

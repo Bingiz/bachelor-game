@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "#H\xF6hle"
   m_EditorClassIdentifier: 
   name: "H\xF6hle"
-  priority: 0
+  priority: 2
   associatedStrings:
   - "h\xF6hle"
   - tunnel

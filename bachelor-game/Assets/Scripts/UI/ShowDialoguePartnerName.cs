@@ -18,8 +18,8 @@ public class ShowDialoguePartnerName : MonoBehaviour
 
     private void Start()
     {
-        showPlayerInputHistory = GetComponent<SendPlayerInput>().PlayerInputOutput.GetComponent<Text>();
-        showResponseHistory = GetComponent<SendPlayerInput>().AnswerText.GetComponent<Text>();
+        //showPlayerInputHistory = GetComponent<SendPlayerInput>().PlayerInputOutput.GetComponent<Text>();
+        //showResponseHistory = GetComponent<SendPlayerInput>().AnswerText.GetComponent<Text>();
     }
 
     private void Update()
@@ -40,14 +40,13 @@ public class ShowDialoguePartnerName : MonoBehaviour
         //change Color
         charColor = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().color;
         dialoguePartner.GetComponent<Text>().color = charColor;
-        dialoguePartnerAnswer.GetComponent<Text>().color = charColor;
+        //dialoguePartnerAnswer.GetComponent<Text>().color = charColor;
     }
 
     public void showDialoguePartnerDialogueHistory()
     {
-        showPlayerInputHistory.text = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory;
-        showResponseHistory.text = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory;
+       // showPlayerInputHistory.text = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory;
+       // showResponseHistory.text = GetComponent<GameManager>().DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory;
     }
-
 
 }

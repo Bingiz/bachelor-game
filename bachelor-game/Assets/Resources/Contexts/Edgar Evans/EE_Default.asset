@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62060999fc4e84837acbc28a73c8529f, type: 3}
+  m_Name: EE_Default
+  m_EditorClassIdentifier: 
+  priority: -1
+  needsAnswer: 0
+  greetings: []
+  listOfConversationalMoves:
+  - name: META_CatchAll
+    conversationalMoveObject: {fileID: 11400000, guid: d603a123571cb44ad83ca32b3d8e4e16,
+      type: 2}
+    topics:
+    - name: Adelaide Shackleton
+      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Alexander Veltman
+      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Amelie Veltman
+      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Arbeit
+      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Brandspuren
+      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Crew
+      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: David Edgeworth
+      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Edgar Evans
+      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: "Elektronenr\xF6hre"
+      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Forschung
+      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Foto
+      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Friedhof
+      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: "H\xF6hle"
+      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Kairosit
+      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Kiste
+      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Lager
+      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Lawrence Wilson
+      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Maschine
+      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: NO TOPIC
+      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Reise
+      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: "R\xFCckreise"
+      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Schiff
+      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: Spieler
+      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: "S\xFCdpol"
+      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: "Vorr\xE4te"
+      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
+      answers: []
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+  specialCases: []

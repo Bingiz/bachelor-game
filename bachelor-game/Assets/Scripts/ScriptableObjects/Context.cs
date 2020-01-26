@@ -68,7 +68,7 @@ public class Context : ScriptableObject
 
     private void Awake()
     {
-        Object[] count = Resources.LoadAll("Topics");
+        Object[] count = Resources.LoadAll("InputTags/Topics");
         int countOfTopics = count.Length;
         listOfTopics = new Topic[countOfTopics];
 
@@ -77,7 +77,7 @@ public class Context : ScriptableObject
         listOfConversationalMoves = new CM[countOfConversationalMoves];
         
             int i = 0;
-            foreach (InputTag top in Resources.LoadAll("Topics", typeof(InputTag)))
+            foreach (InputTag top in Resources.LoadAll("InputTags/Topics", typeof(InputTag)))
             {
                 listOfTopics[i] = new Topic(top.name, top);
                 i++;

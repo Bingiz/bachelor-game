@@ -12,11 +12,11 @@ public class SendPlayerInput : MonoBehaviour
 
     public GameObject PlayerInput;
 
-    public GameObject AnswerText;
-
-    public GameObject PlayerInputOutput;
+    //public GameObject AnswerText;
 
     public GameObject DialoguePartner;
+
+    public Scrollbar scrollbar;
 
     public ConversationalMove Catchall;
 
@@ -28,6 +28,8 @@ public class SendPlayerInput : MonoBehaviour
     public List<ConversationalMove> listOfAllConversationalMoves;
     public List<ConversationalMove> listOfStandardConversationalMoves;
     public List<ConversationalMove> listOfSpecialCaseConversationalMoves;
+
+    public RectTransform windowSize;
 
     private InputTag[] auxTags;
 
@@ -97,7 +99,12 @@ public class SendPlayerInput : MonoBehaviour
         input = PlayerInput.GetComponent<Text>().text;
         input = input.Trim();
         inputForOutput = input;
+
+        //send inputForOutput;
+        GetComponent<MessageManager>().SendMessageToChat(inputForOutput, Message.MessageType.playerMessage) ;
         input = input.ToLower();
+
+        DialoguePartner = gameManager.DialoguePartner;
 
         AddInputTags();
         CheckDialoguePartner();
@@ -340,6 +347,7 @@ public class SendPlayerInput : MonoBehaviour
         //contextsToSearch = DialoguePartner.GetComponent<DialogueTrigger>().context;
 
         Context currentlyHighestContext = ScriptableObject.CreateInstance<Context>();
+        currentlyHighestContext.priority = -10;
 
         List<ConversationalMove> CMBuffer = GetStandardConversationalMovesFromInput();
 
@@ -356,14 +364,10 @@ public class SendPlayerInput : MonoBehaviour
             //check which of the current contexts has the highest priority and put the one into currentlyHighestContext
             for (int i = 0; i < contextsToSearch.Count; i++)
             {
-                for (int p = 0; p < contextsToSearch.Count; p++)
-                {
-                    if (contextsToSearch[p].priority > currentlyHighestContext.priority)
+                    if (contextsToSearch[i].priority > currentlyHighestContext.priority)
                     {
-                        currentlyHighestContext = contextsToSearch[p];
+                        currentlyHighestContext = contextsToSearch[i];
                     }
-                }
-
 
                 //Check Special Cases first
                 if(currentlyHighestContext.specialCases != null)
@@ -416,8 +420,9 @@ public class SendPlayerInput : MonoBehaviour
 
                                 if (currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic == gameManager.currentTopic)
                                 {
-                                    Debug.Log("MATCH");
-                                    if(currentlyHighestContext.listOfConversationalMoves[j].topics[l].answers != null)
+                                    Debug.Log("MATCH " + currentlyHighestContext.listOfConversationalMoves[j].topics[l]);
+
+                                    if (currentlyHighestContext.listOfConversationalMoves[j].topics[l].answers != null)
                                     {
                                         Debug.Log("Returning String Array");
                                         currentCM = currentlyHighestContext.listOfConversationalMoves[j].conversationalMoveObject;
@@ -466,11 +471,12 @@ public class SendPlayerInput : MonoBehaviour
         {
             output = answerBuffer[Random.Range(0, answerBuffer.Length)];
         }
+
         //write the output
 
-        DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory += inputForOutput + "\n\n\n";
-        WriteNPCLine(output);
-        //AnswerText.GetComponent<Text>().text = output;
+        Debug.Log(output);
+
+        GetComponent<MessageManager>().SendMessageToChat(output, DialoguePartner.GetComponent<CharacterDialogueInfos>().messageType);
 
         // clear the output buffer and empty the list of recieved words
         output = "";
@@ -480,10 +486,10 @@ public class SendPlayerInput : MonoBehaviour
     // sends the NPC answer dialogue line to the UI
     public void WriteNPCLine(string output)
     {
-        DialoguePartner = gameManager.DialoguePartner;
 
+        DialoguePartner = gameManager.DialoguePartner;
         //Write and Call new Message Function (so that text box size matches)
-        DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory += "\n" + output + "\n\n";
+        //DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory += "\n" + output + "\n\n";
     }
 
     // displays greeting Message if conversation with NPC is started

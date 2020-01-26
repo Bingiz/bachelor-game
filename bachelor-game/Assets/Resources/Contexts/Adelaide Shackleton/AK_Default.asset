@@ -15,1499 +15,231 @@ MonoBehaviour:
   priority: -1
   needsAnswer: 0
   greetings:
-  - hello again
+  - Hallo, freut mich euch zu sehen.
+  - "Da seid Ihr ja wieder. Kann ich etwas f\xFCr Sie tun?"
+  - "Ben\xF6tigen sie etwas?"
+  - 
   listOfConversationalMoves:
-  - name: CM_AskKnowldgeOfTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 0bbfbd982c21849b68f5bcd9362a0035,
-      type: 2}
-    topics:
-    - name: Adelaide Shackleton
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Alexander Veltman
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Amelie Veltman
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Arbeit
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Brandspuren
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Crew
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: David Edgeworth
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Edgar Evans
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Forschung
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Foto
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Friedhof
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kairosit
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kiste
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lager
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lawrence Wilson
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Maschine
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: NO TOPIC
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Reise
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Schiff
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Spieler
-      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskLocationOfTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 4ee8312eef2a44d8b9750b3183e174bb,
-      type: 2}
-    topics:
-    - name: Adelaide Shackleton
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Alexander Veltman
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Amelie Veltman
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Arbeit
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Brandspuren
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Crew
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: David Edgeworth
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Edgar Evans
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Forschung
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Foto
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Friedhof
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kairosit
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kiste
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lager
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lawrence Wilson
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Maschine
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: NO TOPIC
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Reise
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Schiff
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Spieler
-      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskMethodOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 32c47c7ac18e94321bb208615906ba79,
-      type: 2}
-    topics:
-    - name: Adelaide Shackleton
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Alexander Veltman
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Amelie Veltman
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Arbeit
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Brandspuren
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Crew
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: David Edgeworth
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Edgar Evans
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Forschung
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Foto
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Friedhof
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kairosit
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kiste
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lager
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lawrence Wilson
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Maschine
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: NO TOPIC
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Reise
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Schiff
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Spieler
-      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskOpinionOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 4462e7e8768774d2ebb9218db1d06782,
-      type: 2}
-    topics:
-    - name: Adelaide Shackleton
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Alexander Veltman
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Amelie Veltman
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Arbeit
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Brandspuren
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Crew
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: David Edgeworth
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Edgar Evans
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Forschung
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Foto
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Friedhof
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kairosit
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kiste
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lager
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lawrence Wilson
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Maschine
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: NO TOPIC
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Reise
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Schiff
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Spieler
-      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskReasonOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 55568f929546c45ffad891d603d63beb,
-      type: 2}
-    topics:
-    - name: Adelaide Shackleton
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Alexander Veltman
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Amelie Veltman
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Arbeit
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Brandspuren
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Crew
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: David Edgeworth
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Edgar Evans
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Forschung
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Foto
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Friedhof
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kairosit
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kiste
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lager
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lawrence Wilson
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Maschine
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: NO TOPIC
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Reise
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Schiff
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Spieler
-      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskStateOfTopic
-    conversationalMoveObject: {fileID: 11400000, guid: fff7d152032cf452ca9a57500531e748,
-      type: 2}
-    topics:
-    - name: Adelaide Shackleton
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Alexander Veltman
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Amelie Veltman
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Arbeit
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Brandspuren
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Crew
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: David Edgeworth
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Edgar Evans
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Forschung
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Foto
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Friedhof
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kairosit
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kiste
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lager
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lawrence Wilson
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Maschine
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: NO TOPIC
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Reise
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Schiff
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Spieler
-      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskTimeOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 31ce5f6c65f494ed094a23ad7384811e,
-      type: 2}
-    topics:
-    - name: Adelaide Shackleton
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Alexander Veltman
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Amelie Veltman
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Arbeit
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Brandspuren
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Crew
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: David Edgeworth
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Edgar Evans
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Forschung
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Foto
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Friedhof
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kairosit
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kiste
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lager
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lawrence Wilson
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Maschine
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: NO TOPIC
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Reise
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Schiff
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Spieler
-      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_InvestigateOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 66047b41d4f374104af7f98e1a5c6a29,
-      type: 2}
-    topics:
-    - name: Adelaide Shackleton
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Alexander Veltman
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Amelie Veltman
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Arbeit
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Brandspuren
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Crew
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: David Edgeworth
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Edgar Evans
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Forschung
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Foto
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Friedhof
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kairosit
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Kiste
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lager
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Lawrence Wilson
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Maschine
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: NO TOPIC
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Reise
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Schiff
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Spieler
-      topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
   - name: META_CatchAll
     conversationalMoveObject: {fileID: 11400000, guid: d603a123571cb44ad83ca32b3d8e4e16,
       type: 2}
     topics:
     - name: Adelaide Shackleton
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - Ich bin Adelaide Shackleton. Ich bin Geologin.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Alexander Veltman
       topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
+      answers:
+      - Alexander Veltman hat diese Expedition angeleitet.. bevor er verschwand.
+      - "Dr. Veltman hat zu meinem Bedauern angeordnet, dass er und David allein das
+        Artefakt untersuchen und nicht gest\xF6rt werden sollen. Ich habe dann selbstst\xE4ndig
+        mit mit meiner eigenen Forschung begonnen."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Amelie Veltman
       topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
+      answers:
+      - "Ich wei\xDF leider nicht von wem sie sprechen."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Arbeit
       topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
+      answers:
+      - "Ich bin als Forschungsassistentin f\xFCr David auf diese Expedition gekommen."
+      - Ich bin als Forschungsassistenz von David Edgeworth hergekommen.
+      - "Mr. Edgeworth und ich wollten zusammen die Geologie und Bodengeographie des
+        S\xFCdpols untersuchen um dessen Entstehung zu ergr\xFCnden."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Brandspuren
       topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
+      answers:
+      - "Sie meinen die Spuren in der H\xF6hle..? Edgar sagte dort ist David.."
+      - "Edgar meint es w\xE4re kein Unfall gewesen. Aber ich glaube nicht, dass Doktor
+        Veltman soetwas tun w\xFCrde. Sie haben schon so lange zusammen gearbeitet."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Crew
       topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
+      answers:
+      - "Als wir ankamen waren wir zu f\xFCnft. Alexander Veltman, er hat die Expedition
+        geleitet. David Edgeworth, er war Ingenieur. Edgar Evans ist der Kapit\xE4n
+        der uns her brachte. Lawrence Wilson ist unser Azt und ich, Adelaide Shackleton,
+        Gelogin."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: David Edgeworth
       topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Dialogpartner
-      topic: {fileID: 11400000, guid: 2120aabf430244097b0eab10d436062c, type: 2}
-      answers: []
+      answers:
+      - "David hat sich um mich gek\xFCmmert, er war mein Mentor. Er hat f\xFCr mich
+        gesorgt und mir erm\xF6glicht mit auf diese Expedition zu kommen. Dr. Veltman
+        h\xE4tte das nie zugelassen, wenn er sich nicht f\xFCr mich eingesetzt h\xE4tte."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Edgar Evans
       topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
+      answers:
+      - "Kapit\xE4n Evans. Er ist der Kapit\xE4n, der uns an diesen faszinierenden
+        Ort gebracht hat."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "Elektronenr\xF6hre"
       topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
+      answers:
+      - "Ich wei\xDF leider nicht genau was das ist. Es k\xF6nnte jedoch ein Elektrotechnisches
+        Bauteil der Maschine in der H\xF6hle sein."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Forschung
       topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
+      answers:
+      - PLATZHALTER FORSCHUNG
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Foto
       topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
+      answers:
+      - "David hat einige Fotos gemacht. Sie h\xE4ngen hier im Forschungszelt."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Friedhof
       topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
+      answers:
+      - "Dort haben wir David begraben.. Dort steht auch ein Kreuz f\xFCr Doktor Veltman."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "H\xF6hle"
       topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
+      answers:
+      - "In der H\xF6hle hat Doktor Veltman zuerst das Kairosit entdeckt."
+      - "\"Die H\xF6hle war nicht schon immer dort. Doktor Veltman hat sie zusammen
+        mit Kapit\xE4n Evans und David freigelegt. \""
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Kairosit
       topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
+      answers:
+      - "David und Dr. Veltman haben seit der Entdeckung daran geforscht. Ich h\xE4tte
+        es gerne vor Veltmans Verschwinden schon genauer untersucht."
+      - Es ist wirklich faszinierend. Es scheint Eigenschaften zu besitzen, wie kein
+        anderes uns bisher bekanntes Material.
+      - "Wird es mit elektrischer Energie gespeist, beginnt es zu luminiszieren und
+        ein Luftflimmern entsteht in seinem Umkreis. Es scheint starke endothermische
+        Qualit\xE4ten zu besitzen. "
+      - "Es scheint starke energieabsorbierende Qualit\xE4ten zu besitzen. "
+      - "Doktor Veltman hat es das gro\xDFe Kairositvorkommen in der H\xF6hle oft
+        als \"das Artefakt\" betitelt. Als h\xE4tte er erwartet es hier zu finden."
+      - "In einem meiner Tests haben sich sogar Dinge auf meinem Schreibtisch bewegt.
+        Fotos die dort lagen waren auf einmal schwarz, als w\xE4ren sie nicht entwickelt
+        worden."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Kiste
       topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
+      answers:
+      - Meinen sie die Kiste von Doktor Veltman
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Lager
       topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
+      answers:
+      - In diesem Zeltlager haben wir gelebt und gearbeitet.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Lawrence Wilson
       topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
+      answers:
+      - "Dr. Wilson ist unser Arzt. Er k\xFCmmert sich gut um unser Wohlbefinden.
+        Sowohl k\xF6rperlich als auch geistig."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Maschine
       topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
+      answers:
+      - "Eine Maschine die an das Kairositvorkommen in der H\xF6hle angeschlossen
+        ist. Doktor Veltman und David haben damit untersucht wie das Kairosit auf
+        elektrische Energie ragiert."
+      - David hat die Maschine gebaut um mit Doktor Veltman das Kairosit zu untersuchen.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: NO TOPIC
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: Person
-      topic: {fileID: 11400000, guid: eccb1df669fa048a39045f30ecff60da, type: 2}
-      answers: []
+      answers:
+      - 'Ich verstehe leider nicht wovon Sie sprechen. #NO_TOPIC'
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Reise
       topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
+      answers:
+      - Die Anreise war lang. Aber ich hatte zumindest die Zeit, die anderen Crewmitglieder
+        kennenzulernen.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "R\xFCckreise"
       topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
+      answers:
+      - "Laut offiziellem Zeitplan h\xE4tten wir die R\xFCckreise eigentlich vor zwei
+        Monaten antreten sollen. Unsere Forschungen waren jedoch noch nicht abgeschlossen,
+        also stimmten wir ab den Aufenthalt so lange es sein muss zu verl\xE4ngern.
+        Dies hatte nat\xFCrlich K\xFCrzung von Rationen zur Folge."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Schiff
       topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
+      answers:
+      - "Sprechen Sie dazu am besten mit Kapit\xE4n Evans. Er kennt sich wohl am Besten
+        mit seinem Schiff aus."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Spieler
       topic: {fileID: 11400000, guid: d8b58fab51605402b992ba587569054f, type: 2}
-      answers: []
+      answers:
+      - '#SPIELER'
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "S\xFCdpol"
       topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
+      answers:
+      - "Der S\xFCdpol ist wirklich ein faszinierender Ort. Er h\xE4lt noch so viel
+        f\xFCr uns bereit. Und wir haben bereits eine Bahnbrechende Entdeckung gemacht."
+      - "Wir waren die ersten Menschen, die diesen Teil des S\xFCdpols betreten haben.
+        Das ist wirklich faszinierend, nicht wahr?"
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "Vorr\xE4te"
       topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
+      answers:
+      - "Eigentlich sind wir schon \xFCber zwei Monate au\xDFerhalb unseres Zeitplans.
+        Aber da wir nur noch zu dritt sind, d\xFCrften wir noch gen\xFCgend Vorr\xE4te
+        haben. Kapit\xE4n Edgeworth hat unsere Rationen trotzdem gek\xFCrtzt, da wir
+        hier feststecken. "
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
