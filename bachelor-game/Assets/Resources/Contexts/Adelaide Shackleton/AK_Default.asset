@@ -18,7 +18,6 @@ MonoBehaviour:
   - Hallo, freut mich euch zu sehen.
   - "Da seid Ihr ja wieder. Kann ich etwas f\xFCr Sie tun?"
   - "Ben\xF6tigen sie etwas?"
-  - 
   listOfConversationalMoves:
   - name: META_CatchAll
     conversationalMoveObject: {fileID: 11400000, guid: d603a123571cb44ad83ca32b3d8e4e16,
@@ -35,16 +34,14 @@ MonoBehaviour:
       topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
       answers:
       - Alexander Veltman hat diese Expedition angeleitet.. bevor er verschwand.
-      - "Dr. Veltman hat zu meinem Bedauern angeordnet, dass er und David allein das
-        Artefakt untersuchen und nicht gest\xF6rt werden sollen. Ich habe dann selbstst\xE4ndig
-        mit mit meiner eigenen Forschung begonnen."
+      - Alexander Veltman hat diese Expedition angeleitet.. bevor er verschwand.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Amelie Veltman
       topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
       answers:
-      - "Ich wei\xDF leider nicht von wem sie sprechen."
+      - "Ich wei\xDF leider nicht von wem sie sprechen. "
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -105,14 +102,15 @@ MonoBehaviour:
     - name: Forschung
       topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
       answers:
-      - PLATZHALTER FORSCHUNG
+      - '#FORSCHUNG'
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: Foto
       topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
       answers:
-      - "David hat einige Fotos gemacht. Sie h\xE4ngen hier im Forschungszelt."
+      - "David hat w\xE4hrend unseres Aufenthalts hier einige Fotos gemacht. Sie h\xE4ngen
+        hier im Forschungszelt."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -154,7 +152,8 @@ MonoBehaviour:
     - name: Kiste
       topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
       answers:
-      - Meinen sie die Kiste von Doktor Veltman
+      - Meinen sie die Schatulle von Doktor Veltman? Er hat sie auf seinem Schreibtisch
+        stehen, aber ich habe nie gesehen was er dort drinnen aufbewahrt.
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -170,6 +169,8 @@ MonoBehaviour:
       answers:
       - "Dr. Wilson ist unser Arzt. Er k\xFCmmert sich gut um unser Wohlbefinden.
         Sowohl k\xF6rperlich als auch geistig."
+      - "Ich komme gut mit Dr. Wilson aus. Er bem\xFCht sich stets das Richtige zu
+        tun."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -186,7 +187,7 @@ MonoBehaviour:
     - name: NO TOPIC
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
       answers:
-      - 'Ich verstehe leider nicht wovon Sie sprechen. #NO_TOPIC'
+      - '#NO_TOPIC'
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -243,4 +244,28 @@ MonoBehaviour:
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-  specialCases: []
+  specialCases:
+  - name: 
+    conversationalMoveObject: {fileID: 11400000, guid: ace7a731cb84f4684ab25bb5a79dba94,
+      type: 2}
+    topics:
+    - name: 
+      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
+      answers:
+      - "Was f\xE4llt ihnen ein?"
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 843724890, guid: 2338c54cefe1542908bce138e660122c,
+              type: 3}
+            m_MethodName: AddContext
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 2bf37f1bddfe943ac96342a15bf82a04,
+                type: 2}
+              m_ObjectArgumentAssemblyTypeName: Context, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2

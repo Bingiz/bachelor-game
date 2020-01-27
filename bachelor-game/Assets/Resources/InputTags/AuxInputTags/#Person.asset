@@ -15,15 +15,7 @@ MonoBehaviour:
   name: Person
   priority: 0
   associatedStrings:
-  - wer
-  - wen
-  - wem
-  - wessen
-  - welcher
-  - welche
-  - welchen
-  - welchem
-  - we
+  - er
   - sie
   - ihm
   - ihn

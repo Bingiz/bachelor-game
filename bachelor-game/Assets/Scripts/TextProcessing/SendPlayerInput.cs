@@ -100,15 +100,18 @@ public class SendPlayerInput : MonoBehaviour
         input = input.Trim();
         inputForOutput = input;
 
+        DialoguePartner = gameManager.DialoguePartner;
+
         //send inputForOutput;
         GetComponent<MessageManager>().SendMessageToChat(inputForOutput, Message.MessageType.playerMessage) ;
         input = input.ToLower();
 
-        DialoguePartner = gameManager.DialoguePartner;
+        
 
         AddInputTags();
         CheckDialoguePartner();
         CheckPerson();
+
         DecideTopic();
 
 
@@ -133,7 +136,7 @@ public class SendPlayerInput : MonoBehaviour
                     if (! listOfTagsInInput.Contains(listOfAllInputTags[j]))
                     {
                         listOfTagsInInput.Add(listOfAllInputTags[j]);
-                        Debug.Log(listOfAllInputTags[j].name + " added");
+                        Debug.Log("Input Tag " + listOfAllInputTags[j].name + " added");
                         //tagFoundForWord = true;
                         break;
                     }
@@ -179,7 +182,7 @@ public class SendPlayerInput : MonoBehaviour
                     )
                 {
                     listOfTagsInInput.Add(previousTopic);
-                    Debug.Log(previousTopic + " added");
+                    Debug.Log("Input Tag" + previousTopic + " added");
                 }
             }
         }
@@ -188,7 +191,7 @@ public class SendPlayerInput : MonoBehaviour
     public void CheckDialoguePartner()
     {
         //check DialoguePartner Input Tag
-        if (listOfTagsInInput.Contains(auxTags[0]))
+        if (listOfTagsInInput.Contains(auxTags[0]) && listOfTagsInInput.Count == 1)
         {
             listOfTagsInInput.Remove(auxTags[0]);
             Debug.Log(auxTags[0].name + " removed from InputTags in input.");
@@ -219,7 +222,7 @@ public class SendPlayerInput : MonoBehaviour
                 //Debug.Log("Comparing Input Tag: "+ listOfAllTopics[i].name +" to "+ listOfTagsInInput[j].name);
                 if (listOfAllTopics[i].name == listOfTagsInInput[j].name)
                 {
-                    //Debug.Log("Input Tag: " + listOfAllTopics[i].name + " added to list of Topics in Input");
+                    Debug.Log("Input Tag: " + listOfAllTopics[i].name + " added to list of Topics in Input");
                     listOfTopicsInInput.Add(listOfTagsInInput[j]);
                 }
             } 
@@ -243,6 +246,7 @@ public class SendPlayerInput : MonoBehaviour
         {
             //check for highest priority Topic
             InputTag currentlyHighestTopic = ScriptableObject.CreateInstance<InputTag>();
+            currentlyHighestTopic.name = "DEFAULT";
 
             for (int i = 0; i < listOfTopicsInInput.Count; i++)
             {
@@ -263,7 +267,7 @@ public class SendPlayerInput : MonoBehaviour
             }
 
             // change to new topic if topic is recognised in input
-            if(currentlyHighestTopic != null)
+            if(currentlyHighestTopic.name != "DEFAULT")
             {
                 gameManager.currentTopic = currentlyHighestTopic;
                 Debug.Log("New Topic is: "+gameManager.currentTopic.name);
@@ -275,8 +279,9 @@ public class SendPlayerInput : MonoBehaviour
             }
             // input the #NO_TOPIC topic when previously no topic was recognised
             else
-            {   
-                gameManager.currentTopic = Instantiate(Resources.Load("Topics/#NO_TOPIC",typeof(InputTag))) as InputTag;
+            {
+                Debug.Log("No Topic found. Adding: " + Resources.Load("InputTags/Topics/#NO_TOPIC", typeof(InputTag)));
+                gameManager.currentTopic = Resources.Load("InputTags/Topics/#NO_TOPIC", typeof(InputTag)) as InputTag;
             }
         }
     }
@@ -398,6 +403,7 @@ public class SendPlayerInput : MonoBehaviour
                 //check the tagResponseCombinations of the currentlyHighestContext against the tags in Input
                 for (int j = 0; j < currentlyHighestContext.listOfConversationalMoves.Length; j++)
                 {
+                    Debug.Log("Entering list of CMs");
                     /*
                     if (j == 0)
                     {
@@ -408,7 +414,7 @@ public class SendPlayerInput : MonoBehaviour
 
                     for (int k = 0; k < CMBuffer.Count; k++)
                     {
-                        //Debug.Log("Comparing " + currentlyHighestContext.listOfConversationalMoves[j].conversationalMoveObject + " to " + CMBuffer[k]);
+                        Debug.Log("Comparing " + currentlyHighestContext.listOfConversationalMoves[j].conversationalMoveObject + " to " + CMBuffer[k]);
 
                         if (currentlyHighestContext.listOfConversationalMoves[j].conversationalMoveObject == CMBuffer[k])
                         {
@@ -416,7 +422,7 @@ public class SendPlayerInput : MonoBehaviour
 
                             for (int l = 0; l < currentlyHighestContext.listOfConversationalMoves[j].topics.Length; l++)
                             {
-                                //Debug.Log("Comparing Topics " + currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic.name + " to " + gameManager.currentTopic.name);
+                                Debug.Log("Comparing Topics " + currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic.name + " to " + gameManager.currentTopic.name);
 
                                 if (currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic == gameManager.currentTopic)
                                 {
@@ -424,7 +430,7 @@ public class SendPlayerInput : MonoBehaviour
 
                                     if (currentlyHighestContext.listOfConversationalMoves[j].topics[l].answers != null)
                                     {
-                                        Debug.Log("Returning String Array");
+                                        
                                         currentCM = currentlyHighestContext.listOfConversationalMoves[j].conversationalMoveObject;
                                         previousTopic = currentlyHighestContext.listOfConversationalMoves[j].topics[l].topic;
                                         return currentlyHighestContext.listOfConversationalMoves[j].topics[l].answers;
@@ -465,7 +471,7 @@ public class SendPlayerInput : MonoBehaviour
 
         answerBuffer = FindAnswerOfHighestPriority();
 
-        Debug.Log(answerBuffer);
+        Debug.Log("Answer Buffer: " + answerBuffer);
 
         if (answerBuffer != null)
         {
@@ -474,7 +480,7 @@ public class SendPlayerInput : MonoBehaviour
 
         //write the output
 
-        Debug.Log(output);
+        Debug.Log("Output: " + output);
 
         GetComponent<MessageManager>().SendMessageToChat(output, DialoguePartner.GetComponent<CharacterDialogueInfos>().messageType);
 
@@ -486,8 +492,6 @@ public class SendPlayerInput : MonoBehaviour
     // sends the NPC answer dialogue line to the UI
     public void WriteNPCLine(string output)
     {
-
-        DialoguePartner = gameManager.DialoguePartner;
         //Write and Call new Message Function (so that text box size matches)
         //DialoguePartner.GetComponent<CharacterDialogueInfos>().responseHistory += "\n" + output + "\n\n";
     }
@@ -502,7 +506,7 @@ public class SendPlayerInput : MonoBehaviour
             output = answerBuffer[Random.Range(0, answerBuffer.Length)];
 
             WriteNPCLine(output);
-            DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory += "\n\n\n";
+            //DialoguePartner.GetComponent<CharacterDialogueInfos>().playerInputHistory += "\n\n\n";
             answerBuffer = null;
         }
 

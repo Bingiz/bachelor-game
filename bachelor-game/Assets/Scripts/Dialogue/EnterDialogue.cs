@@ -41,6 +41,7 @@ public class EnterDialogue : MonoBehaviour
 
         //change Name and Color to Dialogue Partners
         showDialoguePartnerName.ChangeNameAndColor();
+        gameManager.GetComponent<SendPlayerInput>().DialoguePartner = gameManager.DialoguePartner;
 
         gameManager.GetComponent<SendPlayerInput>().Greeting();
         
@@ -70,6 +71,8 @@ public class EnterDialogue : MonoBehaviour
         {
             gameManager.currentContexts.Remove(contextBuffer[i]);
         }
+
+        gameManager.GetComponent<SendPlayerInput>().DialoguePartner = null;
 
         contextBuffer.Clear();
         activateUI.deactivateDialogueUI();

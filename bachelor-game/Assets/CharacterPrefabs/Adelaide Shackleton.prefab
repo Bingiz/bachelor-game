@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3660190182148029609}
   - component: {fileID: 3660190182148029608}
   - component: {fileID: 3660190182148029604}
+  - component: {fileID: 843724890}
+  - component: {fileID: 843724894}
   m_Layer: 0
   m_Name: Adelaide Shackleton
   m_TagString: NPC
@@ -62,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   context:
-  - {fileID: 11400000, guid: 6154e65694e6a4f36bd2bf7024fdcde5, type: 2}
+  - {fileID: 11400000, guid: aa0b75702897f405191dd993e7067410, type: 2}
   EnterDialogue:
     m_PersistentCalls:
       m_Calls:
@@ -77,8 +79,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &3660190182148029608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,9 +92,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Adelaide Shackleton
-  color: {r: 0.3329477, g: 0.8113208, b: 0.8052715, a: 1}
+  color: {r: 0, g: 0.764373, b: 0.9150943, a: 1}
   playerInputHistory: 
   responseHistory: 
+  characterInputTag: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
+  messageType: 1
 --- !u!114 &3660190182148029604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +111,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputFieldObj: {fileID: 0}
   gameManager: {fileID: 0}
+  scrollbar: {fileID: 0}
+--- !u!114 &843724890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3660190182148029611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf4e0515405f4caeaa3dacc68328d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &843724894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3660190182148029611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5617d1af5a56f497fb6e5cc197dd96c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 1
+  UIElement: {fileID: 0}
+  doOnInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3660190182148029604}
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  doOnExitInteraction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7319560066666698279
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +220,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
