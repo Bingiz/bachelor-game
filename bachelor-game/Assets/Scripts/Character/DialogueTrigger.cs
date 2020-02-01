@@ -8,6 +8,5 @@ public class DialogueTrigger : MonoBehaviour
 {
     public GameManager gameManager;
     public List<Context> context;
-    public UnityEvent EnterDialogue;
-   
+    public UnityEvent EnterDialogue;   
 }

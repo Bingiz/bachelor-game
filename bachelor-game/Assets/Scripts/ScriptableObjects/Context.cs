@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using UnityEngine.Events;
 
 [ExecuteInEditMode]
 
@@ -14,8 +16,15 @@ public class TagList
 public class Context : ScriptableObject
 {
     public int priority;
-    private string[] characters;
-    public bool needsAnswer;
+
+    private GameObject thisGameObject;
+
+    public Context(string[] greet, List<CM> cm, List<CM> scm)
+    {
+        greetings = greet;
+        listOfConversationalMoves = cm;
+        specialCases = scm;
+    }
 
     [System.Serializable]
     public class Topic
@@ -26,12 +35,25 @@ public class Context : ScriptableObject
         public string[] answers;
 
         [Header("Event")]
-        public UnityEngine.Events.UnityEvent DialogueEvent;
+        public UnityEvent DialogueEvent;
 
-        public Topic(string n, InputTag it)
+        /*
+        public void AddContext(Context C,GameObject D)
+        {
+            D.GetComponent<DialogueTrigger>().context.Add(C);
+        }
+
+        public void RemoveContext(Context C, GameObject D)
+        {
+            D.GetComponent<DialogueTrigger>().context.Remove(C);
+        }
+        */
+
+        public Topic(string n, InputTag it, string[] an)
         {
             name = n;
             topic = it;
+            answers = an;
         }
     }
 
@@ -41,9 +63,16 @@ public class Context : ScriptableObject
         [HideInInspector]
         public string name;
         public ConversationalMove conversationalMoveObject;
-        public Topic[] topics;
+        public List<Topic> topics;
 
-        public CM(string n, ConversationalMove cm, Topic[] to)
+        public CM(string n, ConversationalMove cm, List<Topic> to)
+        {
+            name = n;
+            conversationalMoveObject = cm;
+            topics = to;
+        }
+
+        public void Init(string n, ConversationalMove cm, List<Topic> to)
         {
             name = n;
             conversationalMoveObject = cm;
@@ -53,86 +82,14 @@ public class Context : ScriptableObject
 
     public string[] greetings;
 
-    public CM[] listOfConversationalMoves;
+    public List<CM> listOfConversationalMoves;
 
-    public CM[] specialCases;
+    public List<CM> specialCases;
 
-    [HideInInspector]
-    Topic[] listOfTopics;
 
     public Context()
     {
         priority = -1;
         //askedBefore = false;
     }
-
-    private void Awake()
-    {
-        Object[] count = Resources.LoadAll("InputTags/Topics");
-        int countOfTopics = count.Length;
-        listOfTopics = new Topic[countOfTopics];
-
-        count = Resources.LoadAll("Conversational Moves/Standard Moves");
-        int countOfConversationalMoves = count.Length;
-        listOfConversationalMoves = new CM[countOfConversationalMoves];
-        
-            int i = 0;
-            foreach (InputTag top in Resources.LoadAll("InputTags/Topics", typeof(InputTag)))
-            {
-                listOfTopics[i] = new Topic(top.name, top);
-                i++;
-            }
-
-            int j = 0;
-            foreach (ConversationalMove cmove in Resources.LoadAll("Conversational Moves/Standard Moves", typeof(ConversationalMove)))
-            {
-                listOfConversationalMoves[j] = new CM(cmove.name, cmove, listOfTopics);
-                j++;
-            }
-    }
 }
-
-/*
-if (cmove.name.Contains("SCM_"))
-            {
-                Topic[] singleTopic = new Topic[1];
-singleTopic[0] = new Topic("DEFAULT", null);
-
-listOfConversationalMoves[j] = new CM(cmove.name, cmove, singleTopic);
-            }
-
-
-
-
-
-
-        [System.Serializable]
-    public class TagResponseCombinations
-    {
-        [HideInInspector]
-        public string name;
-
-        [Header("Input Tags required for response")]
-        public TagList[] tagList;
-
-        [Header("Response Output")]
-        public string[] responses;
-
-        [Header("Context add")]
-        //public GameObject addContextToCharacter;
-        public List<Context> addContexts;
-
-        [Header("Context remove")]
-        //public GameObject removeContextFromCharacter;
-        public List<Context> removeContexts;
-
-        [Header("Topic switch")]
-        public Context switchTopicTo;
-
-        [Header("Event")]
-        public UnityEngine.Events.UnityEvent DialogueEvent;
-
-        //[HideInInspector]
-        //public bool askedBefore;
-    }
-*/

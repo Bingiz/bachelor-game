@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7112215394661769762}
   - component: {fileID: 7112215394661769763}
   - component: {fileID: 7112215394661769767}
-  - component: {fileID: 8507122314752411019}
+  - component: {fileID: 960059932}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -50,9 +50,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentContexts: []
+  itemsInInventory: []
   currentTopic: {fileID: 0}
   stemDictionary: {fileID: 0}
   DialoguePartner: {fileID: 0}
+  InteractingWith: {fileID: 0}
 --- !u!114 &7112215394661769760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +116,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &7112215394661769762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,13 +129,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerInput: {fileID: 0}
-  AnswerText: {fileID: 0}
-  PlayerInputOutput: {fileID: 0}
   DialoguePartner: {fileID: 0}
+  scrollbar: {fileID: 0}
+  Catchall: {fileID: 11400000, guid: d603a123571cb44ad83ca32b3d8e4e16, type: 2}
+  currentCM: {fileID: 0}
   listOfAllInputTags: []
   listOfAllTopics: []
   listOfAllAuxTags: []
+  listOfAllConversationalMoves: []
+  listOfStandardConversationalMoves: []
+  listOfSpecialCaseConversationalMoves: []
+  windowSize: {fileID: 0}
   listOfTagsInInput: []
+  previousTopic: {fileID: 0}
 --- !u!114 &7112215394661769763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePartner: {fileID: 0}
   dialoguePartnerAnswer: {fileID: 0}
---- !u!114 &8507122314752411019
+--- !u!114 &960059932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,6 +179,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7112215394661769775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0552e09fa1bd48d8882d268a117d267, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ef40e1804e444c0fa20f7488164f89f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMessages: 25
+  chatPanel: {fileID: 0}
+  textObject: {fileID: 932229960940581552, guid: 15a676091beb541e497090a0bdc95330,
+    type: 3}
+  chatBox: {fileID: 0}
+  playerCol: {r: 1, g: 1, b: 1, a: 1}
+  adelaideCol: {r: 0, g: 0.764373, b: 0.9150943, a: 1}
+  edgarCol: {r: 0.9245283, g: 0.8199437, b: 0, a: 1}
+  lawrenceCol: {r: 0.88617826, g: 0, b: 0.9339623, a: 1}

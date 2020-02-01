@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: SCM_Oppose
   m_EditorClassIdentifier: 
   priority: 0
-  associatedTagCombinations: []
+  associatedTagCombinations:
+  - InputTags:
+    - {fileID: 11400000, guid: 23e45060ee55348e38775ae49b84a92f, type: 2}
   topicAnswers: []

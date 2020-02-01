@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: AK_Upset
   m_EditorClassIdentifier: 
   priority: 10
-  needsAnswer: 0
   greetings:
   - ghello
-  listOfConversationalMoves: []
-  specialCases:
+  listOfConversationalMoves:
   - name: 
-    conversationalMoveObject: {fileID: 11400000, guid: 4fcf5a2fb63bc41609b9868249157f45,
+    conversationalMoveObject: {fileID: 11400000, guid: d603a123571cb44ad83ca32b3d8e4e16,
       type: 2}
     topics:
     - name: 
@@ -29,13 +27,15 @@ MonoBehaviour:
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
+  specialCases:
   - name: 
     conversationalMoveObject: {fileID: 11400000, guid: 687badaf090044f9dbdbd61e6c057550,
       type: 2}
     topics:
     - name: 
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
+      answers:
+      - "Danke f\xFCr die Entschuldigung."
       DialogueEvent:
         m_PersistentCalls:
           m_Calls:

@@ -8,10 +8,10 @@ public class AddRemoveActiveContextOnCollision : MonoBehaviour
   public GameManager gameManager;
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.GetComponent<GameManager>().currentContexts.Add(context);
+        //gameManager.GetComponent<GameManager>().currentContexts.Add(context);
     }
     private void OnTriggerExit(Collider other)
     {
-        gameManager.GetComponent<GameManager>().currentContexts.Remove(context);
+       // gameManager.GetComponent<GameManager>().currentContexts.Remove(context);
     }
 }

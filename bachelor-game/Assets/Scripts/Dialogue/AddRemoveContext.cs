@@ -4,20 +4,16 @@ using System.Collections.Generic;
 
 public class AddRemoveContext : MonoBehaviour
 {
-    private List<Context> listOfContexts;
-
-    private void Start()
-    {
-        listOfContexts = GetComponent<DialogueTrigger>().context;
-    }
-
     public void AddContext(Context C)
 	{
-        listOfContexts.Add(C);
-	}
+        //Debug.Log("Context: "+ C.name + " added to " + gameObject);
+        //listOfContexts.Add(C);
+        GameObject.Find("GameManager").GetComponent<GameManager>().DialoguePartner.GetComponent<DialogueTrigger>().context.Add(C);
+
+    }
 
     public void RemoveContext(Context C)
     {
-        listOfContexts.Remove(C);
+        GameObject.Find("GameManager").GetComponent<GameManager>().DialoguePartner.GetComponent<DialogueTrigger>().context.Remove(C);
     }
 }
