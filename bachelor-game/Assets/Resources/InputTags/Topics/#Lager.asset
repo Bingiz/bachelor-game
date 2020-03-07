@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Lager'
   m_EditorClassIdentifier: 
   name: Lager
+  priority: 2
   associatedStrings:
   - lager
   - camp

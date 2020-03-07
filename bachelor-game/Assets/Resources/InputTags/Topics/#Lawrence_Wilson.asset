@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: '#Lawrence_Wilson'
   m_EditorClassIdentifier: 
   name: Lawrence Wilson
+  priority: 0
   associatedStrings:
   - lawrence
   - wilson
   - arzt
   - doktor
+  - lawrences
+  - wilsons
   associatedTagCombinations: []

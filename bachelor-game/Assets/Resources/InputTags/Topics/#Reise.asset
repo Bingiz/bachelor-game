@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Reise'
   m_EditorClassIdentifier: 
   name: Reise
+  priority: 3
   associatedStrings:
   - reise
   - fahrt

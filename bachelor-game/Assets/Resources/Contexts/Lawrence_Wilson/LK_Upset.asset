@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62060999fc4e84837acbc28a73c8529f, type: 3}
+  m_Name: LK_Upset
+  m_EditorClassIdentifier: 
+  priority: 100
+  greetings:
+  - Seid ihr endlich bereit euch bei mir zu entschuldigen?
+  GreetEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  listOfConversationalMoves:
+  - name: 
+    conversationalMoveObject: {fileID: 11400000, guid: d603a123571cb44ad83ca32b3d8e4e16,
+      type: 2}
+    topics:
+    - name: 
+      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
+      answers:
+      - "Wie w\xE4re es wenn sie sich zun\xE4chst entschuldigen?"
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+  specialCases:
+  - name: 
+    conversationalMoveObject: {fileID: 11400000, guid: ace7a731cb84f4684ab25bb5a79dba94,
+      type: 2}
+    topics:
+    - name: 
+      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
+      answers:
+      - Reicht es ihnen nicht mich einmal zu beleidigen?
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+  - name: 
+    conversationalMoveObject: {fileID: 11400000, guid: 687badaf090044f9dbdbd61e6c057550,
+      type: 2}
+    topics:
+    - name: 
+      topic: {fileID: 0}
+      answers:
+      - Nun gut, aber beherrschen sie sich in Zukunft.
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2213646997401861672, guid: f079309b5f5b74447b6d203f0ee1c4c4,
+              type: 3}
+            m_MethodName: RemoveContext
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000}
+              m_ObjectArgumentAssemblyTypeName: Context, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2

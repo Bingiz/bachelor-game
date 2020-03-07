@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: '#David_Edgeworth'
   m_EditorClassIdentifier: 
   name: David Edgeworth
+  priority: 6
   associatedStrings:
   - david
   - edgeworth
   - toter
   - ingenieur
+  - davids
+  - edgeworths
   associatedTagCombinations: []

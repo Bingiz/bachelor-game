@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Friedhof'
   m_EditorClassIdentifier: 
   name: Friedhof
+  priority: 7
   associatedStrings:
   - friedhof
   - grab

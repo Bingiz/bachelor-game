@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: '#Alexander_Veltman'
   m_EditorClassIdentifier: 
   name: Alexander Veltman
+  priority: 10
   associatedStrings:
   - alexander
   - veltman
   - leiter
   - verschwundener
   - verschwundene
+  - alexanders
+  - veltmans
   associatedTagCombinations: []

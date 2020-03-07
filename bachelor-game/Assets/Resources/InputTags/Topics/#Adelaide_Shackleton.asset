@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: '#Adelaide_Shackleton'
   m_EditorClassIdentifier: 
   name: Adelaide Shackleton
-  priority: 1
+  priority: 0
   associatedStrings:
   - adelaide
   - shackleton
   - geologin
+  - adelaides
+  - shackletons
   associatedTagCombinations: []

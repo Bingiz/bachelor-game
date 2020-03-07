@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62060999fc4e84837acbc28a73c8529f, type: 3}
   m_Name: AK_Upset
   m_EditorClassIdentifier: 
-  priority: 10
+  priority: 100
   greetings:
-  - ghello
+  - Seid ihr hier um euch endlich zu entschuldigen?
+  GreetEvent:
+    m_PersistentCalls:
+      m_Calls: []
   listOfConversationalMoves:
   - name: 
     conversationalMoveObject: {fileID: 11400000, guid: d603a123571cb44ad83ca32b3d8e4e16,
@@ -24,6 +27,7 @@ MonoBehaviour:
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
       answers:
       - "Wie w\xE4re es, wenn sie sich zun\xE4chst entschuldigen!"
+      answercount: 1
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -36,6 +40,7 @@ MonoBehaviour:
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
       answers:
       - "Danke f\xFCr die Entschuldigung."
+      answercount: 1
       DialogueEvent:
         m_PersistentCalls:
           m_Calls:

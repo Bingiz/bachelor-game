@@ -229,11 +229,22 @@ public class SendPlayerInput : MonoBehaviour
         {
             for (int j = 0; j < listOfStandardConversationalMoves[i].associatedTagCombinations.Length; j++)
             {
-                if(UnorderedEqual(listOfStandardConversationalMoves[i].associatedTagCombinations[j].InputTags, listOfTagsInInput))
-                {
-                    conversationalMovesInInput.Add(listOfStandardConversationalMoves[i]);
-                    Debug.Log("CM added : "+ listOfStandardConversationalMoves[i].name);
-                }
+
+                Debug.Log("Comparing: " + listOfStandardConversationalMoves[i].associatedTagCombinations[j].InputTags[0].name);
+
+                    for (int l = 0; l < listOfStandardConversationalMoves[i].associatedTagCombinations[j].InputTags.Length; l++)
+                    {
+                        bool temp = true;
+                        if (!listOfTagsInInput.Contains(listOfStandardConversationalMoves[i].associatedTagCombinations[j].InputTags[l]))
+                        {
+                            temp = false;
+                        }
+                        if (temp)
+                        {
+                            conversationalMovesInInput.Add(listOfStandardConversationalMoves[i]);
+                            Debug.Log("CM added : " + listOfStandardConversationalMoves[i].name);
+                        }
+                    }
             }
         }
 
@@ -309,7 +320,7 @@ public class SendPlayerInput : MonoBehaviour
     }
 
     // return a answer based on current contexts and Input Tags
-    public string[] FindAnswerOfHighestPriority()
+    public string FindAnswerOfHighestPriority()
     {
         //// CONTEXT ////
         List<Context> contextsToSearch = OrderContexts();
@@ -358,7 +369,24 @@ public class SendPlayerInput : MonoBehaviour
                                                 currentCM = null;
                                                 previousTopic = contextsToSearch[0].specialCases[m].topics[n].topic;
                                                 contextsToSearch[0].specialCases[m].topics[n].DialogueEvent.Invoke();
-                                                return contextsToSearch[0].specialCases[m].topics[n].answers;
+
+                                                //output the answers in order
+                                                if (contextsToSearch[0].specialCases[m].topics[n].answercount >= contextsToSearch[0].specialCases[m].topics[n].answers.Length)
+                                                {
+                                                    contextsToSearch[0].specialCases[m].topics[n].answercount = 0; //if every answer is output once, restart cycle
+                                                }
+
+                                                string temp = "";
+
+                                                if (contextsToSearch[0].specialCases[m].topics[n].answers.Length > 0)
+                                                {
+                                                    contextsToSearch[0].specialCases[m].topics[n].answercount++;
+                                                    temp = contextsToSearch[0].specialCases[m].topics[n].answers[contextsToSearch[0].specialCases[m].topics[n].answercount - 1];
+
+                                                }
+
+                                                return temp;
+                                                
                                             }
                                         }
                                     }
@@ -410,7 +438,24 @@ public class SendPlayerInput : MonoBehaviour
                                         currentCM = contextsToSearch[0].listOfConversationalMoves[m].conversationalMoveObject;
                                         previousTopic = contextsToSearch[0].listOfConversationalMoves[m].topics[n].topic;
                                         contextsToSearch[0].listOfConversationalMoves[m].topics[n].DialogueEvent.Invoke();
-                                        return contextsToSearch[0].listOfConversationalMoves[m].topics[n].answers;
+
+                                        //output the answers in order
+                                        if (contextsToSearch[0].listOfConversationalMoves[m].topics[n].answercount >= contextsToSearch[0].listOfConversationalMoves[m].topics[n].answers.Length)
+                                        {
+                                            contextsToSearch[0].listOfConversationalMoves[m].topics[n].answercount = 0; //if every answer is output once, restart cycle
+                                        }
+
+                                        contextsToSearch[0].listOfConversationalMoves[m].topics[n].answercount++;
+
+                                        string temp = "";
+
+                                        if (contextsToSearch[0].listOfConversationalMoves[m].topics[n].answers.Length > 0)
+                                        {
+                                             temp = contextsToSearch[0].listOfConversationalMoves[m].topics[n].answers[contextsToSearch[0].listOfConversationalMoves[m].topics[n].answercount - 1];
+
+                                        }
+
+                                        return temp;
                                     }
                                 }
                             }
@@ -465,9 +510,8 @@ public class SendPlayerInput : MonoBehaviour
     // outputs the answer 
     public void outputAnswer()
     {
+        /*
         string[] answerBuffer = null;
-
-        
 
         answerBuffer = FindAnswerOfHighestPriority();
         
@@ -475,8 +519,26 @@ public class SendPlayerInput : MonoBehaviour
         if (answerBuffer.Length > 0)
         {
             Debug.Log(answerBuffer[0]);
-            output = answerBuffer[Random.Range(0, answerBuffer.Length)];
+            //output = answerBuffer[Random.Range(0, answerBuffer.Length)];
+            output = answerBuffer[];
         }
+        */
+
+
+        string answerBuffer = null;
+
+        answerBuffer = FindAnswerOfHighestPriority();
+
+
+        if (answerBuffer != null)
+        {
+            output = answerBuffer;
+
+            DialoguePartner.GetComponent<Transform>().GetChild(0).GetComponent<Animator>().SetTrigger("Answer_"+ Random.Range(1, 3).ToString());
+            //Debug.Log("Answer_" + Random.Range(1, 3).ToString());
+            //Debug.Log(DialoguePartner.GetComponent<Transform>().GetChild(0).GetComponent<Animator>());
+        }
+
 
         //CLEAR ALL LISTS
         listOfTopicsInInput.Clear();
@@ -495,18 +557,16 @@ public class SendPlayerInput : MonoBehaviour
     // displays greeting Message if conversation with NPC is started
     public void Greeting()
     {
-        if (GreetHighestPriorityContext() != null)
-        {
             string[] answerBuffer = GreetHighestPriorityContext();
 
             output = answerBuffer[Random.Range(0, answerBuffer.Length)];
 
             GetComponent<MessageManager>().SendMessageToChat(output, DialoguePartner.GetComponent<CharacterDialogueInfos>().messageType);
 
+        if (answerBuffer[0] == "") {
             answerBuffer = null;
         }
-
-        else { Debug.Log("no greeting available");}
+        else { Debug.Log("no greeting available"); }
 
     }
 
@@ -520,13 +580,15 @@ public class SendPlayerInput : MonoBehaviour
             {
                     if (contextsToSearch[0].greetings.Length > 0)
                     {
-                        return contextsToSearch[0].greetings;
+                    contextsToSearch[0].GreetEvent.Invoke();
+                    return contextsToSearch[0].greetings;
                     }
             }
 
         contextsToSearch.Clear();
         Debug.Log("No Greet answer found");
-        return null;
+        string[] temp = new string[] { "" };
+        return temp;
     }
 
     //https://www.dotnetperls.com/list-equals

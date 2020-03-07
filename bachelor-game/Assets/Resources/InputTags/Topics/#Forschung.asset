@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Forschung'
   m_EditorClassIdentifier: 
   name: Forschung
+  priority: 15
   associatedStrings:
   - forschung
   - forscher
@@ -32,4 +33,7 @@ MonoBehaviour:
   - experimentiert
   - experimentierte
   - experimentierst
+  - geforscht
+  - durchbruch
+  - forschungsdurchbruch
   associatedTagCombinations: []

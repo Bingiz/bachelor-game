@@ -20,6 +20,8 @@ public class Raycast : MonoBehaviour
 
     public GameObject interactingWith;
 
+    public GameObject viewOverlay;
+
 
 
     // Update is called once per frame
@@ -58,6 +60,18 @@ public class Raycast : MonoBehaviour
             interactionIcon.SetActive(false);
         }
         */
+        if (interactingWith != null)
+        {
+            if (interactingWith.tag == "ViewableObject")
+            {
+                viewOverlay.active = true;
+            }
+        }
+        else
+        {
+            viewOverlay.active = false;
+        }
+
 
 
         RaycastHit hit;
@@ -109,7 +123,7 @@ public class Raycast : MonoBehaviour
         }
         else { interactionIcon.SetActive(false); }
 
-        if (interacting == true && cooldown == false)
+        if (interacting == true && cooldown == false && interactingWith != null)
         {
             if (interactingWith.tag =="ViewableObject")
             {
@@ -125,7 +139,7 @@ public class Raycast : MonoBehaviour
 
 
             //cooldown = true;
-
+            /*
             if (Input.GetButtonDown("Escape"))
             {
 
@@ -143,6 +157,7 @@ public class Raycast : MonoBehaviour
                 interacting = false;
                 transform.parent.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
             }
+            */
 
             if (Input.GetButtonDown("Interact"))
             {
@@ -179,27 +194,26 @@ public class Raycast : MonoBehaviour
 
     public void ExitInteraction()
     {
+        if (interactingWith != null)
+        {
+            interactingWith = null;
+        }
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         //interactingWith.GetComponent<ViewObject>().QuitView();
-        transform.parent.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
-        interactingWith = null;
+        GameObject controller = GameObject.Find("FPSController");
+        controller.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+
         interacting = false;
         
     }
-    void EnterInteraction()
+    public void EnterInteraction()
     {
-        
         Cursor.visible = true;
         interactionIcon.SetActive(false);
         transform.parent.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
         interacting = true;
-        
-    }
-
-    void OpenMainMenu(bool open)
-    {
-
     }
 
 

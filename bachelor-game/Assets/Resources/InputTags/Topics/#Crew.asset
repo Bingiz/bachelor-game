@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: '#Crew'
   m_EditorClassIdentifier: 
   name: Crew
-  priority: 0
+  priority: 4
   associatedStrings:
   - crew
   - besatzung

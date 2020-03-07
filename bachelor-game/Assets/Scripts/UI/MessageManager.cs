@@ -15,17 +15,6 @@ public class MessageManager : MonoBehaviour
 
     List<Message> messageList = new List<Message>();
 
-    private void Update()
-    {
-        if (!chatBox.isFocused)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SendMessageToChat("You pressed the space bar!", Message.MessageType.playerMessage);
-            }
-        }
-    }
-
     public void SendMessageToChat(string text, Message.MessageType messageType)
     {
         if (messageList.Count >= maxMessages)

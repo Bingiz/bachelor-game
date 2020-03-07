@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: "#Vorr\xE4te"
   m_EditorClassIdentifier: 
   name: "Vorr\xE4te"
-  priority: 0
+  priority: 2
   associatedStrings:
   - essen
   - wasser
   - "vorr\xE4te"
   - nahrung
+  - proviant
   associatedTagCombinations: []

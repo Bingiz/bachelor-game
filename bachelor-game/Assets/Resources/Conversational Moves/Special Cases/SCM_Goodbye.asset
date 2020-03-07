@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c71e3b0e48b3490e9e104870a5661f0, type: 3}
   m_Name: SCM_Goodbye
   m_EditorClassIdentifier: 
-  associatedTagCombinations: []
+  priority: 0
+  associatedTagCombinations:
+  - InputTags:
+    - {fileID: 11400000, guid: 127ee0e20ac1145fdbc75eff5ed1cfc0, type: 2}
   topicAnswers: []

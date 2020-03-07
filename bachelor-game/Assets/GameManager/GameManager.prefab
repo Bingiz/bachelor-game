@@ -135,10 +135,12 @@ MonoBehaviour:
   currentCM: {fileID: 0}
   listOfAllInputTags: []
   listOfAllTopics: []
-  listOfAllAuxTags: []
+  listOfAllRegularTags: []
+  listOfTopicsInInput: []
   listOfAllConversationalMoves: []
   listOfStandardConversationalMoves: []
   listOfSpecialCaseConversationalMoves: []
+  conversationalMovesInInput: []
   windowSize: {fileID: 0}
   listOfTagsInInput: []
   previousTopic: {fileID: 0}
@@ -190,4 +192,4 @@ MonoBehaviour:
   playerCol: {r: 1, g: 1, b: 1, a: 1}
   adelaideCol: {r: 0, g: 0.764373, b: 0.9150943, a: 1}
   edgarCol: {r: 0.9245283, g: 0.8199437, b: 0, a: 1}
-  lawrenceCol: {r: 0.88617826, g: 0, b: 0.9339623, a: 1}
+  lawrenceCol: {r: 0.67032516, g: 0.31835172, b: 0.9245283, a: 1}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Arbeit'
   m_EditorClassIdentifier: 
   name: Arbeit
+  priority: 8
   associatedStrings:
   - machen
   - machst

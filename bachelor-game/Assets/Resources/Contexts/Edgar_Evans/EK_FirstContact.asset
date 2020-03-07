@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62060999fc4e84837acbc28a73c8529f, type: 3}
+  m_Name: EK_FirstContact
+  m_EditorClassIdentifier: 
+  priority: 50
+  greetings:
+  - Wer bist du? Was machst du hier? Es ist mitten im Winter!
+  GreetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1344336797, guid: 884c5705db90742cd841695efe7e5906, type: 3}
+        m_MethodName: RemoveContext
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 450e4c5ac852045208320dd05187cdbb,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Context, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 843724890, guid: 2338c54cefe1542908bce138e660122c, type: 3}
+        m_MethodName: RemoveContext
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a67afe4052fe64b0abcd3fd9113e17c3,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Context, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 843724890, guid: 2338c54cefe1542908bce138e660122c, type: 3}
+        m_MethodName: AddContext
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a24204a6b1d174c14964f9f32fcfc651,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Context, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2213646997401861672, guid: f079309b5f5b74447b6d203f0ee1c4c4,
+          type: 3}
+        m_MethodName: RemoveContext
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 450e4c5ac852045208320dd05187cdbb,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Context, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2213646997401861672, guid: f079309b5f5b74447b6d203f0ee1c4c4,
+          type: 3}
+        m_MethodName: AddContext
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 5d6c010a83408428f863d7e978813dee,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Context, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  listOfConversationalMoves: []
+  specialCases: []

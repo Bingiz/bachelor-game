@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: '#Edgar_Evans'
   m_EditorClassIdentifier: 
   name: Edgar Evans
+  priority: 0
   associatedStrings:
   - edgar
   - evans
   - "kapit\xE4n"
   - captain
+  - edgars
   associatedTagCombinations: []

@@ -44,13 +44,16 @@ public class CreateContexts : MonoBehaviour
 
 
             // load the .CSV
-            string fileData = File.ReadAllText("Assets/Resources/Answers/" + contextName + ".csv");
+            //string fileData = File.ReadAllText("Assets/Resources/Answers/" + contextName + ".csv");
+
+            // load the .TSV
+            string fileData = File.ReadAllText("Assets/Resources/Answers/" + contextName + ".tsv");
 
             string[] lineData = fileData.Split("\n"[0]);
 
-            int spaltenAnzahl = lineData[0].Split(","[0]).Length;
+            //int spaltenAnzahl = lineData[0].Split(","[0]).Length;
+            int spaltenAnzahl = lineData[0].Split("\t"[0]).Length;
 
-            
 
             //string[] cellData = lineData[0].Trim().Split(","[0]);
 
@@ -62,13 +65,18 @@ public class CreateContexts : MonoBehaviour
             
             for (int y = 0; y < lineData.Length; y++)
             {
-                for (int x = 0; x < spaltenAnzahl; x++)
+                string[] temp = lineData[y].Trim().Split("\t"[0]);
+                //Debug.Log("Temp is this long: " + temp.Length);
+
+                for (int x = 0; x < temp.Length; x++)
                 {
-                    string[] temp = lineData[y].Trim().Split(","[0]);
+                    //string[] temp = lineData[y].Trim().Split(","[0]);
+                    
                     processedData[x, y] = temp[x];
+                    
                     //Debug.Log("[" + x + "," + y + "]:" + processedData[x, y]);
                 }
-                //Debug.Log("//////////////////////////////////////LINE COMPLETE");
+                Debug.Log("//////////////////////////////////////LINE COMPLETE");
             }
 
             // create a Context that needs to be fed the data from the CSV
@@ -81,6 +89,7 @@ public class CreateContexts : MonoBehaviour
 
             for (int yy = 0; yy < lineData.Length; yy++)
             {
+                Debug.Log("Row "+ yy + " of "+lineData.Length);
                 if (processedData[1, yy].Contains("SCM_"))
                 {
                     cmtype = CMType.SCM;
@@ -156,7 +165,7 @@ public class CreateContexts : MonoBehaviour
 
                     int numberOfAnswers = 0;
 
-                    while (processedData[4 + numberOfAnswers, yy] != "" && numberOfAnswers + 4 < spaltenAnzahl-1)
+                    while (processedData[4 + numberOfAnswers, yy] != "" && processedData[4 + numberOfAnswers, yy] != null && numberOfAnswers + 4 < spaltenAnzahl-1)
                     {
                         numberOfAnswers++;
                     }
@@ -193,7 +202,7 @@ public class CreateContexts : MonoBehaviour
             }
 
             // create the Context
-            AssetDatabase.CreateAsset(context, "Assets/Resources/Contexts/" + character + "/" + contextName + ".asset");
+            //AssetDatabase.CreateAsset(context, "Assets/Resources/Contexts/" + character + "/" + contextName + ".asset");
 
             //Debug.Log(fileData);
             /*

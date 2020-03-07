@@ -33,6 +33,8 @@ public class Context : ScriptableObject
         public string name;
         public InputTag topic;
         public string[] answers;
+        [HideInInspector]
+        public int answercount;
 
         [Header("Event")]
         public UnityEvent DialogueEvent;
@@ -54,6 +56,7 @@ public class Context : ScriptableObject
             name = n;
             topic = it;
             answers = an;
+            answercount = 0;
         }
     }
 
@@ -81,6 +84,9 @@ public class Context : ScriptableObject
     }
 
     public string[] greetings;
+
+    [Header("Event")]
+    public UnityEvent GreetEvent;
 
     public List<CM> listOfConversationalMoves;
 

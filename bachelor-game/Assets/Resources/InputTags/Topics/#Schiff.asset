@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: '#Schiff'
   m_EditorClassIdentifier: 
   name: Schiff
-  priority: 0
+  priority: 3
   associatedStrings:
   - schiff
   - foresight

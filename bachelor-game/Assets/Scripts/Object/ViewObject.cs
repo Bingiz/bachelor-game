@@ -13,6 +13,8 @@ public class ViewObject : MonoBehaviour
     GameObject itemDescription;
     GameObject itemInfoUI;
     GameObject inventory;
+    GameObject infoBox;
+
     //private bool viewingInformation = false;
 
     public Item item;
@@ -26,6 +28,7 @@ public class ViewObject : MonoBehaviour
         itemInfoUI = GameObject.Find("/UI/ItemDescription/Background");
         itemInfoUI.SetActive(false);
         inventory = GameObject.Find("/UI/Inventory/Background");
+        infoBox = GameObject.Find("UI/Info/Background");
     }
 
 
@@ -81,6 +84,7 @@ public class ViewObject : MonoBehaviour
 
     public void CollectItem()
     {
+        infoBox.GetComponent<Slide_Info>().ShowMessage(item.name + " erhalten.");
         gameManager.itemsInInventory.Add(item);
         inventory.GetComponent<InventoryUI>().AddInventoryObject(item);
         Destroy(this.gameObject);

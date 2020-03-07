@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: '#Spieler'
   m_EditorClassIdentifier: 
   name: Spieler
+  priority: 1
   associatedStrings:
   - ich
   - mein

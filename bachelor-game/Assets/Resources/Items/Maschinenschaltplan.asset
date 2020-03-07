@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6221aa83162fb419f8b152518054d033, type: 3}
   m_Name: Maschinenschaltplan
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  icon: {fileID: 0}
+  name: Forschungsnotizen von David Edgeworth
+  description: "Hier stehen Einstellungen f\xFCr die Maschine in der H\xF6hle. Die
+    meisten Eintr\xE4ge sind verkohlt. Einer l\xE4sst sich jedoch noch entziffern
+    \"... wird unser n\xE4chster Test sein. Wenn wir zu keinem Ergebnis kommen, sollten
+    wir vielleicht die Stromst\xE4rke verringern - 1 7 4 6  k\xF6nnte vielversprechende
+    Ergebnisse liefern.\""
+  icon: {fileID: 21300000, guid: 28e9b5ed0941c4ae2aae5aabc9f4ecf9, type: 3}
+  collectible: 0

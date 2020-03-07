@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "#R\xFCckreise"
   m_EditorClassIdentifier: 
   name: "R\xFCckreise"
-  priority: 0
+  priority: 3
   associatedStrings:
   - "r\xFCckreise"
   - "r\xFCckfahrt"

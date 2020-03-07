@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "#S\xFCdpol"
   m_EditorClassIdentifier: 
   name: "S\xFCdpol"
-  priority: 0
+  priority: 2
   associatedStrings:
   - "s\xFCdpol"
   - antarktis

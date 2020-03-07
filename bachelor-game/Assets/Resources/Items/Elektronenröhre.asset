@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6221aa83162fb419f8b152518054d033, type: 3}
   m_Name: "Elektronenr\xF6hre"
   m_EditorClassIdentifier: 
-  name: "Elektronenr\xF6hre"
-  description: blabla
-  icon: {fileID: 0}
-  collectible: 0
+  name: Ersatzteil
+  description: "Es scheint ein Ersatzteil f\xFCr eine Maschine zu sein."
+  icon: {fileID: 21300000, guid: aff0fd88aa2da4272ac8baa8ad7276ca, type: 3}
+  collectible: 1

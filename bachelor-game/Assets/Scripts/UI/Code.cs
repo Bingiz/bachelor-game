@@ -84,6 +84,7 @@ public class Code : MonoBehaviour
         }
         else
         {
+            raycast.interactingWith.GetComponent<InteractableObject>().WrongNumber();
             Debug.Log("Code is wrong!");
         }
     }

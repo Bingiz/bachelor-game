@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c71e3b0e48b3490e9e104870a5661f0, type: 3}
   m_Name: CM_AskTimeOnTopic
   m_EditorClassIdentifier: 
-  priority: 0
+  priority: 2
   associatedTagCombinations: []
   topicAnswers: []

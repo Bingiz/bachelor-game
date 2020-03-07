@@ -21,19 +21,15 @@ MonoBehaviour:
   - da
   - woher
   - wohin
-  - tod
-  - unfall
-  - verlust
-  - tot
   - zu
   - zum
   - nah
   - hin
-  - nah
   - verschwinden
   - verschwunden
   - verschwindet
   - verschwand
+  - finden
   associatedTagCombinations:
   - InputTags:
     - {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}

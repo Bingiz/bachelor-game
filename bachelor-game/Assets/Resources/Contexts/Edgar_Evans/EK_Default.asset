@@ -13,36 +13,13 @@ MonoBehaviour:
   m_Name: EK_Default
   m_EditorClassIdentifier: 
   priority: -1
-  needsAnswer: 0
-  greetings: []
+  greetings:
+  - Hallo, Junge.
+  - Da bist du ja wieder. Kann ich dir helfen?
+  GreetEvent:
+    m_PersistentCalls:
+      m_Calls: []
   listOfConversationalMoves:
-  - name: Conversational Move
-    conversationalMoveObject: {fileID: 0}
-    topics:
-    - name: Topic
-      topic: {fileID: 0}
-      answers:
-      - Antwort 1
-      - Antwort 2
-      - Antwort 3
-      - Antwort 4
-      - Antwort 5
-      - Antwort 6
-      - Antwort 7
-      - Antwort 8
-      - Antwort 9
-      - Antwort 10
-      - Antwort 11
-      - Antwort 12
-      - Antwort 13
-      - Antwort 14
-      - Antwort 15
-      - Antwort 16
-      - Antwort 17
-      - Antwort 18
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
   - name: CM_CatchAll
     conversationalMoveObject: {fileID: 11400000, guid: d603a123571cb44ad83ca32b3d8e4e16,
       type: 2}
@@ -50,78 +27,62 @@ MonoBehaviour:
     - name: '#Adelaide_Shackleton'
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
       answers:
-      - "Adelaide ist noch fast ein Kind. Und dann will sie auch noch Geologin sein?
-        Sie sollte nicht an einem gef\xE4hrlichem Ort wie dem hier sein. Sie sollte
-        sich daheim gedanken um eine Familie machen."
+      - "Adelaide ist Geologin. Sie hat ganz sch\xF6n was auf dem Kasten f\xFCr ihr
+        Alter. Sie ist mit David hergekommen. Sie hat das Eis und Proben von diesem
+        Stein untersucht, den Alexander hier gefunden hat."
+      - "Auch wenn Adelaide zu den Forschen geh\xF6rt, war sie fast nie selbst in
+        der H\xF6hle. Wie ich das verstanden habe hat sie meistens andere Aufgaben
+        gehabt."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Alexander_Veltman'
       topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
       answers:
-      - '"Alexander Veltman. Pfft! Gut'
-      - ' dass er weg ist."'
-      - "Ich habe ihm von Anfang an nicht getraut. Alexander war verr\xFCckt. Er hat
-        David aus dem Weg ger\xE4umt und das Schiff sabotiert."
-      - Irgendwann habe ich ihm etwas nachgestellt.
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Amelie_Veltman'
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers:
-      - Keine Ahnung wer das ist. Alexanders Frau? Seine Tochter?
+      - "Alexander ist unser Expeditionsleiter. Er hat sich echt in die Forschungen
+        reingekniet seit wir hier sind. Aber nach Davids Tod wurde es ziemlich ungesund.
+        Er hat Tag und Nacht allein in der H\xF6hle verbracht und hat gearbeitet.
+        Ich habe ihm jeden Tag etwas zu Essen gebracht. Eines Tages meinte er er steht
+        kurz vor dem Durchbruch. Am n\xE4chsten Tag konnte ich ihn nirgends mehr finden.
+        Ich kann mir nicht erkl\xE4ren wieso und wohin er verschwunden sein kann."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Arbeit'
       topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
       answers:
-      - '"Seit wir hier in der Arktis sind'
-      - " habe ich mich gr\xF6\xDFtenteils um die Verwaltung der Vorr\xE4te ind die
-        Instandhaltung der Werkzeuge gek\xFCmmert.\""
+      - "Seit wir hier in der Arktis sind, habe ich mich gr\xF6\xDFtenteils um die
+        Verwaltung der Vorr\xE4te ind die Instandhaltung der Werkzeuge gek\xFCmmert.
+        Als sich Alexander in der H\xF6hle zur\xFCckgezogen hat habe ich ihn jeden
+        Tag kurz besucht und zumindest etwas zu Essen gebracht. Sonst w\xE4re er dort
+        noch verhungert."
       - Ich hatte nicht so viel arbeit. Daher hatte ich endlich genug Zeit etwas zu
         schreiben.
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Brandspuren'
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers:
-      - 'Dort hat es David erwischt.. Eine Schande. '
-      - '"Als ich Alexander einmal nachgestellt habe'
-      - " habe ich einen Streit zwischen ihm und David mitbekommen. David sagte die
-        Versuche werden zu gef\xE4hrlich und sie sollten abbrechen. Aber Alexander
-        wollte nicht h\xF6ren. Er legte einen Hebel um und ein grelles Licht blendete
-        mich"
-      - " Blitze schossen aus diesem Stein in der H\xF6hle. Einer traf David und verwundete
-        ihn schwer. Ich st\xFCrmte hinein und sah nach David. Veltman war verschwunden.\""
-      - "David hat es nicht \xFCberstanden.."
-      - "Alexander hat wenigstens bekommen was er verdient hat. Ist garantiert dort
-        drau\xDFen irgendwo erfroren."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Crew'
       topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
       answers:
-      - '"Lawrence'
-      - " Adelaide und ich sind noch \xFCbrig.\""
-      - David und Alexander sind nicht mehr hier.
+      - "Lawrence, Adelaide und ich sind noch \xFCbrig. David ist vor einem Monat
+        bei einem Unfall bei den Forschungen gestorben und Alexander ist einfach spurlos
+        verschwunden."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#David_Edgeworth'
       topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
       answers:
-      - '"David war ein guter Mensch. Dumm nur'
-      - " dass er sich so von Alexander hat mitrei\xDFen lassen.\""
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Dialogpartner'
-      topic: {fileID: 0}
-      answers: []
+      - "Ich glaube David hat eng mit Alexander zusammen gearbeitet. Sie haben die
+        meiste Zeit in der H\xF6hle mit ihren Forschungen verbracht, bis David gestorben
+        ist. Ich habe ihn begraben. Er hatte nicht viel pers\xF6nliches dabei, was
+        ich ihm h\xE4tte beilegen k\xF6nnen. Ich habe aber zumindest sein Tagebuch
+        auf sein Grab gelegt."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -129,350 +90,241 @@ MonoBehaviour:
       topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
       answers:
       - "Ich bin der Kapit\xE4n der Foresight. Ich bin in erster Linie hier um aller
-        hier hin und wieder weg zu bringen."
-      - 'Ich konnte den Auftrag nicht ausschlagen bei dieser Bezahlung. Naja.. ob
-        daraus jetzt noch was wird... '
-      - Dabei wollte ich mich hier nach mit meiner Frau zur Ruhe setzen.
+        hier hin und wieder weg zu bringen. Ich konnte den Auftrag nicht ausschlagen.
+        Er sollte echt gut bezahlt werden. Naja.. ob daraus jetzt noch was wird..."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: "#Elektronenr\xF6hre"
+    - name: '#Ersatzteil'
       topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
       answers:
-      - Elek.. was? Wovon redest du?
-      - Ich habe keine Ahnung was das sein soll.
+      - "Ich habe geh\xF6rt, dass die Maschine defekt ist. Adelaide sagte ein Ersatzteil
+        muss ausgetauscht werden, damit sie nochmal funktioniert. Aber pass auf, Junge.
+        Das Ding kann gef\xE4hrlich sein. Du wei\xDFt was mit David passiert ist."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Forschung'
       topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
       answers:
-      - "\"Ich wei\xDF nichts \xFCber die Forschung. Ich wei\xDF nur"
-      - ' dass Alexanders dumme Versuche David das Leben gekostet haben."'
-      - '"Wenns dich so sehr interessiert'
-      - " dann frag Adelaide. Das M\xE4dchen hat sich selbst an diesen Steinen versucht"
-      - " nachdem Alexander sie nicht bei der Forschung dabei haben wollte. H\xE4tte
-        auf ihn h\xF6ren sollen.\""
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Foto'
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers:
-      - '"Meinste das Foto'
-      - ' das Alexander in seiner Schatulle aufbewahrt? Ich hab nicht gesehen'
-      - ' was darauf abgebildet ist'
-      - ' aber es war ihm wohl wichitg."'
-      - '"Ich hab nicht gesehen'
-      - ' was darauf abgebildet ist'
-      - ' aber es war ihm wohl wichitg."'
+      - "Ich verstehe leider nichts von den Forschungen und um ehrlich zu sein interessiert
+        es mich auch nicht wirklich. Adelaide kann ihnen aber bestimmt weiter helfen,
+        wenn sie etwas dar\xFCber wissen m\xF6chten."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Friedhof'
       topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
       answers:
-      - "Wir haben David dort begraben. Wir haben auch noch ein Kreuz f\xFCr Alexander
-        aufgestellt."
+      - "Ich habe David hinter dem Lager begraben. Ich habe vor ein paar Tagen auch
+        ein Kreuz f\xFCr Alexander aufgestellt. Ich glaube nicht, dass er noch zur\xFCck
+        kommen wird. Er hat nichtmal Vorr\xE4te mitgenommen."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#H\xF6hle"
       topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
       answers:
-      - 'Ich habe gesehen wie Alexander und David dort gearbeitet haben. '
+      - "In der H\xF6hle haben David und Alexander die meiste Zeit gearbeitet. Irgendwelche
+        Experimente mit dem Stein in der H\xF6hle."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Kairosit'
       topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
       answers:
-      - Dieser komische Stein den sie gefunden haben?
-      - "Sie sagen dieser Stein ist etwas besonderes. F\xFCr mich sieht es nicht anders
-        aus als ein riesiger Feuerstein."
-      - "Adelaide die junge Geologin hat sich auch damit besch\xE4ftigt. Du k\xF6nntest
-        sie ja danach fragen wenn es dich so interessiert."
+      - "Dieser komische Stein den sie gefunden haben? Sie sagen dieser Stein ist
+        etwas besonderes. F\xFCr mich sieht er nicht anders aus als jeder andere.
+        Adelaide, die junge Geologin, hat sich auch damit besch\xE4ftigt. Du k\xF6nntest
+        sie ja danach fragen wenn es dich interessiert."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: '#Kiste'
+    - name: '#Schatulle'
       topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
       answers:
-      - "\"Ich habe \xF6fter beobachtet"
-      - ' wie Veltman diese Kiste angeschaut hat. Ihr Inhalt hat ihm viel bedeutet."'
+      - "Ich habe diese Kiste auf Alexanders Schreibtisch gesehen. Sie ist mit einem
+        Zahlencode verschlossen. Ich bin schon neugierig was dort drin sein k\xF6nnte.
+        Bestimmt etwas n\xFCtzliches."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Lager'
       topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
       answers:
-      - '"Direkt nach unserer Ankunft haben wir das Lager errichtet. Ein Wohnzelt'
-      - ' ein Forschungszelt und ein privates Zelt von Alexander."'
+      - Direkt nach unserer Ankunft haben wir das Lager errichtet. Ein Wohnzelt, ein
+        Forschungszelt und ein privates Zelt von Alexander. Wir haben hier gelebt
+        und gearbeitet.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Lawrence_Wilson'
       topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
       answers:
-      - '"Lawrence'
-      - ' unser Arzt. Er ist ein guter Freund von mir."'
-      - "\"Ich glaube er nimmt es mir \xFCbel"
-      - " dass ich ihn dazu \xFCberredet habe mit auf diese Expedition zu kommen.
-        Und irgendwann konnte ich ihn verstehen. Ich bin heil froh"
-      - " dass wir jetzt bald von hier verschwinden k\xF6nnen.\""
+      - "Lawrence ist unser Arzt. Ich kenne ihn noch von fr\xFCher. Er ist ein guter
+        Mensch. Er hat sich zuletzt so gut er konnte um Alexander gek\xFCmmert. Er
+        hat auch sein bestes getan um David zu retten.."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Maschine'
       topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
       answers:
-      - "Dieses Ding hat genug kraft um t\xF6dliche Blitze zu erzeugen. Ich w\xFCrde
-        an deiner Stelle die Finger davon lassen."
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Person'
-      topic: {fileID: 0}
-      answers: []
+      - "Dieses Ding hat genug Kraft um Explosionen zu erzeugen. Ich w\xFCrde an deiner
+        Stelle die Finger davon lassen. Ich m\xF6chte nicht noch jemanden begraben.
+        Allerdings sagt Adelaide, die Maschine sei momentan sowieso defekt."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Reise'
       topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
       answers:
-      - Die Foresight hat sich tapfer gehalten. Sie war jedem Unwetter gewachsen.
-      - '"Die Foresight ist leider kein Eisbrecher'
-      - " also hatten wir ein paar Probleme zur K\xFCste zu navigieren.\""
+      - Die Foresight hat uns auf der Reise hierher gute Dienste erwiesen. Sie hat
+        sich tapfer gehalten und war jedem Unwetter gewachsen.
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: '#Rettung'
+      topic: {fileID: 11400000, guid: adb2e08d2ed3040d8addbd6307fd115a, type: 2}
+      answers:
+      - "Rettung? Ehrlich gesagt wei\xDF ich garnicht was du hier machst. Aber eure
+        Hilfe k\xF6nnen wir trotzdem gebrauchen. Wir haben keinen Schimmer wo Alexander
+        ist."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#R\xFCckreise"
       topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
       answers:
-      - "\"Wir stecken hier fest. Die Foresight ist eingefroren. Ohne Eisbrecher kommen
-        wir vor dem Sommer hier nicht weg. Gott sei Dank seid ihr jetzt hier. Wer
-        wei\xDF"
-      - " ob wir es zur\xFCck geschafft h\xE4tten..\""
-      - "\"H\xE4tten wir unseren urspr\xFCnglichen Zeitplan eingehalten"
-      - " w\xE4ren wir noch rechtzeitig von hier verschwunden. Der Winter hat uns
-        \xFCberrascht. Die Temperaturen sind viel fr\xFCher gefallen als ich es erwartet
-        hatte.\""
+      - "Die Foresight ist eingefroren. Ohne Eisbrecher kommen wir vor dem Sommer
+        hier nicht weg. Aber das war auch der Plan. Im Fr\xFChling, wenn das Eis taut,
+        die R\xFCckreise anzutreten."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Schiff'
       topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
       answers:
-      - "\"Die Foresight ist mein Schiff. Nicht die Pr\xE4chtigste"
-      - ' aber sie ist mir schon seit 20 Jahren treu."'
-      - Leider steckt die Foresight wegen des Packeis hier fest. Ich hoffe wir schaffen
-        es sie zusammen mit deinem Team zu befreien.
+      - "Die Foresight ist mein Schiff. Nicht die Pr\xE4chtigste, aber sie ist mir
+        schon seit 20 Jahren treu. Wegen des Winters stecken wir aber noch hier fest.
+        Das Packeis macht es uns unm\xF6glich um diese Jahreszeit zur\xFCck zu Fahren.
+        Die Foresight ist leider kein Eisbrecher, deshalb warten wir auf den Fr\xFChling.
+        Vielleicht schaffen wir es aber auch die Foresight jetzt zusammen mit deinem
+        Team zu befreien."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#S\xFCdpol"
       topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
       answers:
-      - '"Ich bin nur froh'
-      - " wenn wir diesen gottlosen Ort bald verlassen k\xF6nnen.\""
+      - "Ein merkw\xFCrdiger Ort. Irgendetwas f\xFChlt sich hier nicht richtig an.
+        Ich bin heilfroh wenn wir wieder aufbrechen k\xF6nnen."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#Vorr\xE4te"
       topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
       answers:
-      - "\"Ich habe die Vorr\xE4te f\xFCr die Expedition verwaltet. Es habs nicht
-        gerne gemacht"
-      - ' aber als wir festgestellt haben'
-      - " dass wir hier festsitzen musste ich unsere Rationen k\xFCrzen.\""
-      - '"Als Veltman abgehauen ist'
-      - " hat er sich scheinbar nicht an den Vorr\xE4ten bedient. Von der Ausr\xFCstung
-        fehlt auch nichts. Was auch immer er vor hatte"
-      - ' er hat es also wahrscheinlich nicht weit gebracht."'
+      - "Es gibt noch gen\xFCgend Rationen. Merkw\xFCrdigerweise hat Alexander nichts
+        mitgenommen als er verschwunden ist."
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: '#Visionen'
+      topic: {fileID: 11400000, guid: 7cd9a97d7aa594c16ba0e0d824f246ef, type: 2}
+      answers:
+      - "Hmm... Ich kann mich erinnern, dass Alexander mal erz\xE4lte diesen Ort bereits
+        irgendwo her zu kennen."
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: '#Verschwinden'
+      topic: {fileID: 11400000, guid: ea09fa2dd975e48f3a693333655814b6, type: 2}
+      answers:
+      - "Es war vor etwa zwei Wochen. Nach Davids Tod war Alexander fast nur noch
+        in der H\xF6hle. Tagelang. Ich habe ihm jeden Tag etwas zu Essen gebracht.
+        Ansonsten w\xE4re er wohl dort noch verhungert. Und eines Tages konnte ich
+        ihn nirgends mehr finden."
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: '#wasistpassiert'
+      topic: {fileID: 11400000, guid: c9d909e1b4688458da9b7bb58ec44482, type: 2}
+      answers:
+      - "David Edgeworth ist in einem Unfall in der H\xF6hle t\xF6tlich verwundet
+        worden. Alexander Veltman ist vor ungef\xE4hr einem Monat verschwunden und
+        nicht wieder aufgetaucht. Die Vorr\xE4te sind jedoch unber\xFChrt und von
+        der Ausr\xFCstung fehlt auch nichts. Ich wei\xDF nicht was er sich dabei gedacht
+        hat."
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: '#Unfall'
+      topic: {fileID: 11400000, guid: 5c2b7eab8ab5d44d5bddc0513f9b0135, type: 2}
+      answers:
+      - "Es gab einen Unfall in der H\xF6hle. David ist an den Folgen gestorben. So
+        eine Schande.. Und Alexander hat danach noch intensiver gearbeitet. Ich finde
+        er sollte aufh\xF6ren. Es scheint zu gef\xE4hrlich zu sein."
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: "#Merkw\xFCrdig"
+      topic: {fileID: 0}
+      answers:
+      - "Hier gehen merkw\xFCrdige Dinge vor sich. Ich kann nicht genau sagen wieso,
+        aber ich bin froh wenn wir von hier verschwinden."
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: '#Eisprobe'
+      topic: {fileID: 11400000, guid: 1f245018688434cb9864047e2a2a13f2, type: 2}
+      answers:
+      - "Ich habe Adelaide geholfen die Proben zu beschaffen, aber ich wei\xDF nicht
+        was sie damit gemacht hat."
+      answercount: 0
+      DialogueEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - name: '#Aufzeichnungen'
+      topic: {fileID: 0}
+      answers:
+      - "David hatte st\xE4ndig ein Buch bei sich, in welches er seine Notizen geschrieben
+        hat. Ich habe es ihm auf sein Grab gelegt."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#NO_TOPIC'
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: 
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_InvestigateOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 66047b41d4f374104af7f98e1a5c6a29,
-      type: 2}
-    topics:
-    - name: '#Adelaide_Shackleton'
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Alexander_Veltman'
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Amelie_Veltman'
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Arbeit'
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kairosit'
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Brandspuren'
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Crew'
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#David_Edgeworth'
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Dialogpartner'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Edgar_Evans'
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Forschung'
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Foto'
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Friedhof'
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kiste'
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lager'
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lawrence_Wilson'
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Maschine'
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Person'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reise'
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reparatur'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Schiff'
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#NO_TOPIC'
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: 
-      topic: {fileID: 0}
-      answers: []
+      answers:
+      - "Vielleicht schaust du dir mal Davids Forschungsunterlagen an. Vielleicht
+        erf\xE4hrst du etwas \xFCber die Forschung, was dir helfen kann Alexander
+        zu finden."
+      - "Es ist nie leicht jemanden zu verlieren. Adelaide hat der Tod von David ganz
+        sch\xF6n mitgenommen. Sie war in dem letzten Monat h\xE4ufig bei seinem Grab."
+      - Hast du schon mit Lawrence und Adelaide gesprochen?
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -482,685 +334,138 @@ MonoBehaviour:
     topics:
     - name: '#Adelaide_Shackleton'
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - Adelaide ist bestimmt im Forschungszelt, sie ist eifrig und arbeitet viel.
+        Ich hoffe sie endet nicht wie Alexander.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Alexander_Veltman'
       topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Amelie_Veltman'
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Arbeit'
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
+      answers:
+      - Ich habe keine Ahnung wo Alexander ist. Das letzte was er zu mir sagte war,
+        dass er kurz vor einem Durchbruch steht.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Kairosit'
       topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Brandspuren'
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
+      answers:
+      - "Dieser Stein ist in der H\xF6hle."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Crew'
       topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
+      answers:
+      - Adelaide ist bestimmt im Forschungszelt. Lawrence ist um die Zeit normalerweise
+        im Wohnzelt. Sie wissen es wahrscheinlich schon. David ist vor einem Monat
+        gestorben und Alexander ist vor zwei Wochen verschwunden.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#David_Edgeworth'
       topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Dialogpartner'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Edgar_Evans'
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Forschung'
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Foto'
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Friedhof'
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kiste'
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lager'
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lawrence_Wilson'
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Maschine'
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Person'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reise'
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reparatur'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Schiff'
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#NO_TOPIC'
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: 
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskMethodOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 32c47c7ac18e94321bb208615906ba79,
-      type: 2}
-    topics:
-    - name: '#Adelaide_Shackleton'
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Alexander_Veltman'
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Amelie_Veltman'
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Arbeit'
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kairosit'
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Brandspuren'
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Crew'
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#David_Edgeworth'
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Dialogpartner'
-      topic: {fileID: 0}
-      answers: []
+      answers:
+      - "David ist vor einem Monat bei einem Unfall in den H\xF6hlen gestorben. Ich
+        habe ihn in der N\xE4he vom Lager begraben und ein Kreuz f\xFCr ihn aufgestellt."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Edgar_Evans'
       topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
+      answers:
+      - Ich stehe hier vor ihnen.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: "#Elektronenr\xF6hre"
+    - name: '#Ersatzteil'
       topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Forschung'
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Foto'
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
+      answers:
+      - "Ich habe keine Ahnung wo das Ersatzteil sein k\xF6nnte. Aber wahrscheinlich
+        hat Alexander es verwahrt."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Friedhof'
       topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
+      answers:
+      - "Der Friedhof ist in der N\xE4he vom Lager, hinter dem Fahnenmast."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#H\xF6hle"
       topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
+      answers:
+      - "Folge einfach vom Lager aus dem orangenen Pfad, dann erreichst du die H\xF6hle."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: '#Kiste'
+    - name: '#Schatulle'
       topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
+      answers:
+      - Alexanders Schatulle ist auf seinem Schreibtisch.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Lager'
       topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
+      answers:
+      - Von da bist du wahrscheinlich gerade gekommen. Folge einfach dem rot markierten
+        Pfad, dann kannst du das Lager nicht verfehlen.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Lawrence_Wilson'
       topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
+      answers:
+      - Lawrdence ist vermutlich gerade im Wohnzelt im Lager.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Maschine'
       topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Person'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reise'
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reparatur'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
+      answers:
+      - "Die Maschine ist in der H\xF6hle. Aber die ist sowieso defekt. Fehlt ein
+        Ersatzteil oder so."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Schiff'
       topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
+      answers:
+      - "Die Foresight ist gleich hier, hinter mir. Sie ist wundersch\xF6n, nicht
+        wahr?"
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#S\xFCdpol"
       topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
+      answers:
+      - Mein Junge, was meinst du wo du gerade bist.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#Vorr\xE4te"
       topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#NO_TOPIC'
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: 
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskOpinionOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 4462e7e8768774d2ebb9218db1d06782,
-      type: 2}
-    topics:
-    - name: '#Adelaide_Shackleton'
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Alexander_Veltman'
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Amelie_Veltman'
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Arbeit'
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kairosit'
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Brandspuren'
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Crew'
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#David_Edgeworth'
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Dialogpartner'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Edgar_Evans'
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Forschung'
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Foto'
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Friedhof'
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kiste'
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lager'
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lawrence_Wilson'
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Maschine'
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Person'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reise'
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reparatur'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Schiff'
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#NO_TOPIC'
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: 
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-  - name: CM_AskReasonOnTopic
-    conversationalMoveObject: {fileID: 11400000, guid: 55568f929546c45ffad891d603d63beb,
-      type: 2}
-    topics:
-    - name: '#Adelaide_Shackleton'
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Alexander_Veltman'
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Amelie_Veltman'
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Arbeit'
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kairosit'
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Brandspuren'
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Crew'
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#David_Edgeworth'
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Dialogpartner'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Edgar_Evans'
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Forschung'
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Foto'
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Friedhof'
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kiste'
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lager'
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lawrence_Wilson'
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Maschine'
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Person'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reise'
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reparatur'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Schiff'
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#NO_TOPIC'
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: 
-      topic: {fileID: 0}
-      answers: []
+      answers:
+      - "Die Vorr\xE4te sind auf der Foresight."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1170,175 +475,105 @@ MonoBehaviour:
     topics:
     - name: '#Adelaide_Shackleton'
       topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
+      answers:
+      - "Adelaide hat den Tod von David nicht gut verkraftet. Sie st\xFCrzt sich nur
+        in noch mehr Arbeit. Sie ist aber stolz auf das was sie schon herausgefunden
+        hat."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Alexander_Veltman'
       topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Amelie_Veltman'
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
+      answers:
+      - "Vor seinem Verschwinden war Alexaner ganz bessessen von der Forschung. Ich
+        kann mir garnicht vorstellen wieso er auf einmal einfach damit aufh\xF6ren
+        und verschwinden konnte. Wahrscheinlich ist er nicht mal mehr am Leben. Er
+        hat keine Vorr\xE4te mitgenommen. Ich ihm ein Kreuz neben Davids aufgestellt.
+        M\xF6ge seine rastlose Forscherseele ihren Frieden finden."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Arbeit'
       topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kairosit'
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Brandspuren'
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Crew'
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
       answers:
-      - '"Wir haben fast den Mut verloren'
-      - " nachdem wir Mister Edgeworth und Doktor Veltman verloren haben und dann
-        ist auch noch die Foresight fahrunt\xFCchtig.  Es ist ein Wunder"
-      - ' dass Sie uns rechtzeitig erreicht haben."'
-      - "Die Moral hat sich deutlich verbessert seit Sie hier sind. Unser \xFCberleben
-        ist gesichert."
+      - "Ich verwalte momentan vor allem die Vorr\xE4te und halte die Ger\xE4te instand."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#David_Edgeworth'
       topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Dialogpartner'
-      topic: {fileID: 0}
-      answers: []
+      answers:
+      - David ist Tod. Ich habe ihn vor etwa vier Wochen begraben.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Edgar_Evans'
       topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
+      answers:
+      - "Um ehrlich zu sein ist mir dieser Ort nicht recht. Ich bin froh wenn wir
+        hier fr\xFCher weg kommen als urspr\xFCnglich geplant."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Forschung'
       topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
+      answers:
+      - "Davon wei\xDF ich wirklich nichts. Da musst du Adelaide fragen. Sie hat mit
+        David und Alexander zusammengearbeitet."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: '#Foto'
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Friedhof'
-      topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#H\xF6hle"
-      topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kiste'
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lager'
-      topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
+    - name: '#Kairosit'
+      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
+      answers:
+      - "Von diesem Stein verstehe ich nichts. Frag lieber Adelaide. Sie hat sich
+        damit besch\xE4ftigt."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Lawrence_Wilson'
       topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
+      answers:
+      - Ich glaube auch Lawrence ist von der Situation belastet, aber bleibt immer
+        professionell.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Maschine'
       topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
+      answers:
+      - Die Maschine ist momentan defekt. Adelaide sagt ein Ersatzteil muss getauscht
+        werden um sie wieder zum Laufen zu bringen. Alexander hat bestimmt noch Ersatzteile
+        in seinem Zelt.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: '#Person'
+    - name: '#Tod'
       topic: {fileID: 0}
-      answers: []
+      answers:
+      - "David wurde wohl von einer Explosion get\xF6tet. Alexander erkl\xE4rte irgendwas
+        von zu viel Energie und der Maschine. Ich habe es nicht verstanden, aber fest
+        steht, dass diese Maschine gef\xE4hrlich ist und einer unserer Leute tot ist."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: '#Reise'
-      topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reparatur'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#R\xFCckreise"
-      topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Schiff'
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Vorr\xE4te"
-      topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#NO_TOPIC'
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: 
-      topic: {fileID: 0}
-      answers: []
+    - name: '#Unfall'
+      topic: {fileID: 11400000, guid: 5c2b7eab8ab5d44d5bddc0513f9b0135, type: 2}
+      answers:
+      - "In der H\xF6hle gab es eine Explosion. Alexander erkl\xE4rte irgendwas von
+        zu viel Energie und der Maschine. Ich habe es nicht verstanden, aber fest
+        steht, dass diese Maschine gef\xE4hrlich ist und einer unserer Leute tot ist."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1346,182 +581,101 @@ MonoBehaviour:
     conversationalMoveObject: {fileID: 11400000, guid: 31ce5f6c65f494ed094a23ad7384811e,
       type: 2}
     topics:
-    - name: '#Adelaide_Shackleton'
-      topic: {fileID: 11400000, guid: 1fa92e55d98a94c1b9971533fbb8d4db, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Alexander_Veltman'
-      topic: {fileID: 11400000, guid: 3269a33dcc8b848c3b75e4e693559a49, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Amelie_Veltman'
-      topic: {fileID: 11400000, guid: 18654ef53dd074340827c5e9af4ae595, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Arbeit'
-      topic: {fileID: 11400000, guid: 0b14be0c998154d7fbd041f56bf63ab0, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Kairosit'
-      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Brandspuren'
-      topic: {fileID: 11400000, guid: 1547f6222faae4dda83694c36c5c85d9, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Crew'
-      topic: {fileID: 11400000, guid: e3220c6ec94e44e809fedb87d0b8b86a, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#David_Edgeworth'
-      topic: {fileID: 11400000, guid: cec1dfd4dbce3482ea75ac8622df69c6, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Dialogpartner'
-      topic: {fileID: 0}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Edgar_Evans'
-      topic: {fileID: 11400000, guid: 12c0947d916484140924e86f63a571ce, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: "#Elektronenr\xF6hre"
-      topic: {fileID: 11400000, guid: c302791131e5e47dd9baa1756057b3bb, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Forschung'
-      topic: {fileID: 11400000, guid: 00ab9318fa158461595deff4588cd2a5, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Foto'
-      topic: {fileID: 11400000, guid: ddcc4a41be76349609bc340a155807d7, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
     - name: '#Friedhof'
       topic: {fileID: 11400000, guid: 05f3b8a74bddc4cb79550cdef915a06c, type: 2}
-      answers: []
+      answers:
+      - Ich habe David vor einem Monat nach dem Unfall begraben.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#H\xF6hle"
       topic: {fileID: 11400000, guid: fed9b3e0600d0480d8e8309aa552815c, type: 2}
-      answers: []
+      answers:
+      - "Die H\xF6hle hat Adelaide bald nach unserer Ankunft lokalisiert."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: '#Kiste'
-      topic: {fileID: 11400000, guid: 8055a7860b2af427eaa5426094a6f543, type: 2}
-      answers: []
+    - name: '#Kairosit'
+      topic: {fileID: 11400000, guid: 9174b84a5d77848079a34d30fc1ee9ad, type: 2}
+      answers:
+      - "Dieses Gestein haben die Forscher kurz nach unserer Ankunft in der H\xF6hle
+        entdeckt."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Lager'
       topic: {fileID: 11400000, guid: 318878654e766498e970a95078360136, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Lawrence_Wilson'
-      topic: {fileID: 11400000, guid: 94b909d65de9f45d08102adea1a7dac1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Maschine'
-      topic: {fileID: 11400000, guid: 7919b16950bea4392a2be2024f284b6f, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#NO_TOPIC'
-      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Person'
-      topic: {fileID: 0}
-      answers: []
+      answers:
+      - Wir haben das Lager in unserer ersten Woche hier errichtet.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: '#Reise'
       topic: {fileID: 11400000, guid: 7f39bb6455fc147938d49008034374cd, type: 2}
-      answers: []
-      DialogueEvent:
-        m_PersistentCalls:
-          m_Calls: []
-    - name: '#Reparatur'
-      topic: {fileID: 0}
-      answers: []
+      answers:
+      - "Wir sind vor f\xFCnf Monaten hier angekommen."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#R\xFCckreise"
       topic: {fileID: 11400000, guid: aa485dd192adb47c180002087e9e0e61, type: 2}
-      answers: []
+      answers:
+      - "Unsere geplante R\xFCckreise ist in vier Monaten. Wenn das Eis taut und die
+        Foresight wieder das offene Meer erreichen kann."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: '#Schiff'
-      topic: {fileID: 11400000, guid: 67884a9fb277d42e79dd3c2e0bc518f1, type: 2}
-      answers: []
+    - name: '#Tod'
+      topic: {fileID: 0}
+      answers:
+      - "David ist vor einem Monat bei dem Unfall in der H\xF6hle gestorben."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: "#S\xFCdpol"
-      topic: {fileID: 11400000, guid: 9596f1cf8b4534196bce086b0f66e07a, type: 2}
-      answers: []
+    - name: '#Unfall'
+      topic: {fileID: 11400000, guid: 5c2b7eab8ab5d44d5bddc0513f9b0135, type: 2}
+      answers:
+      - "Das Ungl\xFCck ist vor einem Monat passiert. David ist dabei gestorben."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
     - name: "#Vorr\xE4te"
       topic: {fileID: 11400000, guid: c2b886c686d86445dbf8ad4e13fa7ce0, type: 2}
-      answers: []
+      answers:
+      - "Die Vorr\xE4te werden uns nicht ausgehen. Wir haben noch planm\xE4\xDFig
+        Rationen bis zu unserer Abreise. Und wir sind zwei Mann weniger. Der arme
+        Alexander hat nichtmal etwas von den Vorr\xE4ten mitgenommen."
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
-    - name: 
-      topic: {fileID: 0}
-      answers: []
+    - name: '#NO_TOPIC'
+      topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
+      answers:
+      - Eh.. wir haben Mitte Februar wenn ich mich nicht irre. Noch etwa vier Monate
+        bis das Eis tauen soll.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
   specialCases:
-  - name: SCM_Appologize
+  - name: SCM_Apologize
     conversationalMoveObject: {fileID: 11400000, guid: 687badaf090044f9dbdbd61e6c057550,
       type: 2}
     topics:
     - name: '#NO_TOPIC'
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
+      answers:
+      - "Wof\xFCr entschuldigst du dich, Junge?"
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1531,7 +685,9 @@ MonoBehaviour:
     topics:
     - name: '#NO_TOPIC'
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
+      answers:
+      - Mach's gut.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1541,7 +697,9 @@ MonoBehaviour:
     topics:
     - name: '#NO_TOPIC'
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
+      answers:
+      - Hallo, Junge.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1552,6 +710,7 @@ MonoBehaviour:
     - name: '#NO_TOPIC'
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
       answers: []
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -1561,25 +720,45 @@ MonoBehaviour:
     topics:
     - name: '#NO_TOPIC'
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
+      answers:
+      - Was soll das, Junge?
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1344336797, guid: 884c5705db90742cd841695efe7e5906,
+              type: 3}
+            m_MethodName: AddContext
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: Context, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   - name: SCM_Agree
-    conversationalMoveObject: {fileID: 0}
+    conversationalMoveObject: {fileID: 11400000, guid: 0cdc02d8f0e984f47871cfb9d331b756,
+      type: 2}
     topics:
     - name: '#NO_TOPIC'
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
+      answers:
+      - Freut mich, dass du mir zustimmst.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
   - name: SCM_Disagree
-    conversationalMoveObject: {fileID: 0}
+    conversationalMoveObject: {fileID: 11400000, guid: 7d336a0567ed14b90b39ea879f1ddd30,
+      type: 2}
     topics:
     - name: '#NO_TOPIC'
       topic: {fileID: 11400000, guid: 6dc2bc8ef73aa4a03939b19ba8e80fc1, type: 2}
-      answers: []
+      answers:
+      - Nagut, jeder wie er meint.
+      answercount: 0
       DialogueEvent:
         m_PersistentCalls:
           m_Calls: []
